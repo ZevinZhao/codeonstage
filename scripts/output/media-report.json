@@ -1,0 +1,6089 @@
+{
+  "generatedAt": "2026-10-21T08:23:17.810Z",
+  "repoHit": 395,
+  "skillHit": 402,
+  "report": [
+    {
+      "repo": "HeyChengC/vibe-knowledge-film",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "heychengc-vibe-knowledge-film"
+      ]
+    },
+    {
+      "repo": "LuZhong-Li/vibe-knowledge-video-skill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "luzhong-li-vibe-knowledge-video-skill"
+      ]
+    },
+    {
+      "repo": "worlds3/vibe-knowledge",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "worlds3-vibe-knowledge",
+        "worlds3-vibe-knowledge-skill-vibe-knowledge-skill-md"
+      ]
+    },
+    {
+      "repo": "Win-Hao/knowledge-video",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "win-hao-knowledge-video"
+      ]
+    },
+    {
+      "repo": "Jogzh/concept-reel",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "jogzh-concept-reel"
+      ]
+    },
+    {
+      "repo": "AlbertPine/vibe-knowledge-video-director",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "albertpine-vibe-knowledge-video-director"
+      ]
+    },
+    {
+      "repo": "121469249/vibe-knowledge-film",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "121469249-vibe-knowledge-film"
+      ]
+    },
+    {
+      "repo": "1302344380/vibe-knowledge-film",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "1302344380-vibe-knowledge-film"
+      ]
+    },
+    {
+      "repo": "1975435449/vibe-knowledge-film",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "1975435449-vibe-knowledge-film"
+      ]
+    },
+    {
+      "repo": "2389305744Q/vibe-knowledge-film",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "2389305744q-vibe-knowledge-film"
+      ]
+    },
+    {
+      "repo": "aluxezla-netizen/vibe-knowledge-film",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "aluxezla-netizen-vibe-knowledge-film"
+      ]
+    },
+    {
+      "repo": "anduoera/vibe-knowledge-film",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "anduoera-vibe-knowledge-film"
+      ]
+    },
+    {
+      "repo": "BEER-BELLY-DU/vibe-knowledge-film",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "beer-belly-du-vibe-knowledge-film"
+      ]
+    },
+    {
+      "repo": "cd1517/vibe-knowledge-film",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "cd1517-vibe-knowledge-film"
+      ]
+    },
+    {
+      "repo": "clbhin/vibe-knowledge-film",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "clbhin-vibe-knowledge-film"
+      ]
+    },
+    {
+      "repo": "DaanaMqasn62707-source/vibe-knowledge-film",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "daanamqasn62707-source-vibe-knowledge-film"
+      ]
+    },
+    {
+      "repo": "Dave-cc/vibe-knowledge-film",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "dave-cc-vibe-knowledge-film"
+      ]
+    },
+    {
+      "repo": "David1024Smith/vibe-knowledge-film",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "david1024smith-vibe-knowledge-film"
+      ]
+    },
+    {
+      "repo": "fangyuanopus/vibe-knowledge-film",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "fangyuanopus-vibe-knowledge-film"
+      ]
+    },
+    {
+      "repo": "finaleech/vibe-knowledge-film",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "finaleech-vibe-knowledge-film"
+      ]
+    },
+    {
+      "repo": "fushengyk666/vibe-knowledge-film",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "fushengyk666-vibe-knowledge-film"
+      ]
+    },
+    {
+      "repo": "hereitis19/vibe-knowledge-film",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "hereitis19-vibe-knowledge-film"
+      ]
+    },
+    {
+      "repo": "heshuhuan6/vibe-knowledge-film",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "heshuhuan6-vibe-knowledge-film"
+      ]
+    },
+    {
+      "repo": "HV2TSDR/vibe-knowledge-film",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "hv2tsdr-vibe-knowledge-film"
+      ]
+    },
+    {
+      "repo": "Imzl-zl/vibe-knowledge-film",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "imzl-zl-vibe-knowledge-film"
+      ]
+    },
+    {
+      "repo": "iznake/vibe-knowledge-film",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "iznake-vibe-knowledge-film"
+      ]
+    },
+    {
+      "repo": "jinxb/vibe-knowledge-film",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "jinxb-vibe-knowledge-film"
+      ]
+    },
+    {
+      "repo": "jokerjiang666/vibe-knowledge-film",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "jokerjiang666-vibe-knowledge-film"
+      ]
+    },
+    {
+      "repo": "Joncoreman/vibe-knowledge-film",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "joncoreman-vibe-knowledge-film"
+      ]
+    },
+    {
+      "repo": "joshua23/vibe-knowledge-film",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "joshua23-vibe-knowledge-film"
+      ]
+    },
+    {
+      "repo": "k40965921-droid/vibe-knowledge-film",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "k40965921-droid-vibe-knowledge-film"
+      ]
+    },
+    {
+      "repo": "keepingzeal/vibe-knowledge-film",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "keepingzeal-vibe-knowledge-film"
+      ]
+    },
+    {
+      "repo": "Kilig1058674225/vibe-knowledge-film",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "kilig1058674225-vibe-knowledge-film"
+      ]
+    },
+    {
+      "repo": "Lc0110/vibe-knowledge-film",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "lc0110-vibe-knowledge-film"
+      ]
+    },
+    {
+      "repo": "leangjia/vibe-knowledge-film",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "leangjia-vibe-knowledge-film"
+      ]
+    },
+    {
+      "repo": "liliang8858/vibe-knowledge-film",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "liliang8858-vibe-knowledge-film"
+      ]
+    },
+    {
+      "repo": "LiLin928/vibe-knowledge-film",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "lilin928-vibe-knowledge-film"
+      ]
+    },
+    {
+      "repo": "lj200612/vibe-knowledge-film",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "lj200612-vibe-knowledge-film"
+      ]
+    },
+    {
+      "repo": "Mobiusa/vibe-knowledge-film",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "mobiusa-vibe-knowledge-film"
+      ]
+    },
+    {
+      "repo": "Mt-Youya/vibe-knowledge-film",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "mt-youya-vibe-knowledge-film"
+      ]
+    },
+    {
+      "repo": "niudingdang/vibe-knowledge-film",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "niudingdang-vibe-knowledge-film"
+      ]
+    },
+    {
+      "repo": "Nuyoah965/vibe-knowledge-film",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "nuyoah965-vibe-knowledge-film"
+      ]
+    },
+    {
+      "repo": "personadynamics-studio/vibe-knowledge-film",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "personadynamics-studio-vibe-knowledge-film"
+      ]
+    },
+    {
+      "repo": "poxiaosuitian-lang/vibe-knowledge-film",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "poxiaosuitian-lang-vibe-knowledge-film"
+      ]
+    },
+    {
+      "repo": "sdflysd/vibe-knowledge-film",
+      "status": 403,
+      "count": 0,
+      "skillIds": [
+        "sdflysd-vibe-knowledge-film"
+      ]
+    },
+    {
+      "repo": "shijimobianhua/vibe-knowledge-film",
+      "status": 403,
+      "count": 0,
+      "skillIds": [
+        "shijimobianhua-vibe-knowledge-film"
+      ]
+    },
+    {
+      "repo": "shuaibibi11/vibe-knowledge-film",
+      "status": 403,
+      "count": 0,
+      "skillIds": [
+        "shuaibibi11-vibe-knowledge-film"
+      ]
+    },
+    {
+      "repo": "shyliez925/vibe-knowledge-film",
+      "status": 403,
+      "count": 0,
+      "skillIds": [
+        "shyliez925-vibe-knowledge-film"
+      ]
+    },
+    {
+      "repo": "sunforwork/vibe-knowledge-film",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "sunforwork-vibe-knowledge-film"
+      ]
+    },
+    {
+      "repo": "Tail2699/vibe-knowledge-film",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "tail2699-vibe-knowledge-film"
+      ]
+    },
+    {
+      "repo": "Tunnelai/vibe-knowledge-film",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "tunnelai-vibe-knowledge-film"
+      ]
+    },
+    {
+      "repo": "Turingturing/vibe-knowledge-film",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "turingturing-vibe-knowledge-film"
+      ]
+    },
+    {
+      "repo": "VincentYe0310/vibe-knowledge-film",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "vincentye0310-vibe-knowledge-film"
+      ]
+    },
+    {
+      "repo": "wky114/vibe-knowledge-film",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "wky114-vibe-knowledge-film"
+      ]
+    },
+    {
+      "repo": "xartisan/vibe-knowledge-film",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "xartisan-vibe-knowledge-film"
+      ]
+    },
+    {
+      "repo": "xianzhihui627-boop/vibe-knowledge-film",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "xianzhihui627-boop-vibe-knowledge-film"
+      ]
+    },
+    {
+      "repo": "xiaoboyan618-alt/vibe-knowledge-film",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "xiaoboyan618-alt-vibe-knowledge-film"
+      ]
+    },
+    {
+      "repo": "xpnobug/vibe-knowledge-film",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "xpnobug-vibe-knowledge-film"
+      ]
+    },
+    {
+      "repo": "xrf64668/vibe-knowledge-film",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "xrf64668-vibe-knowledge-film"
+      ]
+    },
+    {
+      "repo": "Xuanyi-king/vibe-knowledge-film",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "xuanyi-king-vibe-knowledge-film"
+      ]
+    },
+    {
+      "repo": "yfviar/vibe-knowledge-film",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "yfviar-vibe-knowledge-film"
+      ]
+    },
+    {
+      "repo": "yxzhanggg/vibe-knowledge-film",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "yxzhanggg-vibe-knowledge-film"
+      ]
+    },
+    {
+      "repo": "ZhangXiao0516/vibe-knowledge-film",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "zhangxiao0516-vibe-knowledge-film"
+      ]
+    },
+    {
+      "repo": "zhaoxiufei/vibe-knowledge-film",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "zhaoxiufei-vibe-knowledge-film"
+      ]
+    },
+    {
+      "repo": "zhy1369800/vibe-knowledge-film",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "zhy1369800-vibe-knowledge-film"
+      ]
+    },
+    {
+      "repo": "chenmingyu12345/vibe-knowledge-video-skill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "chenmingyu12345-vibe-knowledge-video-skill"
+      ]
+    },
+    {
+      "repo": "jsnjfz/vibe-knowledge-video-skill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "jsnjfz-vibe-knowledge-video-skill"
+      ]
+    },
+    {
+      "repo": "shijimobianhua/vibe-knowledge-video-skill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "shijimobianhua-vibe-knowledge-video-skill"
+      ]
+    },
+    {
+      "repo": "Tunnelai/vibe-knowledge-video-skill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "tunnelai-vibe-knowledge-video-skill"
+      ]
+    },
+    {
+      "repo": "xiazhuo123456789/vibe-knowledge-video",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "xiazhuo123456789-vibe-knowledge-video"
+      ]
+    },
+    {
+      "repo": "xqq9978-hub/vibe-knowledge-video",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "xqq9978-hub-vibe-knowledge-video"
+      ]
+    },
+    {
+      "repo": "kekeren97/vibe-knowledge-video",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "kekeren97-vibe-knowledge-video"
+      ]
+    },
+    {
+      "repo": "YT-smart/vibe-knowledge-video",
+      "status": 200,
+      "count": 4,
+      "skillIds": [
+        "yt-smart-vibe-knowledge-video"
+      ]
+    },
+    {
+      "repo": "690433524cx-lang/-vibe-knowledge-video",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "690433524cx-lang-vibe-knowledge-video"
+      ]
+    },
+    {
+      "repo": "czai-cn/vibe-knowledge-video",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "czai-cn-vibe-knowledge-video"
+      ]
+    },
+    {
+      "repo": "MiyanoX/vibe-knowledge-video",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "miyanox-vibe-knowledge-video"
+      ]
+    },
+    {
+      "repo": "riceFun/vibe-knowledge-video",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "ricefun-vibe-knowledge-video"
+      ]
+    },
+    {
+      "repo": "sualpha/vibe-knowledge-video",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "sualpha-vibe-knowledge-video"
+      ]
+    },
+    {
+      "repo": "Tunnelai/vibe-knowledge-video",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "tunnelai-vibe-knowledge-video"
+      ]
+    },
+    {
+      "repo": "waann-rrichh1/vibe-knowledge-video",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "waann-rrichh1-vibe-knowledge-video"
+      ]
+    },
+    {
+      "repo": "wswzf/vibe-knowledge-video",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "wswzf-vibe-knowledge-video"
+      ]
+    },
+    {
+      "repo": "86777835/vibe-director",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "86777835-vibe-director"
+      ]
+    },
+    {
+      "repo": "mystijk/vibe-director",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "mystijk-vibe-director"
+      ]
+    },
+    {
+      "repo": "walter-io/vibecoding-remotion",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "walter-io-vibecoding-remotion"
+      ]
+    },
+    {
+      "repo": "lazySir/Narrated-Vibe-Knowledge-Film",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "lazysir-narrated-vibe-knowledge-film"
+      ]
+    },
+    {
+      "repo": "lesliewu66/vibe-knowledge-studio",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "lesliewu66-vibe-knowledge-studio"
+      ]
+    },
+    {
+      "repo": "Friday-s/pixel-knowledge",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "friday-s-pixel-knowledge"
+      ]
+    },
+    {
+      "repo": "YT-smart/pixel-explainer-video",
+      "status": 200,
+      "count": 4,
+      "skillIds": [
+        "yt-smart-pixel-explainer-video"
+      ]
+    },
+    {
+      "repo": "shij8396/vibe-knowledge-awards",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "shij8396-vibe-knowledge-awards"
+      ]
+    },
+    {
+      "repo": "Buffaiai/vibe-knowledge-award",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "buffaiai-vibe-knowledge-award"
+      ]
+    },
+    {
+      "repo": "CodeTeng/Vibe-Knowledge-Awards",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "codeteng-vibe-knowledge-awards"
+      ]
+    },
+    {
+      "repo": "Nanping5/Vibe-Knowledge-Festival",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "nanping5-vibe-knowledge-festival"
+      ]
+    },
+    {
+      "repo": "AuroraBarista/vibe-knowledge-skill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "aurorabarista-vibe-knowledge-skill"
+      ]
+    },
+    {
+      "repo": "immurray/vibe-video",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "immurray-vibe-video"
+      ]
+    },
+    {
+      "repo": "steelan9199/vibe-knowledge-mv-yashu",
+      "status": 404,
+      "count": 0,
+      "skillIds": [
+        "steelan9199-vibe-knowledge-mv-yashu"
+      ]
+    },
+    {
+      "repo": "steelan9199/vibe-knowledge-video-yashu",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "steelan9199-vibe-knowledge-video-yashu"
+      ]
+    },
+    {
+      "repo": "wwwyh007/Vibe-GPT-Evolution",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "wwwyh007-vibe-gpt-evolution"
+      ]
+    },
+    {
+      "repo": "xxjj2024/Vibe-Knowledge-Awards-Video-Production",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "xxjj2024-vibe-knowledge-awards-video-production"
+      ]
+    },
+    {
+      "repo": "davexxx1214/VibeKnowledge",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "davexxx1214-vibeknowledge"
+      ]
+    },
+    {
+      "repo": "7onyZ2Z/Vibe-Knowledge",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "7onyz2z-vibe-knowledge"
+      ]
+    },
+    {
+      "repo": "juliarozanova/vibe_knowledge",
+      "status": 404,
+      "count": 0,
+      "skillIds": [
+        "juliarozanova-vibe-knowledge"
+      ]
+    },
+    {
+      "repo": "Shown06/vibe-knowledge",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "shown06-vibe-knowledge"
+      ]
+    },
+    {
+      "repo": "ShawInnes/vibe-knowledge",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "shawinnes-vibe-knowledge"
+      ]
+    },
+    {
+      "repo": "ChenShuo2004/cs-skills",
+      "status": 200,
+      "count": 3,
+      "skillIds": [
+        "chenshuo2004-cs-skills-cs-code-video-references-signature-md",
+        "chenshuo2004-cs-skills-cs-code-video-skill-md"
+      ]
+    },
+    {
+      "repo": "norahe0304-art/30x-video",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "norahe0304-art-30x-video"
+      ]
+    },
+    {
+      "repo": "iart-ai/ad-video-skills",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "iart-ai-ad-video-skills"
+      ]
+    },
+    {
+      "repo": "Arman-Luthra/aftr",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "arman-luthra-aftr"
+      ]
+    },
+    {
+      "repo": "dlazy-ai/ai-product-video",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "dlazy-ai-ai-product-video"
+      ]
+    },
+    {
+      "repo": "liyupi/ai-promo-video-maker",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "liyupi-ai-promo-video-maker"
+      ]
+    },
+    {
+      "repo": "hamen/app-promo-reel",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "hamen-app-promo-reel"
+      ]
+    },
+    {
+      "repo": "IskakovDamir/apple-motion",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "iskakovdamir-apple-motion"
+      ]
+    },
+    {
+      "repo": "trunghaiy/appshot",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "trunghaiy-appshot"
+      ]
+    },
+    {
+      "repo": "mattivilola/brag-codex",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "mattivilola-brag-codex"
+      ]
+    },
+    {
+      "repo": "AmazingAng/ccvideo",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "amazingang-ccvideo"
+      ]
+    },
+    {
+      "repo": "kiki-lgtm-dot/cinematic-product-promo-skill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "kiki-lgtm-dot-cinematic-product-promo-skill"
+      ]
+    },
+    {
+      "repo": "vood/claude-launch-video-skill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "vood-claude-launch-video-skill"
+      ]
+    },
+    {
+      "repo": "howseen-ai/claude-motion-design",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "howseen-ai-claude-motion-design"
+      ]
+    },
+    {
+      "repo": "ChenShuo2004/cs-shotcraft-skill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "chenshuo2004-cs-shotcraft-skill"
+      ]
+    },
+    {
+      "repo": "Avijit07x/cursorcam",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "avijit07x-cursorcam"
+      ]
+    },
+    {
+      "repo": "derrickgong87/demo-video-creation-skill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "derrickgong87-demo-video-creation-skill"
+      ]
+    },
+    {
+      "repo": "chacha95/demo-video-creator",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "chacha95-demo-video-creator"
+      ]
+    },
+    {
+      "repo": "surajshetty3416/demo-video-skill",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "surajshetty3416-demo-video-skill"
+      ]
+    },
+    {
+      "repo": "mrieck/demoday-claude-plugin",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "mrieck-demoday-claude-plugin"
+      ]
+    },
+    {
+      "repo": "haxzie/genmotion",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "haxzie-genmotion"
+      ]
+    },
+    {
+      "repo": "op7418/guizang-product-video-skill",
+      "status": 200,
+      "count": 3,
+      "skillIds": [
+        "op7418-guizang-product-video-skill"
+      ]
+    },
+    {
+      "repo": "geekjourneyx/hyperframes-motion-director",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "geekjourneyx-hyperframes-motion-director"
+      ]
+    },
+    {
+      "repo": "Sunwood-ai-labs/hyperframes-motion-reel-skill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "sunwood-ai-labs-hyperframes-motion-reel-skill"
+      ]
+    },
+    {
+      "repo": "per-simmons/launch-video-clone",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "per-simmons-launch-video-clone"
+      ]
+    },
+    {
+      "repo": "jammaru/launch-video-craft",
+      "status": 200,
+      "count": 3,
+      "skillIds": [
+        "jammaru-launch-video-craft"
+      ]
+    },
+    {
+      "repo": "timscheuerai/launch-video-kit",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "timscheuerai-launch-video-kit"
+      ]
+    },
+    {
+      "repo": "serenakeyitan/launch-video-skill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "serenakeyitan-launch-video-skill"
+      ]
+    },
+    {
+      "repo": "cblain100-prog/motion-design-claude-code",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "cblain100-prog-motion-design-claude-code"
+      ]
+    },
+    {
+      "repo": "charlie947/motion-graphics-skills",
+      "status": 200,
+      "count": 4,
+      "skillIds": [
+        "charlie947-motion-graphics-skills"
+      ]
+    },
+    {
+      "repo": "imMamdouhaboammar/motion-graphics-skills",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "immamdouhaboammar-motion-graphics-skills"
+      ]
+    },
+    {
+      "repo": "Mort1d/motion-graphics-skills",
+      "status": 200,
+      "count": 3,
+      "skillIds": [
+        "mort1d-motion-graphics-skills"
+      ]
+    },
+    {
+      "repo": "echris6/motion-video-kit",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "echris6-motion-video-kit"
+      ]
+    },
+    {
+      "repo": "bestagentkits/motion-video-skill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "bestagentkits-motion-video-skill"
+      ]
+    },
+    {
+      "repo": "suntay44/motionable",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "suntay44-motionable"
+      ]
+    },
+    {
+      "repo": "Tejashmakwana/motionmaxxing",
+      "status": 200,
+      "count": 5,
+      "skillIds": [
+        "tejashmakwana-motionmaxxing"
+      ]
+    },
+    {
+      "repo": "gorkem-bwl/onboarding-video-generator",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "gorkem-bwl-onboarding-video-generator"
+      ]
+    },
+    {
+      "repo": "feitangyuan/onetake",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "feitangyuan-onetake"
+      ]
+    },
+    {
+      "repo": "lumian2015/opus-5-5-video-templates",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "lumian2015-opus-5-5-video-templates"
+      ]
+    },
+    {
+      "repo": "samuelstroschein/opus-video-generator",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "samuelstroschein-opus-video-generator"
+      ]
+    },
+    {
+      "repo": "opus-pro/opusclip-video-tools",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "opus-pro-opusclip-video-tools"
+      ]
+    },
+    {
+      "repo": "crimeacs/product-demo-director",
+      "status": 200,
+      "count": 3,
+      "skillIds": [
+        "crimeacs-product-demo-director"
+      ]
+    },
+    {
+      "repo": "Anshgrover23/product-demo-playbook",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "anshgrover23-product-demo-playbook"
+      ]
+    },
+    {
+      "repo": "PavanPatel007/product-demo-video-skill",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "pavanpatel007-product-demo-video-skill"
+      ]
+    },
+    {
+      "repo": "farming-labs/product-film-skill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "farming-labs-product-film-skill"
+      ]
+    },
+    {
+      "repo": "AbubakrChan/product-launch-motion",
+      "status": 200,
+      "count": 5,
+      "skillIds": [
+        "abubakrchan-product-launch-motion"
+      ]
+    },
+    {
+      "repo": "ouerf-man/product-launch-motion-skill",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "ouerf-man-product-launch-motion-skill"
+      ]
+    },
+    {
+      "repo": "EveryInc/product-launch-video",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "everyinc-product-launch-video"
+      ]
+    },
+    {
+      "repo": "memex-lab/product-launch-video-skill",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "memex-lab-product-launch-video-skill"
+      ]
+    },
+    {
+      "repo": "kangarooking/promo-creator-skills",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "kangarooking-promo-creator-skills"
+      ]
+    },
+    {
+      "repo": "Finderchangchang/promo-video-skill",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "finderchangchang-promo-video-skill"
+      ]
+    },
+    {
+      "repo": "Alon17-12/remotion-ad-video-skill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "alon17-12-remotion-ad-video-skill"
+      ]
+    },
+    {
+      "repo": "leosssvip-dot/remotion-ad-video-skill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "leosssvip-dot-remotion-ad-video-skill"
+      ]
+    },
+    {
+      "repo": "Maartenlouis/remotion-ads",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "maartenlouis-remotion-ads"
+      ]
+    },
+    {
+      "repo": "Zane-0x5a/remotion-director",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "zane-0x5a-remotion-director"
+      ]
+    },
+    {
+      "repo": "tugrawork-creator/saas-motion-kit",
+      "status": 200,
+      "count": 3,
+      "skillIds": [
+        "tugrawork-creator-saas-motion-kit"
+      ]
+    },
+    {
+      "repo": "noamdorr/saas-product-demo-video",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "noamdorr-saas-product-demo-video"
+      ]
+    },
+    {
+      "repo": "heygen-com/hyperframes",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "heygen-com-hyperframes-skills-product-launch-video-skill-md",
+        "heygen-com-hyperframes",
+        "heygen-com-hyperframes-skills-general-video-skill-md"
+      ]
+    },
+    {
+      "repo": "Varnan-Tech/opendirectory",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "varnan-tech-opendirectory-skills-hyperframes-product-launch-video-skill-md"
+      ]
+    },
+    {
+      "repo": "holy-templar/static-to-video-ad",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "holy-templar-static-to-video-ad"
+      ]
+    },
+    {
+      "repo": "Vibetool/talking-head-video",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "vibetool-talking-head-video"
+      ]
+    },
+    {
+      "repo": "Karnaf0katom/taskfilm",
+      "status": 200,
+      "count": 3,
+      "skillIds": [
+        "karnaf0katom-taskfilm"
+      ]
+    },
+    {
+      "repo": "new-xp/ultrademo",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "new-xp-ultrademo"
+      ]
+    },
+    {
+      "repo": "hub-ki/video-generation",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "hub-ki-video-generation"
+      ]
+    },
+    {
+      "repo": "axtonliu/video-illustrator",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "axtonliu-video-illustrator"
+      ]
+    },
+    {
+      "repo": "welingtondesosa/video-motion",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "welingtondesosa-video-motion"
+      ]
+    },
+    {
+      "repo": "JohnChow90/video-shotcraft",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "johnchow90-video-shotcraft"
+      ]
+    },
+    {
+      "repo": "syklayou-glitch/video-shotcraft",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "syklayou-glitch-video-shotcraft"
+      ]
+    },
+    {
+      "repo": "kingselyjoe/video-shotcraft-dsh",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "kingselyjoe-video-shotcraft-dsh"
+      ]
+    },
+    {
+      "repo": "every-app/video-skills",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "every-app-video-skills"
+      ]
+    },
+    {
+      "repo": "heygen-com/website-to-hyperframes-demo",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "heygen-com-website-to-hyperframes-demo"
+      ]
+    },
+    {
+      "repo": "AmitSubhash/3brown1blue",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "amitsubhash-3brown1blue"
+      ]
+    },
+    {
+      "repo": "adunext/adu-motion-video",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "adunext-adu-motion-video"
+      ]
+    },
+    {
+      "repo": "fujiaxin33/ai-knowledge-video-director",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "fujiaxin33-ai-knowledge-video-director"
+      ]
+    },
+    {
+      "repo": "TimoteoAltobrando/ai-video-skill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "timoteoaltobrando-ai-video-skill"
+      ]
+    },
+    {
+      "repo": "aliangSSS/aliang-knowledge-video",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "aliangsss-aliang-knowledge-video"
+      ]
+    },
+    {
+      "repo": "BusyBee3333/animated-explainer-skills",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "busybee3333-animated-explainer-skills"
+      ]
+    },
+    {
+      "repo": "sudadom/arabic-motion-graphics-skill",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "sudadom-arabic-motion-graphics-skill"
+      ]
+    },
+    {
+      "repo": "donny-ai-note/aroll-broll-knowledge-video",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "donny-ai-note-aroll-broll-knowledge-video"
+      ]
+    },
+    {
+      "repo": "0x68616F4C/auto-popsci",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "0x68616f4c-auto-popsci"
+      ]
+    },
+    {
+      "repo": "gquthier/autonomous-sop-video",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "gquthier-autonomous-sop-video"
+      ]
+    },
+    {
+      "repo": "bangtutorial/bang-motion",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "bangtutorial-bang-motion"
+      ]
+    },
+    {
+      "repo": "sukai213/bilibili-ai-video",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "sukai213-bilibili-ai-video"
+      ]
+    },
+    {
+      "repo": "Agentchengfeng/chengfeng-video-styles",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "agentchengfeng-chengfeng-video-styles"
+      ]
+    },
+    {
+      "repo": "aaay313/cinematic-knowledge-video",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "aaay313-cinematic-knowledge-video"
+      ]
+    },
+    {
+      "repo": "mathruffian-dot/claude-motion-explainer",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "mathruffian-dot-claude-motion-explainer"
+      ]
+    },
+    {
+      "repo": "runesleo/claude-video-kit",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "runesleo-claude-video-kit"
+      ]
+    },
+    {
+      "repo": "Neelshah1810/Claude-Video-Skills",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "neelshah1810-claude-video-skills"
+      ]
+    },
+    {
+      "repo": "appergb/ClipSkills",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "appergb-clipskills"
+      ]
+    },
+    {
+      "repo": "beriki770-ship-it/code-animations",
+      "status": 200,
+      "count": 3,
+      "skillIds": [
+        "beriki770-ship-it-code-animations"
+      ]
+    },
+    {
+      "repo": "OnurGumus/codebase-video",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "onurgumus-codebase-video"
+      ]
+    },
+    {
+      "repo": "chenyuxiaojin/cyxj-hyperframes",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "chenyuxiaojin-cyxj-hyperframes"
+      ]
+    },
+    {
+      "repo": "chuspeeism/dashi-animationstyle",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "chuspeeism-dashi-animationstyle"
+      ]
+    },
+    {
+      "repo": "centraltowerlabs/diagram-tour",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "centraltowerlabs-diagram-tour"
+      ]
+    },
+    {
+      "repo": "coding-ax/docvideoer",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "coding-ax-docvideoer"
+      ]
+    },
+    {
+      "repo": "undsky/doudou-remotion-whiteboard-skill",
+      "status": 200,
+      "count": 3,
+      "skillIds": [
+        "undsky-doudou-remotion-whiteboard-skill"
+      ]
+    },
+    {
+      "repo": "Mng-dev-ai/explainer-video",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "mng-dev-ai-explainer-video"
+      ]
+    },
+    {
+      "repo": "RohanRatwani/explainer-video-opus-5.5",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "rohanratwani-explainer-video-opus-5-5"
+      ]
+    },
+    {
+      "repo": "iart-ai/explainer-video-skills",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "iart-ai-explainer-video-skills"
+      ]
+    },
+    {
+      "repo": "vincentsch/explainroo",
+      "status": 200,
+      "count": 3,
+      "skillIds": [
+        "vincentsch-explainroo"
+      ]
+    },
+    {
+      "repo": "Aydazhang/generate_knowledge-video-skill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "aydazhang-generate-knowledge-video-skill"
+      ]
+    },
+    {
+      "repo": "hi-nikola/hand-drawn-explainer-video-nikola",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "hi-nikola-hand-drawn-explainer-video-nikola"
+      ]
+    },
+    {
+      "repo": "heipiaopiao/handdrawn-knowledge-video",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "heipiaopiao-handdrawn-knowledge-video"
+      ]
+    },
+    {
+      "repo": "lhylvsea/handdrawn-knowledge-video",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "lhylvsea-handdrawn-knowledge-video"
+      ]
+    },
+    {
+      "repo": "Mr-funny/hbg-douyin-code-explainer-video",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "mr-funny-hbg-douyin-code-explainer-video"
+      ]
+    },
+    {
+      "repo": "darrenli6/JJKoubo",
+      "status": 200,
+      "count": 3,
+      "skillIds": [
+        "darrenli6-jjkoubo"
+      ]
+    },
+    {
+      "repo": "haiderfarooq3/khan-explainer",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "haiderfarooq3-khan-explainer"
+      ]
+    },
+    {
+      "repo": "znyupup/knowledge-explainer-skill",
+      "status": 200,
+      "count": 3,
+      "skillIds": [
+        "znyupup-knowledge-explainer-skill"
+      ]
+    },
+    {
+      "repo": "stellawang254-hash/knowledge-motion-video",
+      "status": 404,
+      "count": 0,
+      "skillIds": [
+        "stellawang254-hash-knowledge-motion-video"
+      ]
+    },
+    {
+      "repo": "728889375z-ui/knowledge-video",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "728889375z-ui-knowledge-video"
+      ]
+    },
+    {
+      "repo": "lckksk/knowledge-video",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "lckksk-knowledge-video"
+      ]
+    },
+    {
+      "repo": "MauriceCarlo/knowledge-video",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "mauricecarlo-knowledge-video"
+      ]
+    },
+    {
+      "repo": "wenquancheng093-tech/knowledge-video-motion",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "wenquancheng093-tech-knowledge-video-motion"
+      ]
+    },
+    {
+      "repo": "tanzhijir-04/knowledge-video-production",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "tanzhijir-04-knowledge-video-production"
+      ]
+    },
+    {
+      "repo": "edcfish1993-spec/knowledge-video-workflow",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "edcfish1993-spec-knowledge-video-workflow"
+      ]
+    },
+    {
+      "repo": "cclank/lanshu-html2video-skill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "cclank-lanshu-html2video-skill"
+      ]
+    },
+    {
+      "repo": "ckkaskak-collab/line-figure-knowledge-video",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "ckkaskak-collab-line-figure-knowledge-video"
+      ]
+    },
+    {
+      "repo": "liuliu-66-create/ll-video-edit",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "liuliu-66-create-ll-video-edit"
+      ]
+    },
+    {
+      "repo": "huntingrin/make-90s-tutorial-video",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "huntingrin-make-90s-tutorial-video"
+      ]
+    },
+    {
+      "repo": "sunxiayi/make-blender-education-video-skill",
+      "status": 200,
+      "count": 4,
+      "skillIds": [
+        "sunxiayi-make-blender-education-video-skill"
+      ]
+    },
+    {
+      "repo": "adithya-s-k/manim_skill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "adithya-s-k-manim-skill"
+      ]
+    },
+    {
+      "repo": "iart-ai/map-animation-skills",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "iart-ai-map-animation-skills"
+      ]
+    },
+    {
+      "repo": "shuyicc/MathLens",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "shuyicc-mathlens"
+      ]
+    },
+    {
+      "repo": "GTKottman/mortiflix-oss",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "gtkottman-mortiflix-oss"
+      ]
+    },
+    {
+      "repo": "iart-ai/motion-skills",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "iart-ai-motion-skills"
+      ]
+    },
+    {
+      "repo": "ahmdd4vd/MotionCraft",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "ahmdd4vd-motioncraft"
+      ]
+    },
+    {
+      "repo": "vakovalskii/nd-video-studio",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "vakovalskii-nd-video-studio"
+      ]
+    },
+    {
+      "repo": "cymcymcymcym/notes-to-video",
+      "status": 200,
+      "count": 3,
+      "skillIds": [
+        "cymcymcymcym-notes-to-video"
+      ]
+    },
+    {
+      "repo": "calesthio/OpenMontage",
+      "status": 200,
+      "count": 4,
+      "skillIds": [
+        "calesthio-openmontage"
+      ]
+    },
+    {
+      "repo": "aijiduonadegou/Paper-Cut",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "aijiduonadegou-paper-cut"
+      ]
+    },
+    {
+      "repo": "crawfordxx/paper-cut-video-skill",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "crawfordxx-paper-cut-video-skill"
+      ]
+    },
+    {
+      "repo": "0xS4N4TG/papercut-explainer",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "0xs4n4tg-papercut-explainer"
+      ]
+    },
+    {
+      "repo": "ssrajadh/paperview",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "ssrajadh-paperview"
+      ]
+    },
+    {
+      "repo": "EverMind-AI/Raven",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "evermind-ai-raven"
+      ]
+    },
+    {
+      "repo": "Science-Prof-Robot/recursive-math-animator",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "science-prof-robot-recursive-math-animator"
+      ]
+    },
+    {
+      "repo": "vibe-motion/remotion-code-motion-explainer",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "vibe-motion-remotion-code-motion-explainer"
+      ]
+    },
+    {
+      "repo": "xsourabhsharma/remotion-marketing-video-skill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "xsourabhsharma-remotion-marketing-video-skill"
+      ]
+    },
+    {
+      "repo": "wshuyi/remotion-video-skill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "wshuyi-remotion-video-skill"
+      ]
+    },
+    {
+      "repo": "jinjin1/scenewright",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "jinjin1-scenewright"
+      ]
+    },
+    {
+      "repo": "pjecuacion/script-to-video-skill",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "pjecuacion-script-to-video-skill"
+      ]
+    },
+    {
+      "repo": "AmirSbss/spotlight",
+      "status": 200,
+      "count": 4,
+      "skillIds": [
+        "amirsbss-spotlight"
+      ]
+    },
+    {
+      "repo": "ww-w-ai/super-video-agent",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "ww-w-ai-super-video-agent"
+      ]
+    },
+    {
+      "repo": "Nealsun1993/talk-workbench",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "nealsun1993-talk-workbench"
+      ]
+    },
+    {
+      "repo": "Vincentwei1021/video-talkcraft",
+      "status": 200,
+      "count": 3,
+      "skillIds": [
+        "vincentwei1021-video-talkcraft"
+      ]
+    },
+    {
+      "repo": "santmun/video-vox",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "santmun-video-vox"
+      ]
+    },
+    {
+      "repo": "Anil-matcha/vox-ai-motion-graphics-generator",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "anil-matcha-vox-ai-motion-graphics-generator"
+      ]
+    },
+    {
+      "repo": "holy-templar/vox-animated-ad-mcp",
+      "status": 200,
+      "count": 4,
+      "skillIds": [
+        "holy-templar-vox-animated-ad-mcp"
+      ]
+    },
+    {
+      "repo": "MegaTroll222/VOX-COLLAGE-BROLL",
+      "status": 200,
+      "count": 3,
+      "skillIds": [
+        "megatroll222-vox-collage-broll"
+      ]
+    },
+    {
+      "repo": "Alisa0808/vox-director",
+      "status": 200,
+      "count": 4,
+      "skillIds": [
+        "alisa0808-vox-director"
+      ]
+    },
+    {
+      "repo": "kakaxi12/vox-director-codex",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "kakaxi12-vox-director-codex"
+      ]
+    },
+    {
+      "repo": "jaredcassoutt/vox-editorial",
+      "status": 200,
+      "count": 4,
+      "skillIds": [
+        "jaredcassoutt-vox-editorial"
+      ]
+    },
+    {
+      "repo": "Phantomlau3674/voxstylehub-steven",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "phantomlau3674-voxstylehub-steven"
+      ]
+    },
+    {
+      "repo": "Matteoikarieth96/whiteboard-video-skill",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "matteoikarieth96-whiteboard-video-skill"
+      ]
+    },
+    {
+      "repo": "124zhe/xigua-msvideo-skill",
+      "status": 200,
+      "count": 4,
+      "skillIds": [
+        "124zhe-xigua-msvideo-skill"
+      ]
+    },
+    {
+      "repo": "Anil-matcha/zack-d-films-ai-video-generator",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "anil-matcha-zack-d-films-ai-video-generator"
+      ]
+    },
+    {
+      "repo": "siyuanfeng636-cpu/agentic-motion-graphics",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "siyuanfeng636-cpu-agentic-motion-graphics"
+      ]
+    },
+    {
+      "repo": "alexgreensh/anidoodle",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "alexgreensh-anidoodle"
+      ]
+    },
+    {
+      "repo": "dillydog580/animate-roblox-characters",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "dillydog580-animate-roblox-characters"
+      ]
+    },
+    {
+      "repo": "guanmo-ai/awesome-ai-motion",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "guanmo-ai-awesome-ai-motion"
+      ]
+    },
+    {
+      "repo": "frankxai/awesome-motion-design-agent-skills",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "frankxai-awesome-motion-design-agent-skills"
+      ]
+    },
+    {
+      "repo": "ouerf-man/brand-motion-design-skill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "ouerf-man-brand-motion-design-skill"
+      ]
+    },
+    {
+      "repo": "rock3r/cav",
+      "status": 200,
+      "count": 3,
+      "skillIds": [
+        "rock3r-cav"
+      ]
+    },
+    {
+      "repo": "AgriciDaniel/claude-gif",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "agricidaniel-claude-gif"
+      ]
+    },
+    {
+      "repo": "PHY041/claude-motion-playbook",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "phy041-claude-motion-playbook"
+      ]
+    },
+    {
+      "repo": "joefedna/Claude-Opus-5.5-Motion-Video-Skill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "joefedna-claude-opus-5-5-motion-video-skill"
+      ]
+    },
+    {
+      "repo": "cmak34/claude-remotion-skill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "cmak34-claude-remotion-skill"
+      ]
+    },
+    {
+      "repo": "haidrrrry/claude-remotion-skill",
+      "status": 200,
+      "count": 4,
+      "skillIds": [
+        "haidrrrry-claude-remotion-skill"
+      ]
+    },
+    {
+      "repo": "mvanhorn/clawdbot-skill-remotion-server",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "mvanhorn-clawdbot-skill-remotion-server"
+      ]
+    },
+    {
+      "repo": "naveen-annam/creativly.ai-brand-video-remotion",
+      "status": 200,
+      "count": 3,
+      "skillIds": [
+        "naveen-annam-creativly-ai-brand-video-remotion"
+      ]
+    },
+    {
+      "repo": "teddybui078-dot/Custom-Motion-Graphics-Hyperframes",
+      "status": 404,
+      "count": 0,
+      "skillIds": [
+        "teddybui078-dot-custom-motion-graphics-hyperframes"
+      ]
+    },
+    {
+      "repo": "kylezantos/design-motion-principles",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "kylezantos-design-motion-principles"
+      ]
+    },
+    {
+      "repo": "YIAN6557/eian-riso-broll",
+      "status": 200,
+      "count": 5,
+      "skillIds": [
+        "yian6557-eian-riso-broll"
+      ]
+    },
+    {
+      "repo": "Maartenlouis/elevenlabs-remotion-skill",
+      "status": 404,
+      "count": 0,
+      "skillIds": [
+        "maartenlouis-elevenlabs-remotion-skill"
+      ]
+    },
+    {
+      "repo": "pyang5166/gbro-collage-broll",
+      "status": 200,
+      "count": 4,
+      "skillIds": [
+        "pyang5166-gbro-collage-broll"
+      ]
+    },
+    {
+      "repo": "hacimertgokhan/geomotion",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "hacimertgokhan-geomotion"
+      ]
+    },
+    {
+      "repo": "acelera-agency/html-animation",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "acelera-agency-html-animation"
+      ]
+    },
+    {
+      "repo": "2boysfromtown/hyperframes-motion",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "2boysfromtown-hyperframes-motion"
+      ]
+    },
+    {
+      "repo": "ythx-101/live-panel-skill",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "ythx-101-live-panel-skill"
+      ]
+    },
+    {
+      "repo": "liuliu-66-create/ll-video-motion",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "liuliu-66-create-ll-video-motion"
+      ]
+    },
+    {
+      "repo": "CJ10110425/logo-intro",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "cj10110425-logo-intro"
+      ]
+    },
+    {
+      "repo": "diffusionstudio/lottie",
+      "status": 200,
+      "count": 3,
+      "skillIds": [
+        "diffusionstudio-lottie"
+      ]
+    },
+    {
+      "repo": "awesome-skills/manim-skill",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "awesome-skills-manim-skill"
+      ]
+    },
+    {
+      "repo": "zz41354899/mografy",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "zz41354899-mografy"
+      ]
+    },
+    {
+      "repo": "motiondivision/motion",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "motiondivision-motion"
+      ]
+    },
+    {
+      "repo": "JakeB-5/motion-graphic-skill",
+      "status": 200,
+      "count": 5,
+      "skillIds": [
+        "jakeb-5-motion-graphic-skill"
+      ]
+    },
+    {
+      "repo": "facundograpsas/motion-studio",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "facundograpsas-motion-studio"
+      ]
+    },
+    {
+      "repo": "VisualxIntelligence/motion-tools-and-skills",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "visualxintelligence-motion-tools-and-skills"
+      ]
+    },
+    {
+      "repo": "dauletbekalim/motion-ui-videos",
+      "status": 200,
+      "count": 5,
+      "skillIds": [
+        "dauletbekalim-motion-ui-videos"
+      ]
+    },
+    {
+      "repo": "leeguooooo/motion-use",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "leeguooooo-motion-use"
+      ]
+    },
+    {
+      "repo": "motionvideohq/motionvideo.xyz",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "motionvideohq-motionvideo-xyz"
+      ]
+    },
+    {
+      "repo": "Naturabit/opus-5.5-motion-videos",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "naturabit-opus-5-5-motion-videos"
+      ]
+    },
+    {
+      "repo": "MattiTynka/Opus-Blender-Motion-Video",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "mattitynka-opus-blender-motion-video"
+      ]
+    },
+    {
+      "repo": "Lob0Garou/opus-visual-motion-engine",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "lob0garou-opus-visual-motion-engine"
+      ]
+    },
+    {
+      "repo": "zhenwusw/orca-motion-skill",
+      "status": 200,
+      "count": 4,
+      "skillIds": [
+        "zhenwusw-orca-motion-skill"
+      ]
+    },
+    {
+      "repo": "janwilmake/parallel-skills-remotion-video",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "janwilmake-parallel-skills-remotion-video"
+      ]
+    },
+    {
+      "repo": "toufuim/personal-ip-brand-intro-skill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "toufuim-personal-ip-brand-intro-skill"
+      ]
+    },
+    {
+      "repo": "nolangz/pixel2motion",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "nolangz-pixel2motion"
+      ]
+    },
+    {
+      "repo": "VaradDurge/Premium-Motion-Designer-Skill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "varaddurge-premium-motion-designer-skill"
+      ]
+    },
+    {
+      "repo": "tuzhechen2005/opus-video-skills",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "tuzhechen2005-opus-video-skills-skills-kinetic-reel-readme-md",
+        "tuzhechen2005-opus-video-skills",
+        "tuzhechen2005-opus-video-skills-readme-md",
+        "tuzhechen2005-opus-video-skills-readme-zh-cn-md"
+      ]
+    },
+    {
+      "repo": "phamthanhnghia/remotion-agent-skills",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "phamthanhnghia-remotion-agent-skills"
+      ]
+    },
+    {
+      "repo": "fernandokaraka/remotion-motion-graphics-skill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "fernandokaraka-remotion-motion-graphics-skill"
+      ]
+    },
+    {
+      "repo": "Liamrjohnston/remotion-motion-graphics-skill",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "liamrjohnston-remotion-motion-graphics-skill"
+      ]
+    },
+    {
+      "repo": "chandreshpv/remotion-product-videos-claude-skill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "chandreshpv-remotion-product-videos-claude-skill"
+      ]
+    },
+    {
+      "repo": "mquhuy/remotion-skill",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "mquhuy-remotion-skill"
+      ]
+    },
+    {
+      "repo": "miskaone/remotion-skill-v2",
+      "status": 404,
+      "count": 0,
+      "skillIds": [
+        "miskaone-remotion-skill-v2"
+      ]
+    },
+    {
+      "repo": "buainoai/remotion-skills",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "buainoai-remotion-skills"
+      ]
+    },
+    {
+      "repo": "Ashad001/remotion-transitions",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "ashad001-remotion-transitions"
+      ]
+    },
+    {
+      "repo": "YangAgent/remotion-video-papercraft-skill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "yangagent-remotion-video-papercraft-skill"
+      ]
+    },
+    {
+      "repo": "Brmbobo/remotion-video-skill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "brmbobo-remotion-video-skill"
+      ]
+    },
+    {
+      "repo": "emon100/remotion-video-skill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "emon100-remotion-video-skill"
+      ]
+    },
+    {
+      "repo": "Fioon-Studio/remotion-video-skill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "fioon-studio-remotion-video-skill"
+      ]
+    },
+    {
+      "repo": "levVan2/remotion-video-skill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "levvan2-remotion-video-skill"
+      ]
+    },
+    {
+      "repo": "vLX42/remotion-video-skill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "vlx42-remotion-video-skill"
+      ]
+    },
+    {
+      "repo": "whotto/remotion-video-skill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "whotto-remotion-video-skill"
+      ]
+    },
+    {
+      "repo": "YangAgent/remotion-video-skill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "yangagent-remotion-video-skill"
+      ]
+    },
+    {
+      "repo": "HRuiCcc/RuiC-motion-reel",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "hruiccc-ruic-motion-reel"
+      ]
+    },
+    {
+      "repo": "vercel-labs/skill-remotion-geist",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "vercel-labs-skill-remotion-geist"
+      ]
+    },
+    {
+      "repo": "mathruffian-dot/soil-motion-deck",
+      "status": 200,
+      "count": 3,
+      "skillIds": [
+        "mathruffian-dot-soil-motion-deck"
+      ]
+    },
+    {
+      "repo": "muneebexotic/tlf-motion",
+      "status": 404,
+      "count": 0,
+      "skillIds": [
+        "muneebexotic-tlf-motion"
+      ]
+    },
+    {
+      "repo": "jumpino27/Video-Skill-Remotion",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "jumpino27-video-skill-remotion"
+      ]
+    },
+    {
+      "repo": "iart-ai/youtube-video-skills",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "iart-ai-youtube-video-skills"
+      ]
+    },
+    {
+      "repo": "10291124jcjc-dotcom/ancient-rap-battle",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "10291124jcjc-dotcom-ancient-rap-battle"
+      ]
+    },
+    {
+      "repo": "bishpls/animation-pipeline",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "bishpls-animation-pipeline"
+      ]
+    },
+    {
+      "repo": "LetMeHappyCode/auto-video-agent",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "letmehappycode-auto-video-agent"
+      ]
+    },
+    {
+      "repo": "Upload-Post/avatar-mix",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "upload-post-avatar-mix"
+      ]
+    },
+    {
+      "repo": "buildwithhanif/claude-animation-skill",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "buildwithhanif-claude-animation-skill"
+      ]
+    },
+    {
+      "repo": "i-afaqrashid/claude-animation-studio",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "i-afaqrashid-claude-animation-studio"
+      ]
+    },
+    {
+      "repo": "IdkwhatImD0ing/claude-music-videos",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "idkwhatimd0ing-claude-music-videos"
+      ]
+    },
+    {
+      "repo": "MugaSofer/claude-music-videos",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "mugasofer-claude-music-videos"
+      ]
+    },
+    {
+      "repo": "Joker-chichi/claude-mv-skill",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "joker-chichi-claude-mv-skill"
+      ]
+    },
+    {
+      "repo": "smit-vanani/claude-promo-video",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "smit-vanani-claude-promo-video"
+      ]
+    },
+    {
+      "repo": "latent-variable/deep-learning-birthday",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "latent-variable-deep-learning-birthday"
+      ]
+    },
+    {
+      "repo": "neelnanda-io/dont-go-quiet-on-me",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "neelnanda-io-dont-go-quiet-on-me"
+      ]
+    },
+    {
+      "repo": "ledbetterljoshua/functional-emotions-video",
+      "status": 200,
+      "count": 4,
+      "skillIds": [
+        "ledbetterljoshua-functional-emotions-video"
+      ]
+    },
+    {
+      "repo": "Mr-funny/hbg-life-simulation",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "mr-funny-hbg-life-simulation"
+      ]
+    },
+    {
+      "repo": "20q2/i-like-ur-look-lyric-video",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "20q2-i-like-ur-look-lyric-video"
+      ]
+    },
+    {
+      "repo": "aaronyi97/image-story-video-wizard",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "aaronyi97-image-story-video-wizard"
+      ]
+    },
+    {
+      "repo": "iart-ai/kinetic-typography-skills",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "iart-ai-kinetic-typography-skills"
+      ]
+    },
+    {
+      "repo": "KONG9610/lyric-mv-opus-5.5",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "kong9610-lyric-mv-opus-5-5"
+      ]
+    },
+    {
+      "repo": "makevoid/motion-graphics-music-video-skill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "makevoid-motion-graphics-music-video-skill"
+      ]
+    },
+    {
+      "repo": "makevoid/motion-graphics-music-video-skill-noimage",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "makevoid-motion-graphics-music-video-skill-noimage"
+      ]
+    },
+    {
+      "repo": "unclejobs-ai/motion-video-skill",
+      "status": 200,
+      "count": 5,
+      "skillIds": [
+        "unclejobs-ai-motion-video-skill"
+      ]
+    },
+    {
+      "repo": "cyborggirl963/opus-5.5-music-video-art-styles",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "cyborggirl963-opus-5-5-music-video-art-styles"
+      ]
+    },
+    {
+      "repo": "grapeot/opus-video-audio-skill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "grapeot-opus-video-audio-skill"
+      ]
+    },
+    {
+      "repo": "lintsinghua/paint-mv-skills",
+      "status": 200,
+      "count": 3,
+      "skillIds": [
+        "lintsinghua-paint-mv-skills"
+      ]
+    },
+    {
+      "repo": "JohnHeibel/PDoomVideo",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "johnheibel-pdoomvideo",
+        "johnheibel-pdoomvideo-animation-guide-md"
+      ]
+    },
+    {
+      "repo": "AsadMoulviDev/reel-video",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "asadmoulvidev-reel-video"
+      ]
+    },
+    {
+      "repo": "edenfunf/reelmimic",
+      "status": 200,
+      "count": 5,
+      "skillIds": [
+        "edenfunf-reelmimic"
+      ]
+    },
+    {
+      "repo": "AllenAI2014/remotion-guofeng-starter",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "allenai2014-remotion-guofeng-starter"
+      ]
+    },
+    {
+      "repo": "BayramAnnakov/remotion-video-director",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "bayramannakov-remotion-video-director"
+      ]
+    },
+    {
+      "repo": "clarity-m/shelter-mv",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "clarity-m-shelter-mv"
+      ]
+    },
+    {
+      "repo": "revfactory/showreel",
+      "status": 200,
+      "count": 3,
+      "skillIds": [
+        "revfactory-showreel"
+      ]
+    },
+    {
+      "repo": "BuzyOwl/song-video-director",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "buzyowl-song-video-director"
+      ]
+    },
+    {
+      "repo": "liangdabiao/story-handdrawn-remotion",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "liangdabiao-story-handdrawn-remotion"
+      ]
+    },
+    {
+      "repo": "gnipbao/story-to-handdrawn-video",
+      "status": 200,
+      "count": 5,
+      "skillIds": [
+        "gnipbao-story-to-handdrawn-video"
+      ]
+    },
+    {
+      "repo": "talsiach/take-one",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "talsiach-take-one"
+      ]
+    },
+    {
+      "repo": "JimLiu/taohuayuan",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "jimliu-taohuayuan"
+      ]
+    },
+    {
+      "repo": "taylorzhou16/video-gen",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "taylorzhou16-video-gen"
+      ]
+    },
+    {
+      "repo": "EGSECDA/vocaloid-style-mv-pipeline",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "egsecda-vocaloid-style-mv-pipeline"
+      ]
+    },
+    {
+      "repo": "liyue-aigc/xianxia-cinematic-video-director",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "liyue-aigc-xianxia-cinematic-video-director"
+      ]
+    },
+    {
+      "repo": "10291124jcjc-dotcom/xp-desktop-mv",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "10291124jcjc-dotcom-xp-desktop-mv"
+      ]
+    },
+    {
+      "repo": "happyhappygame/opus-video",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "happyhappygame-opus-video"
+      ]
+    },
+    {
+      "repo": "hetpatel-11/Adobe_Premiere_Pro_MCP",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "hetpatel-11-adobe-premiere-pro-mcp"
+      ]
+    },
+    {
+      "repo": "ayushozha/AdobePremiereProMCP",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "ayushozha-adobepremierepromcp"
+      ]
+    },
+    {
+      "repo": "JUNKDOGE-JOE/after-effects-mcp",
+      "status": 200,
+      "count": 5,
+      "skillIds": [
+        "junkdoge-joe-after-effects-mcp"
+      ]
+    },
+    {
+      "repo": "znyupup/ai-video-editing-skill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "znyupup-ai-video-editing-skill"
+      ]
+    },
+    {
+      "repo": "atifraza158/Audio-Opus-ToVideo",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "atifraza158-audio-opus-tovideo"
+      ]
+    },
+    {
+      "repo": "Supersynergy/awesome-ai-video-editing",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "supersynergy-awesome-ai-video-editing"
+      ]
+    },
+    {
+      "repo": "JimLiu/baocut",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "jimliu-baocut"
+      ]
+    },
+    {
+      "repo": "ZiadAbdelkarim/beat-synced-edit",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "ziadabdelkarim-beat-synced-edit"
+      ]
+    },
+    {
+      "repo": "Yanndotai/brutalist-video-editing-skill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "yanndotai-brutalist-video-editing-skill"
+      ]
+    },
+    {
+      "repo": "cartesiancs/cartcut",
+      "status": 200,
+      "count": 4,
+      "skillIds": [
+        "cartesiancs-cartcut"
+      ]
+    },
+    {
+      "repo": "Jaycheng1103/chatgpt-video-editing-skills",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "jaycheng1103-chatgpt-video-editing-skills"
+      ]
+    },
+    {
+      "repo": "Agentchengfeng/chengfeng-videocut-skills",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "agentchengfeng-chengfeng-videocut-skills"
+      ]
+    },
+    {
+      "repo": "vincentventalon/claude-code-video-editing-skill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "vincentventalon-claude-code-video-editing-skill"
+      ]
+    },
+    {
+      "repo": "onuryildriim/claude-kurgu-atolyesi",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "onuryildriim-claude-kurgu-atolyesi"
+      ]
+    },
+    {
+      "repo": "AgriciDaniel/claude-shorts",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "agricidaniel-claude-shorts"
+      ]
+    },
+    {
+      "repo": "hassancs91/claude-youtube-editor",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "hassancs91-claude-youtube-editor"
+      ]
+    },
+    {
+      "repo": "Kappaemme-git/codex-video-short-maker-skill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "kappaemme-git-codex-video-short-maker-skill"
+      ]
+    },
+    {
+      "repo": "louisedesadeleer/cut-video",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "louisedesadeleer-cut-video"
+      ]
+    },
+    {
+      "repo": "nomicsadmin/editor-video-ia",
+      "status": 200,
+      "count": 4,
+      "skillIds": [
+        "nomicsadmin-editor-video-ia"
+      ]
+    },
+    {
+      "repo": "erduo1998-cell/erduo-broll-loop-engineering",
+      "status": 200,
+      "count": 3,
+      "skillIds": [
+        "erduo1998-cell-erduo-broll-loop-engineering"
+      ]
+    },
+    {
+      "repo": "alisadiq-ai/favstash-ai-video-editing-skills",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "alisadiq-ai-favstash-ai-video-editing-skills"
+      ]
+    },
+    {
+      "repo": "FireRedTeam/FireRed-OpenStoryline",
+      "status": 200,
+      "count": 5,
+      "skillIds": [
+        "fireredteam-firered-openstoryline"
+      ]
+    },
+    {
+      "repo": "kurbaitaev/ghost-editor",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "kurbaitaev-ghost-editor"
+      ]
+    },
+    {
+      "repo": "derek-zhuolin/interflow-video-cut",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "derek-zhuolin-interflow-video-cut"
+      ]
+    },
+    {
+      "repo": "jincheng2026/jc-remotion-skills",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "jincheng2026-jc-remotion-skills"
+      ]
+    },
+    {
+      "repo": "jackjls/jtxvideo-skill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "jackjls-jtxvideo-skill"
+      ]
+    },
+    {
+      "repo": "Monet-AI-Editor/Monet",
+      "status": 200,
+      "count": 4,
+      "skillIds": [
+        "monet-ai-editor-monet"
+      ]
+    },
+    {
+      "repo": "Barty-Bart/motion-graphics",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "barty-bart-motion-graphics"
+      ]
+    },
+    {
+      "repo": "PoetCoderJun/MotionTalk",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "poetcoderjun-motiontalk"
+      ]
+    },
+    {
+      "repo": "naive-kun/naive-video-skill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "naive-kun-naive-video-skill"
+      ]
+    },
+    {
+      "repo": "hahadu4520/newcut-video-clipping-skill",
+      "status": 200,
+      "count": 4,
+      "skillIds": [
+        "hahadu4520-newcut-video-clipping-skill"
+      ]
+    },
+    {
+      "repo": "buildinpublichub/notion-srt-video-skill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "buildinpublichub-notion-srt-video-skill"
+      ]
+    },
+    {
+      "repo": "Cassette-Editor/oh-my-cassette",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "cassette-editor-oh-my-cassette"
+      ]
+    },
+    {
+      "repo": "0xsline/OpenChatCut",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "0xsline-openchatcut"
+      ]
+    },
+    {
+      "repo": "per-simmons/opus-premiere-editing",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "per-simmons-opus-premiere-editing"
+      ]
+    },
+    {
+      "repo": "Bodila51/opus-sound-layer",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "bodila51-opus-sound-layer"
+      ]
+    },
+    {
+      "repo": "leancoderkavy/premiere-pro-mcp",
+      "status": 200,
+      "count": 3,
+      "skillIds": [
+        "leancoderkavy-premiere-pro-mcp"
+      ]
+    },
+    {
+      "repo": "qingyunAGI/qingyun-cine-skill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "qingyunagi-qingyun-cine-skill"
+      ]
+    },
+    {
+      "repo": "YeJe-cpu/SeeCut",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "yeje-cpu-seecut"
+      ]
+    },
+    {
+      "repo": "Fagan1024/smart-video-editor",
+      "status": 200,
+      "count": 3,
+      "skillIds": [
+        "fagan1024-smart-video-editor"
+      ]
+    },
+    {
+      "repo": "YangAgent/srt-hyperframes-editorial-video-skill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "yangagent-srt-hyperframes-editorial-video-skill"
+      ]
+    },
+    {
+      "repo": "pimyf/talk-video-edit-kit",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "pimyf-talk-video-edit-kit"
+      ]
+    },
+    {
+      "repo": "misbahsy/tiktok-ig-shorts",
+      "status": 200,
+      "count": 4,
+      "skillIds": [
+        "misbahsy-tiktok-ig-shorts"
+      ]
+    },
+    {
+      "repo": "AKMessi/vex",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "akmessi-vex"
+      ]
+    },
+    {
+      "repo": "krusemediallc/video-editor-agent",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "krusemediallc-video-editor-agent"
+      ]
+    },
+    {
+      "repo": "zenstory-ai/video-recap-skills",
+      "status": 200,
+      "count": 3,
+      "skillIds": [
+        "zenstory-ai-video-recap-skills"
+      ]
+    },
+    {
+      "repo": "hahadu4520/vlog-cut",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "hahadu4520-vlog-cut"
+      ]
+    },
+    {
+      "repo": "Yuuhann1999/agent-storyboard",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "yuuhann1999-agent-storyboard"
+      ]
+    },
+    {
+      "repo": "kmilo93sd/agent-video-editor",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "kmilo93sd-agent-video-editor"
+      ]
+    },
+    {
+      "repo": "zhouyuechuan2025-ui/ai-self-media-video-packaging-skill",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "zhouyuechuan2025-ui-ai-self-media-video-packaging-skill"
+      ]
+    },
+    {
+      "repo": "RyanBowie/ai-video-creation-guide",
+      "status": 200,
+      "count": 4,
+      "skillIds": [
+        "ryanbowie-ai-video-creation-guide"
+      ]
+    },
+    {
+      "repo": "yomage-ai/ai-video-director-skill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "yomage-ai-ai-video-director-skill"
+      ]
+    },
+    {
+      "repo": "topo-ai/ai-video-skills",
+      "status": 200,
+      "count": 4,
+      "skillIds": [
+        "topo-ai-ai-video-skills"
+      ]
+    },
+    {
+      "repo": "makefx/animation-video-test",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "makefx-animation-video-test"
+      ]
+    },
+    {
+      "repo": "augustofernandesdev7/augustovideo",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "augustofernandesdev7-augustovideo"
+      ]
+    },
+    {
+      "repo": "mcdenil-skills/AutoMontage-Agent",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "mcdenil-skills-automontage-agent"
+      ]
+    },
+    {
+      "repo": "puntorigen/avatar-skills",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "puntorigen-avatar-skills"
+      ]
+    },
+    {
+      "repo": "walidboulanouar/awesome-ai-coded-videos",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "walidboulanouar-awesome-ai-coded-videos"
+      ]
+    },
+    {
+      "repo": "athemeroy/awesome-claude-5-5-videos",
+      "status": 200,
+      "count": 4,
+      "skillIds": [
+        "athemeroy-awesome-claude-5-5-videos"
+      ]
+    },
+    {
+      "repo": "mailes/awesome-claude-5-5-videos",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "mailes-awesome-claude-5-5-videos"
+      ]
+    },
+    {
+      "repo": "xianyu110/awesome-claude-opus-5.5",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "xianyu110-awesome-claude-opus-5-5"
+      ]
+    },
+    {
+      "repo": "opusvideo/awesome-claude-video",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "opusvideo-awesome-claude-video"
+      ]
+    },
+    {
+      "repo": "zhuyansen/awesome-claude-video-skills",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "zhuyansen-awesome-claude-video-skills"
+      ]
+    },
+    {
+      "repo": "tavily-api/awesome-hyperframes",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "tavily-api-awesome-hyperframes"
+      ]
+    },
+    {
+      "repo": "LeaddeOpenLab/awesome-opus-5-5-video-prompts",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "leaddeopenlab-awesome-opus-5-5-video-prompts"
+      ]
+    },
+    {
+      "repo": "X-RayLuan/awesome-opus-5-5-video-prompts",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "x-rayluan-awesome-opus-5-5-video-prompts"
+      ]
+    },
+    {
+      "repo": "HiAPIAI/awesome-opus-5-5-video-styles",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "hiapiai-awesome-opus-5-5-video-styles"
+      ]
+    },
+    {
+      "repo": "BeatAPI/awesome-opus-5-5-videos",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "beatapi-awesome-opus-5-5-videos"
+      ]
+    },
+    {
+      "repo": "chuspeeism/awesome-opus-5-5-videos",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "chuspeeism-awesome-opus-5-5-videos"
+      ]
+    },
+    {
+      "repo": "liustack/awesome-opus-5-5-videos",
+      "status": 404,
+      "count": 0,
+      "skillIds": [
+        "liustack-awesome-opus-5-5-videos"
+      ]
+    },
+    {
+      "repo": "zhuyansen/awesome-opus-5.5-video",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "zhuyansen-awesome-opus-5-5-video"
+      ]
+    },
+    {
+      "repo": "eastling/awesome-opus-5.5-video-prompts",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "eastling-awesome-opus-5-5-video-prompts"
+      ]
+    },
+    {
+      "repo": "Li-Evan/awesome-opus-5.5-video-prompts",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "li-evan-awesome-opus-5-5-video-prompts",
+        "li-evan-awesome-opus-5-5-video-prompts-guide-director-toolkit-md"
+      ]
+    },
+    {
+      "repo": "LaBaZh/Awesome-Opus-Long-Video-Understanding",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "labazh-awesome-opus-long-video-understanding"
+      ]
+    },
+    {
+      "repo": "adela0414-beep/awesome-opus-video-prompts",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "adela0414-beep-awesome-opus-video-prompts"
+      ]
+    },
+    {
+      "repo": "FavioVazquez/awesome-opus-video-skills",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "faviovazquez-awesome-opus-video-skills"
+      ]
+    },
+    {
+      "repo": "guoyingwei2008-hue/awesome-opus-video-skills",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "guoyingwei2008-hue-awesome-opus-video-skills"
+      ]
+    },
+    {
+      "repo": "ismoshushi/awesome-opus-video-skills",
+      "status": 404,
+      "count": 0,
+      "skillIds": [
+        "ismoshushi-awesome-opus-video-skills"
+      ]
+    },
+    {
+      "repo": "kvnloo/awesome-opus-video-skills",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "kvnloo-awesome-opus-video-skills"
+      ]
+    },
+    {
+      "repo": "unixcrh/awesome-opus-video-skills",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "unixcrh-awesome-opus-video-skills"
+      ]
+    },
+    {
+      "repo": "weihongsu-aesc/awesome-opus-video-skills",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "weihongsu-aesc-awesome-opus-video-skills"
+      ]
+    },
+    {
+      "repo": "real-leo/awesome-opus-videos-aggregate",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "real-leo-awesome-opus-videos-aggregate"
+      ]
+    },
+    {
+      "repo": "afri123/awesome-opus5-5-videos",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "afri123-awesome-opus5-5-videos"
+      ]
+    },
+    {
+      "repo": "billyhetech/awesome-opus5-5-videos",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "billyhetech-awesome-opus5-5-videos"
+      ]
+    },
+    {
+      "repo": "caiye9988/awesome-opus5-5-videos",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "caiye9988-awesome-opus5-5-videos"
+      ]
+    },
+    {
+      "repo": "capturingthe3rd/awesome-opus5-5-videos",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "capturingthe3rd-awesome-opus5-5-videos"
+      ]
+    },
+    {
+      "repo": "Carrie-Liaoxx/awesome-opus5-5-videos",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "carrie-liaoxx-awesome-opus5-5-videos"
+      ]
+    },
+    {
+      "repo": "danghungtan0188-dot/awesome-opus5-5-videos",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "danghungtan0188-dot-awesome-opus5-5-videos"
+      ]
+    },
+    {
+      "repo": "Dendiqq/awesome-opus5-5-videos",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "dendiqq-awesome-opus5-5-videos"
+      ]
+    },
+    {
+      "repo": "DimasHidayat24/awesome-opus5-5-videos",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "dimashidayat24-awesome-opus5-5-videos"
+      ]
+    },
+    {
+      "repo": "Kingwentao/awesome-opus5-5-videos",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "kingwentao-awesome-opus5-5-videos"
+      ]
+    },
+    {
+      "repo": "mamarco852-boop/awesome-opus5-5-videos",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "mamarco852-boop-awesome-opus5-5-videos"
+      ]
+    },
+    {
+      "repo": "Mk8gg/awesome-opus5-5-videos",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "mk8gg-awesome-opus5-5-videos"
+      ]
+    },
+    {
+      "repo": "MSShohag/awesome-opus5-5-videos",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "msshohag-awesome-opus5-5-videos"
+      ]
+    },
+    {
+      "repo": "neois/awesome-opus5-5-videos",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "neois-awesome-opus5-5-videos"
+      ]
+    },
+    {
+      "repo": "okaypark/awesome-opus5-5-videos",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "okaypark-awesome-opus5-5-videos"
+      ]
+    },
+    {
+      "repo": "phuonglazy/awesome-opus5-5-videos",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "phuonglazy-awesome-opus5-5-videos"
+      ]
+    },
+    {
+      "repo": "pipipi44/awesome-opus5-5-videos",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "pipipi44-awesome-opus5-5-videos"
+      ]
+    },
+    {
+      "repo": "ryanwuma/awesome-opus5-5-videos",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "ryanwuma-awesome-opus5-5-videos"
+      ]
+    },
+    {
+      "repo": "sjectwang/awesome-opus5-5-videos",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "sjectwang-awesome-opus5-5-videos"
+      ]
+    },
+    {
+      "repo": "sparrowbu-sketch/awesome-opus5-5-videos",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "sparrowbu-sketch-awesome-opus5-5-videos"
+      ]
+    },
+    {
+      "repo": "sunylt/awesome-opus5-5-videos",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "sunylt-awesome-opus5-5-videos"
+      ]
+    },
+    {
+      "repo": "Thiencau20/awesome-opus5-5-videos",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "thiencau20-awesome-opus5-5-videos"
+      ]
+    },
+    {
+      "repo": "tranduytin130591-pixel/awesome-opus5-5-videos",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "tranduytin130591-pixel-awesome-opus5-5-videos"
+      ]
+    },
+    {
+      "repo": "vkfolio/awesome-opus5-5-videos",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "vkfolio-awesome-opus5-5-videos"
+      ]
+    },
+    {
+      "repo": "wowaya75-create/awesome-opus5-5-videos",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "wowaya75-create-awesome-opus5-5-videos"
+      ]
+    },
+    {
+      "repo": "yihui-dev/awesome-opus5-5-videos",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "yihui-dev-awesome-opus5-5-videos"
+      ]
+    },
+    {
+      "repo": "yzxlr/awesome-opus5-5-videos",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "yzxlr-awesome-opus5-5-videos"
+      ]
+    },
+    {
+      "repo": "nikemafia044-a11y/awesome-opus5-5-videos-plugin",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "nikemafia044-a11y-awesome-opus5-5-videos-plugin"
+      ]
+    },
+    {
+      "repo": "Amal-David/awesome-video-skills",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "amal-david-awesome-video-skills"
+      ]
+    },
+    {
+      "repo": "ella-wang-opus/awesome-video-skills",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "ella-wang-opus-awesome-video-skills"
+      ]
+    },
+    {
+      "repo": "billyhetech/awesome-viral-ai-videos",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "billyhetech-awesome-viral-ai-videos"
+      ]
+    },
+    {
+      "repo": "ledbetterljoshua/bohemian-tokenry-video",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "ledbetterljoshua-bohemian-tokenry-video"
+      ]
+    },
+    {
+      "repo": "jaxxchen003/book-video-factory",
+      "status": 200,
+      "count": 5,
+      "skillIds": [
+        "jaxxchen003-book-video-factory"
+      ]
+    },
+    {
+      "repo": "yuwenbin121/book-video-production-skill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "yuwenbin121-book-video-production-skill"
+      ]
+    },
+    {
+      "repo": "JuneYaooo/cheap-claude-video",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "juneyaooo-cheap-claude-video"
+      ]
+    },
+    {
+      "repo": "digitalsamba/claude-code-video-toolkit",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "digitalsamba-claude-code-video-toolkit"
+      ]
+    },
+    {
+      "repo": "wilwaldon/Claude-Code-Video-Toolkit",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "wilwaldon-claude-code-video-toolkit"
+      ]
+    },
+    {
+      "repo": "hassancs91/claude-faceless-shorts-creator",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "hassancs91-claude-faceless-shorts-creator"
+      ]
+    },
+    {
+      "repo": "Hype-yolo/claude-motion-skill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "hype-yolo-claude-motion-skill"
+      ]
+    },
+    {
+      "repo": "apimodels/claude-opus-5-5-video-prompts",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "apimodels-claude-opus-5-5-video-prompts"
+      ]
+    },
+    {
+      "repo": "SuhaasNv/claude-opus5.5-video",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "suhaasnv-claude-opus5-5-video"
+      ]
+    },
+    {
+      "repo": "jhartquist/claude-remotion-kickstart",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "jhartquist-claude-remotion-kickstart"
+      ]
+    },
+    {
+      "repo": "Yeadon8888/claude-video-atlas",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "yeadon8888-claude-video-atlas"
+      ]
+    },
+    {
+      "repo": "JohnHeibel/ClaudeAnimationBase",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "johnheibel-claudeanimationbase"
+      ]
+    },
+    {
+      "repo": "KannanRajan19/ClaudeVideos",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "kannanrajan19-claudevideos"
+      ]
+    },
+    {
+      "repo": "Changroro/code-video",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "changroro-code-video"
+      ]
+    },
+    {
+      "repo": "zoglmk/codex-video-pipeline",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "zoglmk-codex-video-pipeline"
+      ]
+    },
+    {
+      "repo": "Alisa0808/coflow",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "alisa0808-coflow"
+      ]
+    },
+    {
+      "repo": "WhiteTowerAI/cut-as-code",
+      "status": 200,
+      "count": 3,
+      "skillIds": [
+        "whitetowerai-cut-as-code"
+      ]
+    },
+    {
+      "repo": "chenyuxiaojin/cyxj-remotion-starter",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "chenyuxiaojin-cyxj-remotion-starter"
+      ]
+    },
+    {
+      "repo": "iart-ai/data-animation-skills",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "iart-ai-data-animation-skills"
+      ]
+    },
+    {
+      "repo": "zhenghuiyu06/deepseek-v41-flash-video-materials",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "zhenghuiyu06-deepseek-v41-flash-video-materials"
+      ]
+    },
+    {
+      "repo": "liuzhaowei1/Digital-OPUS-VIDEO-SKILL",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "liuzhaowei1-digital-opus-video-skill"
+      ]
+    },
+    {
+      "repo": "kangarooking/director-skills",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "kangarooking-director-skills"
+      ]
+    },
+    {
+      "repo": "LiChangZheng10086/doyin_ai_video",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "lichangzheng10086-doyin-ai-video"
+      ]
+    },
+    {
+      "repo": "haojing8312/easegen-video-talkcraft",
+      "status": 200,
+      "count": 5,
+      "skillIds": [
+        "haojing8312-easegen-video-talkcraft"
+      ]
+    },
+    {
+      "repo": "blixvip/easyedit",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "blixvip-easyedit"
+      ]
+    },
+    {
+      "repo": "David18758/Edici-n-video-Opus-5.5",
+      "status": 404,
+      "count": 0,
+      "skillIds": [
+        "david18758-edici-n-video-opus-5-5"
+      ]
+    },
+    {
+      "repo": "wendymardigian-prog/Editor-IA-Pro",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "wendymardigian-prog-editor-ia-pro"
+      ]
+    },
+    {
+      "repo": "Salmisaari/eudoom-video",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "salmisaari-eudoom-video"
+      ]
+    },
+    {
+      "repo": "dev-isaacmello/extreme-motion-design",
+      "status": 200,
+      "count": 5,
+      "skillIds": [
+        "dev-isaacmello-extreme-motion-design"
+      ]
+    },
+    {
+      "repo": "bryanwhl/ffmpeg-video-editor",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "bryanwhl-ffmpeg-video-editor"
+      ]
+    },
+    {
+      "repo": "danielnguyenfinhub/Finhub-videoOpus",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "danielnguyenfinhub-finhub-videoopus"
+      ]
+    },
+    {
+      "repo": "GTAI-1/flow-mcp",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "gtai-1-flow-mcp"
+      ]
+    },
+    {
+      "repo": "zlong6943-commits/football-prediction-avatar-video",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "zlong6943-commits-football-prediction-avatar-video"
+      ]
+    },
+    {
+      "repo": "smwbev/framewright",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "smwbev-framewright"
+      ]
+    },
+    {
+      "repo": "0v0o-svg/FullVideoProductionSkill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "0v0o-svg-fullvideoproductionskill"
+      ]
+    },
+    {
+      "repo": "1126misakp/FullVideoProductionSkill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "1126misakp-fullvideoproductionskill"
+      ]
+    },
+    {
+      "repo": "A-salted-fish774/FullVideoProductionSkill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "a-salted-fish774-fullvideoproductionskill"
+      ]
+    },
+    {
+      "repo": "aliensweety/FullVideoProductionSkill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "aliensweety-fullvideoproductionskill"
+      ]
+    },
+    {
+      "repo": "baichuanjiang2-cell/FullVideoProductionSkill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "baichuanjiang2-cell-fullvideoproductionskill"
+      ]
+    },
+    {
+      "repo": "chapterv/FullVideoProductionSkill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "chapterv-fullvideoproductionskill"
+      ]
+    },
+    {
+      "repo": "Clxgogogo/FullVideoProductionSkill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "clxgogogo-fullvideoproductionskill"
+      ]
+    },
+    {
+      "repo": "doubao432/FullVideoProductionSkill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "doubao432-fullvideoproductionskill"
+      ]
+    },
+    {
+      "repo": "DuckyDuckD/FullVideoProductionSkill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "duckyduckd-fullvideoproductionskill"
+      ]
+    },
+    {
+      "repo": "feikay/FullVideoProductionSkill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "feikay-fullvideoproductionskill"
+      ]
+    },
+    {
+      "repo": "FIVETING180/FullVideoProductionSkill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "fiveting180-fullvideoproductionskill"
+      ]
+    },
+    {
+      "repo": "Husniper/FullVideoProductionSkill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "husniper-fullvideoproductionskill"
+      ]
+    },
+    {
+      "repo": "iwantobelieve/FullVideoProductionSkill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "iwantobelieve-fullvideoproductionskill"
+      ]
+    },
+    {
+      "repo": "Jack2687/FullVideoProductionSkill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "jack2687-fullvideoproductionskill"
+      ]
+    },
+    {
+      "repo": "jfxhjdx446-hue/FullVideoProductionSkill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "jfxhjdx446-hue-fullvideoproductionskill"
+      ]
+    },
+    {
+      "repo": "jumplong/FullVideoProductionSkill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "jumplong-fullvideoproductionskill"
+      ]
+    },
+    {
+      "repo": "KanbaraKenji/FullVideoProductionSkill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "kanbarakenji-fullvideoproductionskill"
+      ]
+    },
+    {
+      "repo": "kkkkjack/FullVideoProductionSkill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "kkkkjack-fullvideoproductionskill"
+      ]
+    },
+    {
+      "repo": "lambda567/FullVideoProductionSkill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "lambda567-fullvideoproductionskill"
+      ]
+    },
+    {
+      "repo": "LCDFLuent/FullVideoProductionSkill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "lcdfluent-fullvideoproductionskill"
+      ]
+    },
+    {
+      "repo": "LIghtJUNction/FullVideoProductionSkill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "lightjunction-fullvideoproductionskill"
+      ]
+    },
+    {
+      "repo": "lioun1983-stack/FullVideoProductionSkill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "lioun1983-stack-fullvideoproductionskill"
+      ]
+    },
+    {
+      "repo": "lmst2/FullVideoProductionSkill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "lmst2-fullvideoproductionskill"
+      ]
+    },
+    {
+      "repo": "lzy-0618/FullVideoProductionSkill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "lzy-0618-fullvideoproductionskill"
+      ]
+    },
+    {
+      "repo": "martinzsir/FullVideoProductionSkill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "martinzsir-fullvideoproductionskill"
+      ]
+    },
+    {
+      "repo": "Materialism-1/FullVideoProductionSkill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "materialism-1-fullvideoproductionskill"
+      ]
+    },
+    {
+      "repo": "okazaki112/FullVideoProductionSkill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "okazaki112-fullvideoproductionskill"
+      ]
+    },
+    {
+      "repo": "RMDevilMay/FullVideoProductionSkill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "rmdevilmay-fullvideoproductionskill"
+      ]
+    },
+    {
+      "repo": "Sunny635/FullVideoProductionSkill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "sunny635-fullvideoproductionskill"
+      ]
+    },
+    {
+      "repo": "varsian/FullVideoProductionSkill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "varsian-fullvideoproductionskill"
+      ]
+    },
+    {
+      "repo": "waker240/FullVideoProductionSkill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "waker240-fullvideoproductionskill"
+      ]
+    },
+    {
+      "repo": "wp746/FullVideoProductionSkill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "wp746-fullvideoproductionskill"
+      ]
+    },
+    {
+      "repo": "XidooCOOL/FullVideoProductionSkill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "xidoocool-fullvideoproductionskill"
+      ]
+    },
+    {
+      "repo": "xudod/FullVideoProductionSkill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "xudod-fullvideoproductionskill"
+      ]
+    },
+    {
+      "repo": "yhbcode000/FullVideoProductionSkill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "yhbcode000-fullvideoproductionskill"
+      ]
+    },
+    {
+      "repo": "yjc980121/FullVideoProductionSkill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "yjc980121-fullvideoproductionskill"
+      ]
+    },
+    {
+      "repo": "yucben/FullVideoProductionSkill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "yucben-fullvideoproductionskill"
+      ]
+    },
+    {
+      "repo": "pyang5166/gbro-collage-info",
+      "status": 200,
+      "count": 5,
+      "skillIds": [
+        "pyang5166-gbro-collage-info"
+      ]
+    },
+    {
+      "repo": "inematds/google-carbon-video",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "inematds-google-carbon-video"
+      ]
+    },
+    {
+      "repo": "mikelix/gstack-tutorial-5-agi-race-v2",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "mikelix-gstack-tutorial-5-agi-race-v2"
+      ]
+    },
+    {
+      "repo": "wutuobangai/happy-ai-opus55-video-prompts",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "wutuobangai-happy-ai-opus55-video-prompts"
+      ]
+    },
+    {
+      "repo": "pycodebr/heditor",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "pycodebr-heditor"
+      ]
+    },
+    {
+      "repo": "argus-metis/hermes-video-editing",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "argus-metis-hermes-video-editing"
+      ]
+    },
+    {
+      "repo": "gloweaseco-leo/hyperdirector",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "gloweaseco-leo-hyperdirector"
+      ]
+    },
+    {
+      "repo": "seedance-2-5-dev/hyperframes-api-examples",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "seedance-2-5-dev-hyperframes-api-examples"
+      ]
+    },
+    {
+      "repo": "audrey-560/hyperframes-cinematic-caption",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "audrey-560-hyperframes-cinematic-caption"
+      ]
+    },
+    {
+      "repo": "bbylw/hyperframes-cn",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "bbylw-hyperframes-cn"
+      ]
+    },
+    {
+      "repo": "heygen-com/hyperframes-community-skills",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "heygen-com-hyperframes-community-skills"
+      ]
+    },
+    {
+      "repo": "georgeantonopoulos/hyperframes-composer",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "georgeantonopoulos-hyperframes-composer"
+      ]
+    },
+    {
+      "repo": "thecloudranger/hyperframes-producer",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "thecloudranger-hyperframes-producer"
+      ]
+    },
+    {
+      "repo": "encomp/hyperframes-skill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "encomp-hyperframes-skill"
+      ]
+    },
+    {
+      "repo": "Jane-xiaoer/hyperframes-skill-refs",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "jane-xiaoer-hyperframes-skill-refs"
+      ]
+    },
+    {
+      "repo": "manat0912/HyperFrames-Studio",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "manat0912-hyperframes-studio"
+      ]
+    },
+    {
+      "repo": "audrey-560/hyperframes-tactile-collage",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "audrey-560-hyperframes-tactile-collage"
+      ]
+    },
+    {
+      "repo": "saranambiar/hyperframes-video-agent-skills",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "saranambiar-hyperframes-video-agent-skills"
+      ]
+    },
+    {
+      "repo": "yumizyg/Hyperframes-Video-Generation-Skills",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "yumizyg-hyperframes-video-generation-skills"
+      ]
+    },
+    {
+      "repo": "Grivn/hyperliquid-opus-video",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "grivn-hyperliquid-opus-video"
+      ]
+    },
+    {
+      "repo": "hypit-ai/hypit",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "hypit-ai-hypit"
+      ]
+    },
+    {
+      "repo": "intelligent-iterations/ii-content-engine",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "intelligent-iterations-ii-content-engine"
+      ]
+    },
+    {
+      "repo": "shaom/infocard-video-skills",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "shaom-infocard-video-skills"
+      ]
+    },
+    {
+      "repo": "derek-zhuolin/interflow-ip-video",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "derek-zhuolin-interflow-ip-video"
+      ]
+    },
+    {
+      "repo": "ouerf-man/kinetic-editorial-skill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "ouerf-man-kinetic-editorial-skill"
+      ]
+    },
+    {
+      "repo": "cclank/lanshu-create-ai-presenter-video",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "cclank-lanshu-create-ai-presenter-video"
+      ]
+    },
+    {
+      "repo": "LaowtZhou/laowantong-text-to-video-skill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "laowtzhou-laowantong-text-to-video-skill"
+      ]
+    },
+    {
+      "repo": "chenmisss/laoxu-video-script",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "chenmisss-laoxu-video-script"
+      ]
+    },
+    {
+      "repo": "CAI-KUN-MAX/leetcode-video-opus",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "cai-kun-max-leetcode-video-opus"
+      ]
+    },
+    {
+      "repo": "lemomo-ai/lemo-opuscar",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "lemomo-ai-lemo-opuscar"
+      ]
+    },
+    {
+      "repo": "AgriciDaniel/lipnardo",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "agricidaniel-lipnardo"
+      ]
+    },
+    {
+      "repo": "liaojianquan9-source/ljq-broll-video-generator",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "liaojianquan9-source-ljq-broll-video-generator"
+      ]
+    },
+    {
+      "repo": "liuliu-66-create/ll-video-decomposer",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "liuliu-66-create-ll-video-decomposer"
+      ]
+    },
+    {
+      "repo": "GoldLegendW80/llm-video-maker",
+      "status": 200,
+      "count": 4,
+      "skillIds": [
+        "goldlegendw80-llm-video-maker"
+      ]
+    },
+    {
+      "repo": "patraxo/ltx2-vidgen-skill",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "patraxo-ltx2-vidgen-skill"
+      ]
+    },
+    {
+      "repo": "SpaceZephyr/map-motion",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "spacezephyr-map-motion"
+      ]
+    },
+    {
+      "repo": "Rosmontis8/math-videos-made-by-opus",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "rosmontis8-math-videos-made-by-opus"
+      ]
+    },
+    {
+      "repo": "molkex/mcp-flow-google",
+      "status": 200,
+      "count": 3,
+      "skillIds": [
+        "molkex-mcp-flow-google"
+      ]
+    },
+    {
+      "repo": "killkli/minimax-h3-colab-skill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "killkli-minimax-h3-colab-skill"
+      ]
+    },
+    {
+      "repo": "gnipbao/minimax-h3-video-reverse-skill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "gnipbao-minimax-h3-video-reverse-skill"
+      ]
+    },
+    {
+      "repo": "abhinavshrivastava950/Montara",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "abhinavshrivastava950-montara"
+      ]
+    },
+    {
+      "repo": "iart-ai/motion-design-skills",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "iart-ai-motion-design-skills"
+      ]
+    },
+    {
+      "repo": "Miftahul-Islam-Efaz/Motion-graphics-skill",
+      "status": 404,
+      "count": 0,
+      "skillIds": [
+        "miftahul-islam-efaz-motion-graphics-skill"
+      ]
+    },
+    {
+      "repo": "Kimeur/motion-launch-videos",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "kimeur-motion-launch-videos"
+      ]
+    },
+    {
+      "repo": "VasiniDevi/motion-skills",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "vasinidevi-motion-skills"
+      ]
+    },
+    {
+      "repo": "motalim-ai/motion-starter-kit",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "motalim-ai-motion-starter-kit"
+      ]
+    },
+    {
+      "repo": "isaachang/motion-video-workflow",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "isaachang-motion-video-workflow"
+      ]
+    },
+    {
+      "repo": "NarratorAI-Studio/narrator-ai-cli-skill",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "narratorai-studio-narrator-ai-cli-skill"
+      ]
+    },
+    {
+      "repo": "ChaudharyNishant003/Nishant-Video-editorGenerator-creatin",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "chaudharynishant003-nishant-video-editorgenerator-creatin"
+      ]
+    },
+    {
+      "repo": "hyt315/notebook-video",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "hyt315-notebook-video"
+      ]
+    },
+    {
+      "repo": "modoredes07-hash/npx-skills-add-heygen-com-hyperframes",
+      "status": 404,
+      "count": 0,
+      "skillIds": [
+        "modoredes07-hash-npx-skills-add-heygen-com-hyperframes"
+      ]
+    },
+    {
+      "repo": "huangbai-AI/one-prompt-video-skills",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "huangbai-ai-one-prompt-video-skills"
+      ]
+    },
+    {
+      "repo": "kvrancic/oneshot-video",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "kvrancic-oneshot-video"
+      ]
+    },
+    {
+      "repo": "ZLHad/OpenVideoHarness",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "zlhad-openvideoharness"
+      ]
+    },
+    {
+      "repo": "jmes1973/OPUS_Videos_Procedures",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "jmes1973-opus-videos-procedures"
+      ]
+    },
+    {
+      "repo": "ai9app/opus-5-5-video-prompt-library",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "ai9app-opus-5-5-video-prompt-library"
+      ]
+    },
+    {
+      "repo": "rohitsinghcoder/opus-5.5-video",
+      "status": 404,
+      "count": 0,
+      "skillIds": [
+        "rohitsinghcoder-opus-5-5-video"
+      ]
+    },
+    {
+      "repo": "CrodBac4rdi/Opus-5.5-Video-gen",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "crodbac4rdi-opus-5-5-video-gen"
+      ]
+    },
+    {
+      "repo": "vladimirkulikdev/opus-5.5-video-test",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "vladimirkulikdev-opus-5-5-video-test"
+      ]
+    },
+    {
+      "repo": "Hurrikane8/Opus-5.5-Videos",
+      "status": 404,
+      "count": 0,
+      "skillIds": [
+        "hurrikane8-opus-5-5-videos"
+      ]
+    },
+    {
+      "repo": "nova-video-player/opus-android-builder",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "nova-video-player-opus-android-builder"
+      ]
+    },
+    {
+      "repo": "klsoen/opus-js-animations",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "klsoen-opus-js-animations"
+      ]
+    },
+    {
+      "repo": "julianbenjamin/Opus-Pro-Clone-AI-Video-Clipper-SaaS",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "julianbenjamin-opus-pro-clone-ai-video-clipper-saas"
+      ]
+    },
+    {
+      "repo": "abm-dungtq/opus-video",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "abm-dungtq-opus-video"
+      ]
+    },
+    {
+      "repo": "agharsallah/opus-video",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "agharsallah-opus-video"
+      ]
+    },
+    {
+      "repo": "ahweb/opus-video",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "ahweb-opus-video"
+      ]
+    },
+    {
+      "repo": "hcjbde/opus-video",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "hcjbde-opus-video"
+      ]
+    },
+    {
+      "repo": "Loveforwa/opus-video",
+      "status": 404,
+      "count": 0,
+      "skillIds": [
+        "loveforwa-opus-video"
+      ]
+    },
+    {
+      "repo": "lzh08/opus-video",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "lzh08-opus-video"
+      ]
+    },
+    {
+      "repo": "opcop/opus-video",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "opcop-opus-video"
+      ]
+    },
+    {
+      "repo": "anndreloopez012/opus-video-director",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "anndreloopez012-opus-video-director"
+      ]
+    },
+    {
+      "repo": "dandacompany/opus-video-prompts",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "dandacompany-opus-video-prompts"
+      ]
+    },
+    {
+      "repo": "joeseesun/opus-video-prompts",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "joeseesun-opus-video-prompts"
+      ]
+    },
+    {
+      "repo": "bilaldemirerr/opus-video-recipes",
+      "status": 200,
+      "count": 4,
+      "skillIds": [
+        "bilaldemirerr-opus-video-recipes"
+      ]
+    },
+    {
+      "repo": "1531691629/opus-video-skills",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "1531691629-opus-video-skills"
+      ]
+    },
+    {
+      "repo": "A3-Media/opus-video-skills",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "a3-media-opus-video-skills"
+      ]
+    },
+    {
+      "repo": "Adonis0123/opus-video-skills",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "adonis0123-opus-video-skills"
+      ]
+    },
+    {
+      "repo": "cd1517/opus-video-skills",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "cd1517-opus-video-skills"
+      ]
+    },
+    {
+      "repo": "cxm947/opus-video-skills",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "cxm947-opus-video-skills"
+      ]
+    },
+    {
+      "repo": "dyfyyds/opus-video-skills",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "dyfyyds-opus-video-skills"
+      ]
+    },
+    {
+      "repo": "Flyingaway1994/opus-video-skills",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "flyingaway1994-opus-video-skills"
+      ]
+    },
+    {
+      "repo": "FlySec-01/opus-video-skills",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "flysec-01-opus-video-skills"
+      ]
+    },
+    {
+      "repo": "goforai-vip/opus-video-skills",
+      "status": 200,
+      "count": 3,
+      "skillIds": [
+        "goforai-vip-opus-video-skills"
+      ]
+    },
+    {
+      "repo": "hh946/opus-video-skills",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "hh946-opus-video-skills"
+      ]
+    },
+    {
+      "repo": "huanhq99/opus-video-skills",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "huanhq99-opus-video-skills"
+      ]
+    },
+    {
+      "repo": "irina9anna-arch/opus-video-skills",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "irina9anna-arch-opus-video-skills"
+      ]
+    },
+    {
+      "repo": "Saruika/opus-video-skills",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "saruika-opus-video-skills"
+      ]
+    },
+    {
+      "repo": "sutui396-svg/opus-video-skills",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "sutui396-svg-opus-video-skills"
+      ]
+    },
+    {
+      "repo": "yemaozi11/opus-video-skills",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "yemaozi11-opus-video-skills"
+      ]
+    },
+    {
+      "repo": "zground/opus-video-skills",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "zground-opus-video-skills"
+      ]
+    },
+    {
+      "repo": "CorangesS/opus-video-skills-promax",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "corangess-opus-video-skills-promax"
+      ]
+    },
+    {
+      "repo": "thaihoanganh/opus-video-studio",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "thaihoanganh-opus-video-studio"
+      ]
+    },
+    {
+      "repo": "xdis/opus-video-studio",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "xdis-opus-video-studio"
+      ]
+    },
+    {
+      "repo": "Dengzheng122/opus-videos",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "dengzheng122-opus-videos"
+      ]
+    },
+    {
+      "repo": "JinshiYu914/opus5-5-video-prompt-website",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "jinshiyu914-opus5-5-video-prompt-website"
+      ]
+    },
+    {
+      "repo": "nirajan/opus5-5-videos",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "nirajan-opus5-5-videos"
+      ]
+    },
+    {
+      "repo": "GaoFei2025-0314/opus5.5_video",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "gaofei2025-0314-opus5-5-video"
+      ]
+    },
+    {
+      "repo": "Reger-c/opus5.5-video-prompts",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "reger-c-opus5-5-video-prompts"
+      ]
+    },
+    {
+      "repo": "dark-faze/opus5.5-video-test",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "dark-faze-opus5-5-video-test"
+      ]
+    },
+    {
+      "repo": "brucx/opus55-video",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "brucx-opus55-video"
+      ]
+    },
+    {
+      "repo": "haiy/opus55-video-guide-zh",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "haiy-opus55-video-guide-zh"
+      ]
+    },
+    {
+      "repo": "openclawcrab/opus55-video-skill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "openclawcrab-opus55-video-skill"
+      ]
+    },
+    {
+      "repo": "chenyuxiaojin/opus55-video-style-prompts",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "chenyuxiaojin-opus55-video-style-prompts"
+      ]
+    },
+    {
+      "repo": "zyrliuwei-sys/opus55video",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "zyrliuwei-sys-opus55video"
+      ]
+    },
+    {
+      "repo": "meaterick/opusvideo",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "meaterick-opusvideo"
+      ]
+    },
+    {
+      "repo": "TryWorld2026/paper-algorithm",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "tryworld2026-paper-algorithm"
+      ]
+    },
+    {
+      "repo": "cturkyilmaz/PDoomVideo",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "cturkyilmaz-pdoomvideo"
+      ]
+    },
+    {
+      "repo": "HeartArmy/PDoomVideo",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "heartarmy-pdoomvideo"
+      ]
+    },
+    {
+      "repo": "StuGRua/PDoomVideo",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "stugrua-pdoomvideo"
+      ]
+    },
+    {
+      "repo": "yipingheijiang/PDoomVideo",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "yipingheijiang-pdoomvideo"
+      ]
+    },
+    {
+      "repo": "icytear-svg/podcast-to-video",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "icytear-svg-podcast-to-video"
+      ]
+    },
+    {
+      "repo": "MatrixReligio/ProductVideoCreator",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "matrixreligio-productvideocreator"
+      ]
+    },
+    {
+      "repo": "Chamanrajragu/purffle-shorts",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "chamanrajragu-purffle-shorts"
+      ]
+    },
+    {
+      "repo": "wyuzhi/qisi-video-remix",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "wyuzhi-qisi-video-remix"
+      ]
+    },
+    {
+      "repo": "RahmanBuildsAI/ravyn-reel-kit",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "rahmanbuildsai-ravyn-reel-kit"
+      ]
+    },
+    {
+      "repo": "GordenSun/react-bits-video",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "gordensun-react-bits-video"
+      ]
+    },
+    {
+      "repo": "eternityspring/reelbench-skills",
+      "status": 200,
+      "count": 4,
+      "skillIds": [
+        "eternityspring-reelbench-skills"
+      ]
+    },
+    {
+      "repo": "jiangzizhao/ref-mg-video-skill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "jiangzizhao-ref-mg-video-skill"
+      ]
+    },
+    {
+      "repo": "DarioFontanel/regia-hyperframes",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "dariofontanel-regia-hyperframes"
+      ]
+    },
+    {
+      "repo": "JJenglert1/remotion-claude-video",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "jjenglert1-remotion-claude-video"
+      ]
+    },
+    {
+      "repo": "resemble-ai/remotion-resemble-skill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "resemble-ai-remotion-resemble-skill"
+      ]
+    },
+    {
+      "repo": "vibe-motion/remotion-starter",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "vibe-motion-remotion-starter"
+      ]
+    },
+    {
+      "repo": "diko0071/remotion-video-skills",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "diko0071-remotion-video-skills"
+      ]
+    },
+    {
+      "repo": "shreefentsar/remotion-video-toolkit",
+      "status": 404,
+      "count": 0,
+      "skillIds": [
+        "shreefentsar-remotion-video-toolkit"
+      ]
+    },
+    {
+      "repo": "Samin12/samin-reel-engine-plugin",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "samin12-samin-reel-engine-plugin"
+      ]
+    },
+    {
+      "repo": "jtydhr88/screenwriting-skills",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "jtydhr88-screenwriting-skills"
+      ]
+    },
+    {
+      "repo": "generalizingai/shadowcast",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "generalizingai-shadowcast"
+      ]
+    },
+    {
+      "repo": "Dancan254/shenghua",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "dancan254-shenghua"
+      ]
+    },
+    {
+      "repo": "diggerhq/shipvideo",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "diggerhq-shipvideo"
+      ]
+    },
+    {
+      "repo": "FavioVazquez/showtime",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "faviovazquez-showtime"
+      ]
+    },
+    {
+      "repo": "simpletibr/simplicio-videos",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "simpletibr-simplicio-videos"
+      ]
+    },
+    {
+      "repo": "riffkit/skill",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "riffkit-skill"
+      ]
+    },
+    {
+      "repo": "inematds/skill-hyperframes-videos",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "inematds-skill-hyperframes-videos"
+      ]
+    },
+    {
+      "repo": "inematds/skill-video-explicativo",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "inematds-skill-video-explicativo"
+      ]
+    },
+    {
+      "repo": "inematds/skill-video-plan-editor",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "inematds-skill-video-plan-editor"
+      ]
+    },
+    {
+      "repo": "LeslieLeung/skills",
+      "status": 404,
+      "count": 0,
+      "skillIds": [
+        "leslieleung-skills-skills-hyperframe-video-production-skill-md"
+      ]
+    },
+    {
+      "repo": "nateherkai/hyperframes-student-kit",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "nateherkai-hyperframes-student-kit-agents-skills-hyperframes-video-beats-skill-md",
+        "nateherkai-hyperframes-student-kit-claude-skills-make-a-video-skill-md"
+      ]
+    },
+    {
+      "repo": "heygen-com/skills",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "heygen-com-skills"
+      ]
+    },
+    {
+      "repo": "magichourhq/skills",
+      "status": 200,
+      "count": 4,
+      "skillIds": [
+        "magichourhq-skills"
+      ]
+    },
+    {
+      "repo": "remotion-dev/skills",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "remotion-dev-skills"
+      ]
+    },
+    {
+      "repo": "vibe-motion/skills",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "vibe-motion-skills"
+      ]
+    },
+    {
+      "repo": "video-db/skills",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "video-db-skills"
+      ]
+    },
+    {
+      "repo": "leochiu-a/slidev-workspace-intro-video",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "leochiu-a-slidev-workspace-intro-video"
+      ]
+    },
+    {
+      "repo": "hraness/slopcamera",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "hraness-slopcamera"
+      ]
+    },
+    {
+      "repo": "ymybxx/SoloMCN",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "ymybxx-solomcn"
+      ]
+    },
+    {
+      "repo": "liangdabiao/story-handdrawn-video",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "liangdabiao-story-handdrawn-video"
+      ]
+    },
+    {
+      "repo": "marketcalls/story-telling",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "marketcalls-story-telling"
+      ]
+    },
+    {
+      "repo": "doublesq97-ui/su-card-to-video",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "doublesq97-ui-su-card-to-video"
+      ]
+    },
+    {
+      "repo": "Bomx/super-video-maker-skill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "bomx-super-video-maker-skill"
+      ]
+    },
+    {
+      "repo": "beatra-ai/talking-avatar-video-skill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "beatra-ai-talking-avatar-video-skill"
+      ]
+    },
+    {
+      "repo": "pythoninoffice/tasty-opus5-5-videos",
+      "status": 200,
+      "count": 5,
+      "skillIds": [
+        "pythoninoffice-tasty-opus5-5-videos"
+      ]
+    },
+    {
+      "repo": "iart-ai/text-message-video-skills",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "iart-ai-text-message-video-skills"
+      ]
+    },
+    {
+      "repo": "iart-ai/tiktok-video-skills",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "iart-ai-tiktok-video-skills"
+      ]
+    },
+    {
+      "repo": "yammaku/typewriter-video",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "yammaku-typewriter-video"
+      ]
+    },
+    {
+      "repo": "Vandit1604/vawe",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "vandit1604-vawe"
+      ]
+    },
+    {
+      "repo": "adriiita/vertical-video-editing-skill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "adriiita-vertical-video-editing-skill"
+      ]
+    },
+    {
+      "repo": "davidcervinka/vibe-editing",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "davidcervinka-vibe-editing"
+      ]
+    },
+    {
+      "repo": "dunctk/video-agent-skills",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "dunctk-video-agent-skills"
+      ]
+    },
+    {
+      "repo": "Johnson-Jia/video-clipforge",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "johnson-jia-video-clipforge"
+      ]
+    },
+    {
+      "repo": "iosnegov/video-forge-opus-one",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "iosnegov-video-forge-opus-one"
+      ]
+    },
+    {
+      "repo": "Gyansolomon/Video-opus",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "gyansolomon-video-opus"
+      ]
+    },
+    {
+      "repo": "kanik588/video-opus-maker",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "kanik588-video-opus-maker"
+      ]
+    },
+    {
+      "repo": "Aaryan-Kapoor/video-production-skill",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "aaryan-kapoor-video-production-skill"
+      ]
+    },
+    {
+      "repo": "Jakeschincariol/video-production-skills",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "jakeschincariol-video-production-skills"
+      ]
+    },
+    {
+      "repo": "SterlingChin/video-production-skills",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "sterlingchin-video-production-skills"
+      ]
+    },
+    {
+      "repo": "ops120/video-recap-skills-plus",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "ops120-video-recap-skills-plus"
+      ]
+    },
+    {
+      "repo": "mrd-bdsmetro/video-render-lab",
+      "status": 404,
+      "count": 0,
+      "skillIds": [
+        "mrd-bdsmetro-video-render-lab"
+      ]
+    },
+    {
+      "repo": "erduo1998-cell/video-script-builder",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "erduo1998-cell-video-script-builder"
+      ]
+    },
+    {
+      "repo": "nikolasfaria/video-sharingan",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "nikolasfaria-video-sharingan"
+      ]
+    },
+    {
+      "repo": "wocha-xiaoli/video-shot-analysis-feishu",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "wocha-xiaoli-video-shot-analysis-feishu"
+      ]
+    },
+    {
+      "repo": "Vincentwei1021/video-shotcraft",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "vincentwei1021-video-shotcraft"
+      ]
+    },
+    {
+      "repo": "bozhouDev/video-skills-toolkit",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "bozhoudev-video-skills-toolkit"
+      ]
+    },
+    {
+      "repo": "liangdabiao/video-skills-toolkit",
+      "status": 200,
+      "count": 3,
+      "skillIds": [
+        "liangdabiao-video-skills-toolkit"
+      ]
+    },
+    {
+      "repo": "feicaiclub/video-spec-builder",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "feicaiclub-video-spec-builder"
+      ]
+    },
+    {
+      "repo": "Fireface17/video-test",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "fireface17-video-test"
+      ]
+    },
+    {
+      "repo": "satyasanatan989/video-to-2d-studio",
+      "status": 200,
+      "count": 3,
+      "skillIds": [
+        "satyasanatan989-video-to-2d-studio"
+      ]
+    },
+    {
+      "repo": "cocolayuan/videoclip-AI-skill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "cocolayuan-videoclip-ai-skill"
+      ]
+    },
+    {
+      "repo": "robertomanfroi/videos-opus",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "robertomanfroi-videos-opus"
+      ]
+    },
+    {
+      "repo": "erduo1998-cell/vidmuse-video-creator",
+      "status": 200,
+      "count": 4,
+      "skillIds": [
+        "erduo1998-cell-vidmuse-video-creator"
+      ]
+    },
+    {
+      "repo": "sharon-laicc/viral-video-decomposer",
+      "status": 200,
+      "count": 3,
+      "skillIds": [
+        "sharon-laicc-viral-video-decomposer"
+      ]
+    },
+    {
+      "repo": "beatra-ai/viral-video-remake-skill",
+      "status": 200,
+      "count": 2,
+      "skillIds": [
+        "beatra-ai-viral-video-remake-skill"
+      ]
+    },
+    {
+      "repo": "holooooo/webgl-seascape-video",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "holooooo-webgl-seascape-video"
+      ]
+    },
+    {
+      "repo": "liangdabiao/wechat-article-remotion",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "liangdabiao-wechat-article-remotion"
+      ]
+    },
+    {
+      "repo": "nutllwhy/whiteboard-book-video-skill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "nutllwhy-whiteboard-book-video-skill"
+      ]
+    },
+    {
+      "repo": "xinyiqin/X2V-AI-Images-Videos-skill",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "xinyiqin-x2v-ai-images-videos-skill"
+      ]
+    },
+    {
+      "repo": "crawfordxx/xiaoma-studio",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "crawfordxx-xiaoma-studio"
+      ]
+    },
+    {
+      "repo": "Kianzzz/xilo-opus-video",
+      "status": 200,
+      "count": 3,
+      "skillIds": [
+        "kianzzz-xilo-opus-video"
+      ]
+    },
+    {
+      "repo": "adityaarsharma/youtube-marketing-skills",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "adityaarsharma-youtube-marketing-skills"
+      ]
+    },
+    {
+      "repo": "ninestonelee/youtube-shorts-factory",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "ninestonelee-youtube-shorts-factory"
+      ]
+    },
+    {
+      "repo": "ztaihang/agent-skills",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "ztaihang-agent-skills"
+      ]
+    },
+    {
+      "repo": "anthropics/claude-code",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "anthropics-claude-code"
+      ]
+    },
+    {
+      "repo": "jacobbubu/claude-opus-5-5-js-animation-research",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "jacobbubu-claude-opus-5-5-js-animation-research"
+      ]
+    },
+    {
+      "repo": "nutllwhy/code-brand-film",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "nutllwhy-code-brand-film"
+      ]
+    },
+    {
+      "repo": "Everett406/code-film",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "everett406-code-film"
+      ]
+    },
+    {
+      "repo": "vstorm-co/content-skills",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "vstorm-co-content-skills"
+      ]
+    },
+    {
+      "repo": "zenstory-ai/drama-skills",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "zenstory-ai-drama-skills"
+      ]
+    },
+    {
+      "repo": "TomGranot/faceless-channel-factory",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "tomgranot-faceless-channel-factory"
+      ]
+    },
+    {
+      "repo": "LiamGvchi/gc-minimal-zine-poster",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "liamgvchi-gc-minimal-zine-poster"
+      ]
+    },
+    {
+      "repo": "NulightJens/jensai-skills",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "nulightjens-jensai-skills"
+      ]
+    },
+    {
+      "repo": "airbnb/lottie-web",
+      "status": 200,
+      "count": 5,
+      "skillIds": [
+        "airbnb-lottie-web"
+      ]
+    },
+    {
+      "repo": "magicuidesign/magicui",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "magicuidesign-magicui"
+      ]
+    },
+    {
+      "repo": "theSamPadilla/montaj",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "thesampadilla-montaj"
+      ]
+    },
+    {
+      "repo": "Neeraj138/navratri-opus-5.5-anim",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "neeraj138-navratri-opus-5-5-anim"
+      ]
+    },
+    {
+      "repo": "az9713/opus-5.5-builds",
+      "status": 200,
+      "count": 6,
+      "skillIds": [
+        "az9713-opus-5-5-builds"
+      ]
+    },
+    {
+      "repo": "pmndrs/react-three-fiber",
+      "status": 200,
+      "count": 3,
+      "skillIds": [
+        "pmndrs-react-three-fiber"
+      ]
+    },
+    {
+      "repo": "nateherkai/scroll-craft",
+      "status": 200,
+      "count": 3,
+      "skillIds": [
+        "nateherkai-scroll-craft"
+      ]
+    },
+    {
+      "repo": "MengTo/Skills",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "mengto-skills"
+      ]
+    },
+    {
+      "repo": "xiongallen40-design/stickman-animation-skill",
+      "status": 200,
+      "count": 0,
+      "skillIds": [
+        "xiongallen40-design-stickman-animation-skill"
+      ]
+    },
+    {
+      "repo": "MengTo/threeui",
+      "status": 200,
+      "count": 1,
+      "skillIds": [
+        "mengto-threeui"
+      ]
+    },
+    {
+      "repo": "ai-workspace-lab/xworkspace-core-skills",
+      "status": 200,
+      "count": 5,
+      "skillIds": [
+        "ai-workspace-lab-xworkspace-core-skills"
+      ]
+    }
+  ]
+}

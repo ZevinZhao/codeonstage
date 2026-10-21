@@ -1,0 +1,50 @@
+{
+  "generatedAt": "2026-10-21T06:03:39.607Z",
+  "source": "/Users/wupeng/.codex/.chatgpt-projects/g-p-6ad5fec4d050819194cd6564afc546ae/outputs/resource-library-2026-10-20/02-Opus 5.5 前端动画视频 Skills.md",
+  "total": 689,
+  "bySection": {
+    "entry": 7,
+    "main": 568,
+    "companion": 114,
+    "skippedXPosts": 426
+  },
+  "primaryCategory": {
+    "uncategorized": 310,
+    "general-video": 97,
+    "education": 78,
+    "post-production": 71,
+    "promo": 57,
+    "narrative-mv": 48,
+    "motion-design": 26,
+    "game-interactive": 1,
+    "vibe": 1
+  },
+  "primaryCategoryRatio": {
+    "uncategorized": 0.44992743105950656,
+    "general-video": 0.14078374455732948,
+    "education": 0.11320754716981132,
+    "post-production": 0.10304789550072568,
+    "promo": 0.08272859216255443,
+    "narrative-mv": 0.06966618287373004,
+    "motion-design": 0.03773584905660377,
+    "game-interactive": 0.001451378809869376,
+    "vibe": 0.001451378809869376
+  },
+  "uncategorizedRatio": 0.44992743105950656,
+  "rawType": {
+    "Skill/工具仓库候选": 550,
+    "索引/提示词/指南仓库": 69,
+    "代码动画仓库/案例候选": 34,
+    "教程/文章": 11,
+    "": 7,
+    "Skill 文件": 6,
+    "视频教程": 4,
+    "GitHub 文档": 3,
+    "Skill 收录页面": 3,
+    "代码动画仓库/文档": 2
+  },
+  "tagBasis": {
+    "索引介绍": 644,
+    "名称推断": 45
+  }
+}

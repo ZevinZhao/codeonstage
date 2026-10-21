@@ -1,0 +1,8 @@
+{
+  "verification_scenario": "new-feature",
+  "task_id": 5,
+  "task_content": "构建验证（npm run build + tsc）与功能验证（改名/筛选/分页/视频优先展示），输出 VERDICT",
+  "reason": "网站从'vibe知识大赏 Skill 大全'重构为'码上开演'（新品牌+新分类体系+数据导入），属于新功能/重构验证场景",
+  "generated_by": "verify-agent (manual fallback: scenario-recognition skill unavailable)",
+  "generated_at": "2026-10-21"
+}
