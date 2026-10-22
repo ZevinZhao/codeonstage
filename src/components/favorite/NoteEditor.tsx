@@ -1,36 +1,16 @@
-// ============================================================
-// NoteEditor 使用心得编辑器
-// - Textarea 编辑使用心得
-// - 自动保存（防抖 1s）到 store
-// - 字数统计
-// - 编辑/查看模式切换
-// - 查看模式支持 Markdown 简单渲染（加粗、列表、代码块）
-// ============================================================
 import { useState, useEffect, useRef, type ChangeEvent } from 'react';
 import { Pencil, Check, Eye } from 'lucide-react';
 import { cn } from '@/utils/cn';
 import { Textarea } from '@/components/ui/Textarea';
 
-
-/** NoteEditor Props */
 interface NoteEditorProps {
-  /** 当前心得内容 */
   value: string;
-  /** 保存回调（已防抖） */
   onSave: (value: string) => void;
-  /** 自定义类名 */
   className?: string;
-  /** 最大字数 */
   maxLength?: number;
 }
 
-/**
- * 简易 Markdown 渲染
- * 支持：**加粗**、- 列表项、`行内代码`、```代码块```
- * 注意：仅做最小渲染，避免引入完整 markdown 解析库
- */
 function renderMarkdown(text: string): string {
-  // 先转义 HTML 特殊字符，防止注入
   const escapeHtml = (s: string): string =>
     s
       .replace(/&/g, '&amp;')
@@ -43,10 +23,8 @@ function renderMarkdown(text: string): string {
   let codeBuffer: string[] = [];
 
   for (const line of lines) {
-    // 代码块开始/结束
     if (line.trim().startsWith('```')) {
       if (inCodeBlock) {
-        // 结束代码块
         htmlParts.push(
           `<pre class="my-1.5 p-2.5 rounded-md bg-base border border-border overflow-x-auto text-xs font-mono text-content-muted">${escapeHtml(
             codeBuffer.join('\n')
@@ -64,13 +42,11 @@ function renderMarkdown(text: string): string {
       continue;
     }
 
-    // 空行
     if (line.trim() === '') {
       htmlParts.push('<div class="h-2"></div>');
       continue;
     }
 
-    // 列表项
     if (/^\s*[-*]\s+/.test(line)) {
       const content = line.replace(/^\s*[-*]\s+/, '');
       htmlParts.push(
@@ -81,11 +57,9 @@ function renderMarkdown(text: string): string {
       continue;
     }
 
-    // 普通段落
     htmlParts.push(`<p class="my-0.5">${renderInline(line)}</p>`);
   }
 
-  // 处理未闭合的代码块
   if (inCodeBlock && codeBuffer.length > 0) {
     htmlParts.push(
       `<pre class="my-1.5 p-2.5 rounded-md bg-base border border-border overflow-x-auto text-xs font-mono text-content-muted">${escapeHtml(
@@ -97,19 +71,15 @@ function renderMarkdown(text: string): string {
   return htmlParts.join('');
 }
 
-/** 渲染行内格式：加粗 + 行内代码 */
 function renderInline(text: string): string {
-  // 转义
   let result = text
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;');
-  // 行内代码 `xxx`
   result = result.replace(
     /`([^`]+)`/g,
     '<code class="px-1 py-0.5 rounded bg-base border border-border text-xs font-mono text-content-muted">$1</code>'
   );
-  // 加粗 **xxx**
   result = result.replace(
     /\*\*([^*]+)\*\*/g,
     '<strong class="text-content font-semibold">$1</strong>'
@@ -117,50 +87,39 @@ function renderInline(text: string): string {
   return result;
 }
 
-/** NoteEditor 组件 */
 export function NoteEditor({
   value,
   onSave,
   className,
   maxLength = 2000,
 }: NoteEditorProps) {
-  // 编辑模式 vs 查看模式
   const [editing, setEditing] = useState(false);
-  // 本地草稿
   const [draft, setDraft] = useState(value);
-  // 保存状态：idle / saving / saved
   const [saveState, setSaveState] = useState<'idle' | 'saving' | 'saved'>('idle');
-  // 防抖定时器
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  // 外部 value 变化时同步草稿（非编辑状态）
   useEffect(() => {
     if (!editing) setDraft(value);
   }, [value, editing]);
 
-  /** 触发防抖保存 */
   const triggerSave = (next: string) => {
     setSaveState('saving');
     if (timerRef.current) clearTimeout(timerRef.current);
     timerRef.current = setTimeout(() => {
       onSave(next);
       setSaveState('saved');
-      // 1.5s 后重置状态
       setTimeout(() => setSaveState('idle'), 1500);
     }, 1000);
   };
 
-  /** 处理输入变化 */
   const handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
     const next = e.target.value;
     setDraft(next);
     triggerSave(next);
   };
 
-  /** 切换模式 */
   const handleToggleEdit = () => {
     if (editing) {
-      // 退出编辑：立即保存
       if (timerRef.current) clearTimeout(timerRef.current);
       onSave(draft);
       setSaveState('idle');
@@ -168,7 +127,6 @@ export function NoteEditor({
     setEditing((v) => !v);
   };
 
-  // 清理定时器
   useEffect(() => {
     return () => {
       if (timerRef.current) clearTimeout(timerRef.current);
@@ -179,7 +137,6 @@ export function NoteEditor({
 
   return (
     <div className={cn('w-full', className)}>
-      {/* 头部 */}
       <div className="flex items-center justify-between mb-1.5">
         <div className="flex items-center gap-1.5 text-xs text-content-subtle">
           <Pencil className="w-3 h-3" />
@@ -212,7 +169,6 @@ export function NoteEditor({
         </button>
       </div>
 
-      {/* 内容区 */}
       {editing ? (
         <div>
           <Textarea

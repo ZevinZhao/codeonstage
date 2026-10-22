@@ -1,9 +1,3 @@
-// ============================================================
-// StatusBadge 收藏状态标识
-// - 四种状态：待试用 / 试用中 / 常用 / 已弃用
-// - 每种状态不同颜色
-// - 可点击切换状态（下拉菜单）
-// ============================================================
 import { useState, useRef, useEffect } from 'react';
 import { ChevronDown, Check } from 'lucide-react';
 import { cn } from '@/utils/cn';
@@ -13,43 +7,32 @@ import {
 } from '@/utils/constants';
 import type { FavoriteStatus } from '@/types';
 
-/** 状态颜色映射（圆点 + 文字 + 背景 + 边框） */
 const statusStyles: Record<FavoriteStatus, { dot: string; badge: string }> = {
-  // 待试用：蓝色 #3b82f6
   wishlist: {
     dot: 'bg-info',
     badge: 'bg-info/10 text-info border-info/20',
   },
-  // 试用中：橙色 #f59e0b
   trying: {
     dot: 'bg-warning',
     badge: 'bg-warning/10 text-warning border-warning/20',
   },
-  // 常用：绿色 #22c55e
   frequent: {
     dot: 'bg-success',
     badge: 'bg-success/10 text-success border-success/20',
   },
-  // 已弃用：灰色 #737373
   archived: {
     dot: 'bg-content-subtle',
     badge: 'bg-content-faint/10 text-content-subtle border-content-faint/20',
   },
 };
 
-/** StatusBadge Props */
 interface StatusBadgeProps {
-  /** 当前状态 */
   status: FavoriteStatus;
-  /** 是否可切换 */
   editable?: boolean;
-  /** 状态变化回调 */
   onChange?: (status: FavoriteStatus) => void;
-  /** 自定义类名 */
   className?: string;
 }
 
-/** StatusBadge 组件 */
 export function StatusBadge({
   status,
   editable = false,
@@ -59,7 +42,6 @@ export function StatusBadge({
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
-  // 点击外部关闭下拉
   useEffect(() => {
     if (!open) return;
     const handleClick = (e: MouseEvent) => {
@@ -73,13 +55,11 @@ export function StatusBadge({
 
   const style = statusStyles[status];
 
-  /** 处理选择状态 */
   const handleSelect = (next: FavoriteStatus) => {
     setOpen(false);
     if (next !== status) onChange?.(next);
   };
 
-  // 不可编辑：纯展示
   if (!editable) {
     return (
       <span
@@ -95,7 +75,6 @@ export function StatusBadge({
     );
   }
 
-  // 可编辑：下拉菜单
   return (
     <div ref={ref} className={cn('relative inline-block', className)}>
       <button

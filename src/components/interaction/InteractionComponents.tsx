@@ -1,11 +1,3 @@
-// ============================================================
-// 交互动画组件
-// - 动效规范（emil-design-eng）：
-//   1. MagneticCard：spring 物理驱动（JS 写 transform，无 CSS 过渡，可中断保留速度）
-//   2. ScrollReveal：500ms 强 ease-out，位移收敛（16px），含蓄不夸张
-//   3. CursorGlow：spring 平滑跟随 + 降低透明度（装饰含蓄化）
-//   4. Aurora：无限循环漂移（持续运动，合法的 ease-in-out 场景）
-// ============================================================
 import { type ReactNode } from 'react';
 import {
   useScrollReveal,
@@ -15,7 +7,6 @@ import {
   prefersReducedMotion,
 } from '@/hooks/useInteraction';
 
-/** 滚动揭示容器：进入视口时淡入上移 */
 export function ScrollReveal({
   children,
   delay = 0,
@@ -44,7 +35,6 @@ export function ScrollReveal({
   );
 }
 
-/** 数字递增显示 */
 export function CountUp({
   value,
   duration = 1500,
@@ -70,7 +60,6 @@ export function CountUp({
   );
 }
 
-/** 磁性悬浮卡片：spring 物理驱动 3D 倾斜（无 CSS 过渡，spring 直接写 transform） */
 export function MagneticCard({
   children,
   className = '',
@@ -91,11 +80,9 @@ export function MagneticCard({
   );
 }
 
-/** 流动极光背景 */
 export function AuroraBackground({ className = '' }: { className?: string }) {
   return (
     <div className={`absolute inset-0 overflow-hidden pointer-events-none ${className}`}>
-      {/* 极光光带 1 */}
       <div
         className="absolute -top-1/4 -left-1/4 w-1/2 h-1/2 rounded-full opacity-20 aurora-drift-1"
         style={{
@@ -103,7 +90,6 @@ export function AuroraBackground({ className = '' }: { className?: string }) {
           filter: 'blur(60px)',
         }}
       />
-      {/* 极光光带 2 */}
       <div
         className="absolute top-1/4 -right-1/4 w-1/2 h-1/2 rounded-full opacity-15 aurora-drift-2"
         style={{
@@ -111,7 +97,6 @@ export function AuroraBackground({ className = '' }: { className?: string }) {
           filter: 'blur(60px)',
         }}
       />
-      {/* 极光光带 3 */}
       <div
         className="absolute -bottom-1/4 left-1/3 w-1/2 h-1/2 rounded-full opacity-[0.12] aurora-drift-3"
         style={{
@@ -119,7 +104,6 @@ export function AuroraBackground({ className = '' }: { className?: string }) {
           filter: 'blur(60px)',
         }}
       />
-      {/* 网格纹理 */}
       <div
         className="absolute inset-0 opacity-[0.03]"
         style={{
@@ -132,7 +116,6 @@ export function AuroraBackground({ className = '' }: { className?: string }) {
   );
 }
 
-/** 光标跟随光晕：spring 平滑跟随（果冻拖尾感），透明度克制 */
 export function CursorGlow() {
   const ref = useSmoothFollow<HTMLDivElement>();
 

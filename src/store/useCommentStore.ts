@@ -1,12 +1,11 @@
-// ============================================================
-// 评论 Store - Zustand + localStorage 持久化
-// ============================================================
+
+
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import type { Comment, WorkShowcase } from '@/types';
 import { generateId } from '@/utils/format';
 
-/** 初始示例评论数据 */
+
 const initialComments: Comment[] = [
   {
     id: 'comment-1',
@@ -67,22 +66,22 @@ const initialComments: Comment[] = [
   },
 ];
 
-/** 评论 Store 接口 */
+
 interface CommentState {
   comments: Comment[];
-  /** 添加评论 */
+
   addComment: (comment: Omit<Comment, 'id' | 'createdAt' | 'likes'>) => void;
-  /** 删除评论 */
+
   deleteComment: (id: string) => void;
-  /** 点赞评论 */
+
   likeComment: (id: string) => void;
-  /** 给评论添加成品展示 */
+
   addWorkToComment: (commentId: string, work: Omit<WorkShowcase, 'id'>) => void;
-  /** 获取某 Skill 的评论 */
+
   getCommentsBySkillId: (skillId: string) => Comment[];
 }
 
-/** 评论 Store */
+
 export const useCommentStore = create<CommentState>()(
   persist(
     (set, get) => ({

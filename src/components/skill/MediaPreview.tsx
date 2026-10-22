@@ -1,36 +1,18 @@
-// ============================================================
-// MediaPreview - 效果媒体展示组件（视频/图片，支持轮播）
-// ============================================================
-// 用于在卡片和详情页展示 Skill 的效果视频/图片。
-// - 根据 URL 扩展名自动选择 <video> 或 <img> 渲染
-// - 多个媒体时提供左右箭头 + 底部指示器轮播（fade 过渡）
-// - 加载失败时显示优雅的占位区
-// ============================================================
 import { useState, useRef, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, ImageOff } from 'lucide-react';
 import { cn } from '@/utils/cn';
 
-/** MediaPreview Props */
 interface MediaPreviewProps {
-  /** 媒体 URL 数组（mp4/webm/gif/png/jpg/webp 直链） */
   media: string[];
-  /** 自定义类名 */
   className?: string;
-  /** 视频是否自动播放（默认 true，用于卡片；详情页也可 true） */
   autoPlay?: boolean;
-  /** 视频是否显示控制条（默认 false，卡片不显示；详情页可 true） */
   showControls?: boolean;
-  /** 媒体区高度（默认 'h-48'，即 12rem） */
   height?: string;
-  /** 是否圆角（默认 true） */
   rounded?: boolean;
+  fit?: 'cover' | 'contain';
+  loadingLabel?: string;
 }
 
-/**
- * 根据 URL 扩展名判断媒体类型。
- * .mp4 / .webm / .mov → video；其余（gif/png/jpg/jpeg/webp/svg）→ image。
- * GIF 由浏览器 <img> 自动播放动画。
- */
 function getMediaType(url: string): 'video' | 'image' {
   const clean = url.split('?')[0].split('#')[0].toLowerCase();
   const match = clean.match(/\.([a-z0-9]+)$/);
@@ -39,7 +21,6 @@ function getMediaType(url: string): 'video' | 'image' {
   return 'image';
 }
 
-/** 加载失败时的占位区 */
 function ErrorPlaceholder() {
   return (
     <div className="absolute inset-0 flex flex-col items-center justify-center bg-base-elevated text-content-subtle">
@@ -49,36 +30,27 @@ function ErrorPlaceholder() {
   );
 }
 
-/** 单个媒体项 Props */
 interface MediaItemProps {
   url: string;
   autoPlay: boolean;
   showControls: boolean;
-  /** 是否为当前激活项（控制视频播放/暂停） */
   active: boolean;
+  fit: 'cover' | 'contain';
+  poster?: string;
+  loadingLabel?: string;
 }
 
-/**
- * 单个媒体项：处理单个媒体的渲染与加载失败兜底。
- * 视频通过 ref + useEffect 根据 active 控制 play/pause，
- * 避免轮播中多个视频同时播放。
- * 媒体普遍数 MB（GIF 5-15MB、mp4 8-10MB），加载需数秒：
- * 就绪前显示 shimmer 骨架屏，避免长时间灰底/黑屏被误认为"没有媒体"。
- */
-function MediaItem({ url, autoPlay, showControls, active }: MediaItemProps) {
+function MediaItem({ url, autoPlay, showControls, active, fit, poster, loadingLabel }: MediaItemProps) {
   const [hasError, setHasError] = useState(false);
   const [ready, setReady] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const type = getMediaType(url);
 
-  // 根据激活状态控制视频播放/暂停
   useEffect(() => {
     const video = videoRef.current;
     if (!video || type !== 'video') return;
     if (active && autoPlay) {
-      // play() 返回 Promise，自动播放被阻止时静默处理
       video.play().catch(() => {
-        /* 浏览器阻止自动播放时静默忽略 */
       });
     } else {
       video.pause();
@@ -91,13 +63,32 @@ function MediaItem({ url, autoPlay, showControls, active }: MediaItemProps) {
 
   return (
     <div className="absolute inset-0">
-      {/* 骨架屏：媒体就绪前的微光占位（opacity 动画，reduced-motion 全局降级为静止） */}
-      {!ready && <div className="absolute inset-0 bg-base-elevated animate-pulse" aria-hidden="true" />}
+      {!ready && (
+        <div className="absolute inset-0 overflow-hidden bg-[radial-gradient(circle_at_50%_45%,#303030_0%,#171717_38%,#080808_82%)]" aria-hidden="true">
+          {poster && (
+            <img
+              src={poster}
+              alt=""
+              className="absolute inset-0 h-full w-full object-contain opacity-45 blur-[1px]"
+              draggable={false}
+            />
+          )}
+          {loadingLabel && (
+            <div className="absolute inset-0 flex items-center justify-center bg-black/20 px-10 text-center">
+              <div>
+                <div className="text-[10px] font-black tracking-[0.26em] text-white/28">正在载入预览</div>
+                <div className="mt-3 text-xl font-black tracking-tight text-white/55 sm:text-2xl">{loadingLabel}</div>
+              </div>
+            </div>
+          )}
+        </div>
+      )}
       {type === 'video' ? (
         <video
           ref={videoRef}
           src={url}
-          className={cn('w-full h-full object-cover bg-black/30', !ready && 'opacity-0')}
+          poster={poster}
+          className={cn('w-full h-full bg-black/30', fit === 'contain' ? 'object-contain' : 'object-cover', !ready && 'opacity-0')}
           muted
           loop
           playsInline
@@ -111,7 +102,7 @@ function MediaItem({ url, autoPlay, showControls, active }: MediaItemProps) {
         <img
           src={url}
           alt=""
-          className={cn('w-full h-full object-cover', !ready && 'opacity-0')}
+          className={cn('w-full h-full', fit === 'contain' ? 'object-contain' : 'object-cover', !ready && 'opacity-0')}
           loading="lazy"
           draggable={false}
           onLoad={() => setReady(true)}
@@ -122,7 +113,6 @@ function MediaItem({ url, autoPlay, showControls, active }: MediaItemProps) {
   );
 }
 
-/** MediaPreview 组件 */
 export function MediaPreview({
   media,
   className,
@@ -130,10 +120,11 @@ export function MediaPreview({
   showControls = false,
   height = 'h-48',
   rounded = true,
+  fit = 'cover',
+  loadingLabel,
 }: MediaPreviewProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // 空数组兜底：显示失败占位
   if (!media || media.length === 0) {
     return (
       <div
@@ -151,20 +142,18 @@ export function MediaPreview({
 
   const total = media.length;
   const showCarousel = total > 1;
+  const poster = media.find((item) => getMediaType(item) === 'image');
 
-  /** 切换到上一项（阻止冒泡，避免触发外层卡片点击） */
   const handlePrev = (e: React.MouseEvent) => {
     e.stopPropagation();
     setCurrentIndex((i) => (i - 1 + total) % total);
   };
 
-  /** 切换到下一项 */
   const handleNext = (e: React.MouseEvent) => {
     e.stopPropagation();
     setCurrentIndex((i) => (i + 1) % total);
   };
 
-  /** 跳转到指定项 */
   const handleJump = (e: React.MouseEvent, index: number) => {
     e.stopPropagation();
     setCurrentIndex(index);
@@ -179,9 +168,6 @@ export function MediaPreview({
         className
       )}
     >
-      {/* 媒体轮播：仅挂载当前激活项（其余项不渲染 DOM， */}
-      {/* 避免一页 24 张卡片 × 全部媒体同时发起数百 MB 请求）； */}
-      {/* 切换时挂载新项并由 MediaItem 的骨架屏兜底加载态 */}
       {media.map((url, index) => {
         const active = index === currentIndex;
         if (!active) return null;
@@ -195,15 +181,16 @@ export function MediaPreview({
               autoPlay={autoPlay}
               showControls={showControls}
               active={active}
+              fit={fit}
+              poster={getMediaType(url) === 'video' ? poster : undefined}
+              loadingLabel={loadingLabel}
             />
           </div>
         );
       })}
 
-      {/* 轮播控件：仅当媒体数 > 1 时显示 */}
       {showCarousel && (
         <>
-          {/* 左箭头：hover 媒体区时显示 */}
           <button
             type="button"
             onClick={handlePrev}
@@ -213,7 +200,6 @@ export function MediaPreview({
             <ChevronLeft className="w-4 h-4" />
           </button>
 
-          {/* 右箭头 */}
           <button
             type="button"
             onClick={handleNext}
@@ -223,7 +209,6 @@ export function MediaPreview({
             <ChevronRight className="w-4 h-4" />
           </button>
 
-          {/* 底部指示器：当前项高亮 */}
           <div className="absolute bottom-2 left-1/2 -translate-x-1/2 z-10 flex gap-1.5">
             {media.map((url, index) => (
               <button

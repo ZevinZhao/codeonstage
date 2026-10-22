@@ -1,6 +1,5 @@
-// ============================================================
-// 应用入口 - 挂载 React 应用
-// ============================================================
+
+
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { App } from './App';

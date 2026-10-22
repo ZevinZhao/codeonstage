@@ -1,17 +1,16 @@
-// ============================================================
-// SearchInput 组件 - 搜索输入框带图标
-// ============================================================
+
+
 import { forwardRef, type InputHTMLAttributes } from 'react';
 import { Search, X } from 'lucide-react';
 import { cn } from '@/utils/cn';
 
-/** SearchInput Props */
+
 interface SearchInputProps extends InputHTMLAttributes<HTMLInputElement> {
   onClear?: () => void;
   fullWidth?: boolean;
 }
 
-/** SearchInput 组件 */
+
 export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
   ({ onClear, fullWidth = true, value, className, ...props }, ref) => {
     const hasValue = typeof value === 'string' && value.length > 0;

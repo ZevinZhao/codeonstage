@@ -1,7 +1,5 @@
-// ============================================================
-// 常量映射定义（码上开演 · 新分类体系）
-// 大类（PrimaryCategory）+ Vibe 二级（VibeSubcategory）+ 8 组独立标签维度
-// ============================================================
+
+
 import type {
   PrimaryCategory,
   VibeSubcategory,
@@ -21,11 +19,7 @@ import type {
   Difficulty,
 } from '@/types';
 
-// ============================================================
-// 一级大类（PrimaryCategory）
-// ============================================================
 
-/** 大类中文标签 */
 export const PRIMARY_CATEGORY_LABELS: Record<PrimaryCategory, string> = {
   vibe: 'Vibe 知识大赏',
   promo: '产品宣传与演示',
@@ -38,7 +32,7 @@ export const PRIMARY_CATEGORY_LABELS: Record<PrimaryCategory, string> = {
   uncategorized: '待分类',
 };
 
-/** 大类描述 */
+
 export const PRIMARY_CATEGORY_DESCRIPTIONS: Record<PrimaryCategory, string> = {
   vibe: '知识大赏风格的 Skills、模板、教程和案例',
   promo: '产品发布、软件演示、广告、作品集宣传',
@@ -51,7 +45,7 @@ export const PRIMARY_CATEGORY_DESCRIPTIONS: Record<PrimaryCategory, string> = {
   uncategorized: '信息不足、尚待分类的资源',
 };
 
-/** 大类图标 key（lucide 图标名） */
+
 export const PRIMARY_CATEGORY_ICONS: Record<PrimaryCategory, string> = {
   vibe: 'Sparkles',
   promo: 'Megaphone',
@@ -64,7 +58,7 @@ export const PRIMARY_CATEGORY_ICONS: Record<PrimaryCategory, string> = {
   uncategorized: 'CircleDashed',
 };
 
-/** 大类文本色 */
+
 export const PRIMARY_CATEGORY_COLORS: Record<PrimaryCategory, string> = {
   vibe: 'text-brand-400',
   promo: 'text-orange-400',
@@ -77,7 +71,7 @@ export const PRIMARY_CATEGORY_COLORS: Record<PrimaryCategory, string> = {
   uncategorized: 'text-content-muted',
 };
 
-/** 大类徽章配色（bg/text/border 三件套） */
+
 export const PRIMARY_CATEGORY_BADGE_COLORS: Record<PrimaryCategory, string> = {
   vibe: 'bg-brand-500/10 text-brand-300 border-brand-500/20',
   promo: 'bg-orange-500/10 text-orange-400 border-orange-500/20',
@@ -90,7 +84,7 @@ export const PRIMARY_CATEGORY_BADGE_COLORS: Record<PrimaryCategory, string> = {
   uncategorized: 'bg-gray-500/10 text-gray-400 border-gray-500/20',
 };
 
-/** 所有大类列表（按展示顺序） */
+
 export const ALL_PRIMARY_CATEGORIES: PrimaryCategory[] = [
   'vibe',
   'promo',
@@ -103,11 +97,7 @@ export const ALL_PRIMARY_CATEGORIES: PrimaryCategory[] = [
   'uncategorized',
 ];
 
-// ============================================================
-// Vibe 二级分类（VibeSubcategory，仅 primaryCategory === 'vibe'）
-// ============================================================
 
-/** Vibe 二级分类中文标签 */
 export const VIBE_SUBCATEGORY_LABELS: Record<VibeSubcategory, string> = {
   'principle-demo': '原理演示',
   'cognition-fable': '认知与心理寓言',
@@ -117,7 +107,7 @@ export const VIBE_SUBCATEGORY_LABELS: Record<VibeSubcategory, string> = {
   pending: '待细分',
 };
 
-/** Vibe 二级分类描述 */
+
 export const VIBE_SUBCATEGORY_DESCRIPTIONS: Record<VibeSubcategory, string> = {
   'principle-demo': '用图形运动解释机制、规律、因果',
   'cognition-fable': '用角色、行为或实验场景表达认知偏差',
@@ -127,7 +117,7 @@ export const VIBE_SUBCATEGORY_DESCRIPTIONS: Record<VibeSubcategory, string> = {
   pending: '讲解方式信息不足，待细分',
 };
 
-/** Vibe 二级分类图标 key */
+
 export const VIBE_SUBCATEGORY_ICONS: Record<VibeSubcategory, string> = {
   'principle-demo': 'Lightbulb',
   'cognition-fable': 'Drama',
@@ -137,7 +127,7 @@ export const VIBE_SUBCATEGORY_ICONS: Record<VibeSubcategory, string> = {
   pending: 'CircleDashed',
 };
 
-/** Vibe 二级分类徽章配色 */
+
 export const VIBE_SUBCATEGORY_BADGE_COLORS: Record<VibeSubcategory, string> = {
   'principle-demo': 'bg-violet-500/10 text-violet-400 border-violet-500/20',
   'cognition-fable': 'bg-fuchsia-500/10 text-fuchsia-400 border-fuchsia-500/20',
@@ -147,7 +137,7 @@ export const VIBE_SUBCATEGORY_BADGE_COLORS: Record<VibeSubcategory, string> = {
   pending: 'bg-gray-500/10 text-gray-400 border-gray-500/20',
 };
 
-/** 所有 Vibe 二级分类列表（按展示顺序） */
+
 export const ALL_VIBE_SUBCATEGORIES: VibeSubcategory[] = [
   'principle-demo',
   'cognition-fable',
@@ -157,11 +147,7 @@ export const ALL_VIBE_SUBCATEGORIES: VibeSubcategory[] = [
   'pending',
 ];
 
-// ============================================================
-// 标签维度一：资源形态（ResourceForm）
-// ============================================================
 
-/** 资源形态中文标签 */
 export const RESOURCE_FORM_LABELS: Record<ResourceForm, string> = {
   skill: 'Skill',
   template: '工程模板',
@@ -172,7 +158,7 @@ export const RESOURCE_FORM_LABELS: Record<ResourceForm, string> = {
   case: '作品案例',
 };
 
-/** 资源形态描述 */
+
 export const RESOURCE_FORM_DESCRIPTIONS: Record<ResourceForm, string> = {
   skill: '可安装的技能包，配合 AI Agent 使用',
   template: '可修改复用的动画源码、示例工程',
@@ -183,7 +169,7 @@ export const RESOURCE_FORM_DESCRIPTIONS: Record<ResourceForm, string> = {
   case: '用于参考画面、节奏和表达的作品',
 };
 
-/** 资源形态图标 key */
+
 export const RESOURCE_FORM_ICONS: Record<ResourceForm, string> = {
   skill: 'Package',
   template: 'Code2',
@@ -194,7 +180,7 @@ export const RESOURCE_FORM_ICONS: Record<ResourceForm, string> = {
   case: 'Film',
 };
 
-/** 资源形态徽章配色 */
+
 export const RESOURCE_FORM_BADGE_COLORS: Record<ResourceForm, string> = {
   skill: 'bg-indigo-500/10 text-indigo-400 border-indigo-500/20',
   template: 'bg-violet-500/10 text-violet-400 border-violet-500/20',
@@ -205,7 +191,7 @@ export const RESOURCE_FORM_BADGE_COLORS: Record<ResourceForm, string> = {
   case: 'bg-blue-500/10 text-blue-400 border-blue-500/20',
 };
 
-/** 所有资源形态列表（按展示顺序） */
+
 export const ALL_RESOURCE_FORMS: ResourceForm[] = [
   'skill',
   'template',
@@ -216,11 +202,7 @@ export const ALL_RESOURCE_FORMS: ResourceForm[] = [
   'case',
 ];
 
-// ============================================================
-// 标签维度二：画风（VisualStyle，多选）
-// ============================================================
 
-/** 画风中文标签 */
 export const VISUAL_STYLE_LABELS: Record<VisualStyle, string> = {
   geometric: '极简几何',
   'line-art': '线稿手绘',
@@ -232,7 +214,7 @@ export const VISUAL_STYLE_LABELS: Record<VisualStyle, string> = {
   unknown: '资料不足',
 };
 
-/** 画风描述 */
+
 export const VISUAL_STYLE_DESCRIPTIONS: Record<VisualStyle, string> = {
   geometric: '圆、方块、箭头等几何图形承担主要表达',
   'line-art': '线条、小人、简笔画承担主要表达',
@@ -244,7 +226,7 @@ export const VISUAL_STYLE_DESCRIPTIONS: Record<VisualStyle, string> = {
   unknown: '资料不足，暂不判断画风',
 };
 
-/** 画风图标 key */
+
 export const VISUAL_STYLE_ICONS: Record<VisualStyle, string> = {
   geometric: 'Shapes',
   'line-art': 'PenLine',
@@ -256,7 +238,7 @@ export const VISUAL_STYLE_ICONS: Record<VisualStyle, string> = {
   unknown: 'CircleDashed',
 };
 
-/** 画风徽章配色 */
+
 export const VISUAL_STYLE_BADGE_COLORS: Record<VisualStyle, string> = {
   geometric: 'bg-cyan-500/10 text-cyan-400 border-cyan-500/20',
   'line-art': 'bg-orange-500/10 text-orange-400 border-orange-500/20',
@@ -268,7 +250,7 @@ export const VISUAL_STYLE_BADGE_COLORS: Record<VisualStyle, string> = {
   unknown: 'bg-gray-500/10 text-gray-400 border-gray-500/20',
 };
 
-/** 所有画风列表（按展示顺序） */
+
 export const ALL_VISUAL_STYLES: VisualStyle[] = [
   'geometric',
   'line-art',
@@ -280,11 +262,7 @@ export const ALL_VISUAL_STYLES: VisualStyle[] = [
   'unknown',
 ];
 
-// ============================================================
-// 标签维度三：制作功能（ProductionFunction，多选）
-// ============================================================
 
-/** 制作功能中文标签 */
 export const PRODUCTION_FUNCTION_LABELS: Record<ProductionFunction, string> = {
   'topic-research': '选题研究',
   copywriting: '文案',
@@ -300,7 +278,7 @@ export const PRODUCTION_FUNCTION_LABELS: Record<ProductionFunction, string> = {
   'full-pipeline': '全流程制作',
 };
 
-/** 制作功能描述 */
+
 export const PRODUCTION_FUNCTION_DESCRIPTIONS: Record<ProductionFunction, string> = {
   'topic-research': '检索资料、核实事实、确定选题',
   copywriting: '撰写讲解文案与叙事脚本',
@@ -316,7 +294,7 @@ export const PRODUCTION_FUNCTION_DESCRIPTIONS: Record<ProductionFunction, string
   'full-pipeline': '覆盖从选题到成片的完整流程',
 };
 
-/** 制作功能图标 key */
+
 export const PRODUCTION_FUNCTION_ICONS: Record<ProductionFunction, string> = {
   'topic-research': 'Search',
   copywriting: 'PenLine',
@@ -332,7 +310,7 @@ export const PRODUCTION_FUNCTION_ICONS: Record<ProductionFunction, string> = {
   'full-pipeline': 'Workflow',
 };
 
-/** 制作功能徽章配色 */
+
 export const PRODUCTION_FUNCTION_BADGE_COLORS: Record<ProductionFunction, string> = {
   'topic-research': 'bg-cyan-500/10 text-cyan-400 border-cyan-500/20',
   copywriting: 'bg-sky-500/10 text-sky-400 border-sky-500/20',
@@ -348,7 +326,7 @@ export const PRODUCTION_FUNCTION_BADGE_COLORS: Record<ProductionFunction, string
   'full-pipeline': 'bg-indigo-500/10 text-indigo-400 border-indigo-500/20',
 };
 
-/** 所有制作功能列表（按制作流程顺序） */
+
 export const ALL_PRODUCTION_FUNCTIONS: ProductionFunction[] = [
   'topic-research',
   'copywriting',
@@ -364,11 +342,7 @@ export const ALL_PRODUCTION_FUNCTIONS: ProductionFunction[] = [
   'full-pipeline',
 ];
 
-// ============================================================
-// 标签维度四：声音形式（SoundForm，多选）
-// ============================================================
 
-/** 声音形式中文标签 */
 export const SOUND_FORM_LABELS: Record<SoundForm, string> = {
   'no-voiceover': '无旁白',
   narrated: '配音讲解',
@@ -376,7 +350,7 @@ export const SOUND_FORM_LABELS: Record<SoundForm, string> = {
   sfx: '事件音效',
 };
 
-/** 声音形式描述 */
+
 export const SOUND_FORM_DESCRIPTIONS: Record<SoundForm, string> = {
   'no-voiceover': '成片不使用旁白，画面自己说话',
   narrated: '配音讲解承担叙事',
@@ -384,7 +358,7 @@ export const SOUND_FORM_DESCRIPTIONS: Record<SoundForm, string> = {
   sfx: '动作与事件配有音效',
 };
 
-/** 声音形式图标 key */
+
 export const SOUND_FORM_ICONS: Record<SoundForm, string> = {
   'no-voiceover': 'VolumeX',
   narrated: 'Mic',
@@ -392,7 +366,7 @@ export const SOUND_FORM_ICONS: Record<SoundForm, string> = {
   sfx: 'Zap',
 };
 
-/** 声音形式徽章配色 */
+
 export const SOUND_FORM_BADGE_COLORS: Record<SoundForm, string> = {
   'no-voiceover': 'bg-orange-500/10 text-orange-400 border-orange-500/20',
   narrated: 'bg-amber-500/10 text-amber-400 border-amber-500/20',
@@ -400,14 +374,10 @@ export const SOUND_FORM_BADGE_COLORS: Record<SoundForm, string> = {
   sfx: 'bg-yellow-500/10 text-yellow-400 border-yellow-500/20',
 };
 
-/** 所有声音形式列表 */
+
 export const ALL_SOUND_FORMS: SoundForm[] = ['no-voiceover', 'narrated', 'music', 'sfx'];
 
-// ============================================================
-// 标签维度五：输入方式（InputMethod，多选）
-// ============================================================
 
-/** 输入方式中文标签 */
 export const INPUT_METHOD_LABELS: Record<InputMethod, string> = {
   'topic-input': '输入主题',
   'script-input': '输入文案',
@@ -417,7 +387,7 @@ export const INPUT_METHOD_LABELS: Record<InputMethod, string> = {
   'music-driven': '音乐驱动',
 };
 
-/** 输入方式描述 */
+
 export const INPUT_METHOD_DESCRIPTIONS: Record<InputMethod, string> = {
   'topic-input': '给一个主题，自动完成研究与制作',
   'script-input': '提供现成文案，直接进入制作',
@@ -427,7 +397,7 @@ export const INPUT_METHOD_DESCRIPTIONS: Record<InputMethod, string> = {
   'music-driven': '以音乐为起点驱动画面生成',
 };
 
-/** 输入方式图标 key */
+
 export const INPUT_METHOD_ICONS: Record<InputMethod, string> = {
   'topic-input': 'Hash',
   'script-input': 'FileText',
@@ -437,7 +407,7 @@ export const INPUT_METHOD_ICONS: Record<InputMethod, string> = {
   'music-driven': 'Music4',
 };
 
-/** 输入方式徽章配色 */
+
 export const INPUT_METHOD_BADGE_COLORS: Record<InputMethod, string> = {
   'topic-input': 'bg-green-500/10 text-green-400 border-green-500/20',
   'script-input': 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20',
@@ -447,7 +417,7 @@ export const INPUT_METHOD_BADGE_COLORS: Record<InputMethod, string> = {
   'music-driven': 'bg-cyan-500/10 text-cyan-400 border-cyan-500/20',
 };
 
-/** 所有输入方式列表 */
+
 export const ALL_INPUT_METHODS: InputMethod[] = [
   'topic-input',
   'script-input',
@@ -457,11 +427,7 @@ export const ALL_INPUT_METHODS: InputMethod[] = [
   'music-driven',
 ];
 
-// ============================================================
-// 标签维度六：实现技术（Technology，多选）
-// ============================================================
 
-/** 实现技术中文标签 */
 export const TECHNOLOGY_LABELS: Record<Technology, string> = {
   canvas: 'Canvas',
   'html-css': 'HTML/CSS',
@@ -474,7 +440,7 @@ export const TECHNOLOGY_LABELS: Record<Technology, string> = {
   blender: 'Blender',
 };
 
-/** 实现技术描述 */
+
 export const TECHNOLOGY_DESCRIPTIONS: Record<Technology, string> = {
   canvas: '用 Canvas API 逐帧绘制画面',
   'html-css': '以 HTML/CSS 为主体的动画实现',
@@ -487,7 +453,7 @@ export const TECHNOLOGY_DESCRIPTIONS: Record<Technology, string> = {
   blender: 'Blender 三维制作与渲染',
 };
 
-/** 实现技术图标 key */
+
 export const TECHNOLOGY_ICONS: Record<Technology, string> = {
   canvas: 'Frame',
   'html-css': 'Code2',
@@ -500,7 +466,7 @@ export const TECHNOLOGY_ICONS: Record<Technology, string> = {
   blender: 'Blend',
 };
 
-/** 实现技术徽章配色 */
+
 export const TECHNOLOGY_BADGE_COLORS: Record<Technology, string> = {
   canvas: 'bg-pink-500/10 text-pink-400 border-pink-500/20',
   'html-css': 'bg-rose-500/10 text-rose-400 border-rose-500/20',
@@ -513,7 +479,7 @@ export const TECHNOLOGY_BADGE_COLORS: Record<Technology, string> = {
   blender: 'bg-orange-500/10 text-orange-400 border-orange-500/20',
 };
 
-/** 所有实现技术列表 */
+
 export const ALL_TECHNOLOGIES: Technology[] = [
   'canvas',
   'html-css',
@@ -526,11 +492,7 @@ export const ALL_TECHNOLOGIES: Technology[] = [
   'blender',
 ];
 
-// ============================================================
-// 标签维度七：使用平台（Platform，多选）
-// ============================================================
 
-/** 使用平台中文标签 */
 export const PLATFORM_LABELS: Record<Platform, string> = {
   'claude-code': 'Claude Code',
   codex: 'Codex',
@@ -538,7 +500,7 @@ export const PLATFORM_LABELS: Record<Platform, string> = {
   unknown: '待确认',
 };
 
-/** 使用平台描述 */
+
 export const PLATFORM_DESCRIPTIONS: Record<Platform, string> = {
   'claude-code': '配合 Claude Code 使用',
   codex: '配合 Codex 使用',
@@ -546,7 +508,7 @@ export const PLATFORM_DESCRIPTIONS: Record<Platform, string> = {
   unknown: '平台信息待确认',
 };
 
-/** 使用平台图标 key */
+
 export const PLATFORM_ICONS: Record<Platform, string> = {
   'claude-code': 'Terminal',
   codex: 'Bot',
@@ -554,7 +516,7 @@ export const PLATFORM_ICONS: Record<Platform, string> = {
   unknown: 'CircleDashed',
 };
 
-/** 使用平台徽章配色 */
+
 export const PLATFORM_BADGE_COLORS: Record<Platform, string> = {
   'claude-code': 'bg-purple-500/10 text-purple-400 border-purple-500/20',
   codex: 'bg-violet-500/10 text-violet-400 border-violet-500/20',
@@ -562,14 +524,10 @@ export const PLATFORM_BADGE_COLORS: Record<Platform, string> = {
   unknown: 'bg-gray-500/10 text-gray-400 border-gray-500/20',
 };
 
-/** 所有使用平台列表 */
+
 export const ALL_PLATFORMS: Platform[] = ['claude-code', 'codex', 'other-agent', 'unknown'];
 
-// ============================================================
-// 标签维度八：模型（ModelTag，多选）
-// ============================================================
 
-/** 模型中文标签 */
 export const MODEL_LABELS: Record<ModelTag, string> = {
   'opus-55': 'Opus 5.5',
   'other-model': '其他模型',
@@ -577,7 +535,7 @@ export const MODEL_LABELS: Record<ModelTag, string> = {
   unknown: '待确认',
 };
 
-/** 模型描述 */
+
 export const MODEL_DESCRIPTIONS: Record<ModelTag, string> = {
   'opus-55': '面向 Claude Opus 5.5 优化',
   'other-model': '指定其他模型（Sonnet、GPT 等）',
@@ -585,7 +543,7 @@ export const MODEL_DESCRIPTIONS: Record<ModelTag, string> = {
   unknown: '模型信息待确认',
 };
 
-/** 模型图标 key */
+
 export const MODEL_ICONS: Record<ModelTag, string> = {
   'opus-55': 'Brain',
   'other-model': 'Cpu',
@@ -593,7 +551,7 @@ export const MODEL_ICONS: Record<ModelTag, string> = {
   unknown: 'CircleDashed',
 };
 
-/** 模型徽章配色 */
+
 export const MODEL_BADGE_COLORS: Record<ModelTag, string> = {
   'opus-55': 'bg-yellow-500/10 text-yellow-400 border-yellow-500/20',
   'other-model': 'bg-amber-500/10 text-amber-400 border-amber-500/20',
@@ -601,26 +559,22 @@ export const MODEL_BADGE_COLORS: Record<ModelTag, string> = {
   unknown: 'bg-gray-500/10 text-gray-400 border-gray-500/20',
 };
 
-/** 所有模型列表 */
+
 export const ALL_MODELS: ModelTag[] = ['opus-55', 'other-model', 'model-agnostic', 'unknown'];
 
-// ============================================================
-// 标签维度元数据（供筛选 UI 使用）
-// ============================================================
 
-/** 单个标签维度元数据 */
 export interface TagDimensionMeta {
-  /** SkillTags 上的字段名 */
+
   key: TagDimensionKey;
-  /** 中文标签 */
+
   label: string;
-  /** 维度说明 */
+
   description: string;
-  /** 该维度全部取值 */
+
   values: string[];
 }
 
-/** 8 个标签维度元数据（按固定顺序） */
+
 export const TAG_DIMENSIONS_META: TagDimensionMeta[] = [
   {
     key: 'forms',
@@ -672,23 +626,19 @@ export const TAG_DIMENSIONS_META: TagDimensionMeta[] = [
   },
 ];
 
-// ============================================================
-// 筛选维度元数据与首屏/更多筛选分组
-// ============================================================
 
-/** 筛选维度元数据（大类 + Vibe 二级 + 8 个标签维度） */
 export interface FilterDimensionMeta {
-  /** 维度 key */
+
   key: FilterDimensionKey;
-  /** 中文标签 */
+
   label: string;
-  /** 维度说明 */
+
   description: string;
-  /** 该维度全部取值 */
+
   values: string[];
 }
 
-/** 全部筛选维度元数据 */
+
 export const FILTER_DIMENSIONS_META: FilterDimensionMeta[] = [
   {
     key: 'primaryCategory',
@@ -705,7 +655,7 @@ export const FILTER_DIMENSIONS_META: FilterDimensionMeta[] = [
   ...TAG_DIMENSIONS_META,
 ];
 
-/** 首屏筛选维度：大类、资源形态、画风、制作功能 */
+
 export const FIRST_SCREEN_FILTER_DIMENSIONS: FilterDimensionKey[] = [
   'primaryCategory',
   'forms',
@@ -713,7 +663,7 @@ export const FIRST_SCREEN_FILTER_DIMENSIONS: FilterDimensionKey[] = [
   'functions',
 ];
 
-/** 更多筛选维度：Vibe 细分与其余标签维度 */
+
 export const MORE_FILTER_DIMENSIONS: FilterDimensionKey[] = [
   'vibeSubcategory',
   'soundForms',
@@ -723,11 +673,7 @@ export const MORE_FILTER_DIMENSIONS: FilterDimensionKey[] = [
   'models',
 ];
 
-// ============================================================
-// 维度取值 → 中文标签 / 徽章配色 的统一查询
-// ============================================================
 
-/** 各维度的取值中文标签映射 */
 const DIMENSION_LABEL_MAPS: Record<FilterDimensionKey, Record<string, string>> = {
   primaryCategory: PRIMARY_CATEGORY_LABELS,
   vibeSubcategory: VIBE_SUBCATEGORY_LABELS,
@@ -741,7 +687,7 @@ const DIMENSION_LABEL_MAPS: Record<FilterDimensionKey, Record<string, string>> =
   models: MODEL_LABELS,
 };
 
-/** 各维度的取值徽章配色映射 */
+
 const DIMENSION_BADGE_COLOR_MAPS: Record<FilterDimensionKey, Record<string, string>> = {
   primaryCategory: PRIMARY_CATEGORY_BADGE_COLORS,
   vibeSubcategory: VIBE_SUBCATEGORY_BADGE_COLORS,
@@ -755,7 +701,7 @@ const DIMENSION_BADGE_COLOR_MAPS: Record<FilterDimensionKey, Record<string, stri
   models: MODEL_BADGE_COLORS,
 };
 
-/** 各维度的取值描述映射 */
+
 const DIMENSION_DESCRIPTION_MAPS: Record<FilterDimensionKey, Record<string, string>> = {
   primaryCategory: PRIMARY_CATEGORY_DESCRIPTIONS,
   vibeSubcategory: VIBE_SUBCATEGORY_DESCRIPTIONS,
@@ -769,48 +715,44 @@ const DIMENSION_DESCRIPTION_MAPS: Record<FilterDimensionKey, Record<string, stri
   models: MODEL_DESCRIPTIONS,
 };
 
-/** 获取筛选维度的中文名称 */
+
 export function getFilterDimensionLabel(dimension: FilterDimensionKey): string {
   const meta = FILTER_DIMENSIONS_META.find((d) => d.key === dimension);
   return meta?.label ?? dimension;
 }
 
-/** 获取筛选维度的全部取值列表 */
+
 export function getFilterDimensionValues(dimension: FilterDimensionKey): string[] {
   const meta = FILTER_DIMENSIONS_META.find((d) => d.key === dimension);
   return meta?.values ?? [];
 }
 
-/** 获取维度某个取值的中文标签（未知取值原样返回） */
+
 export function getTagLabel(dimension: FilterDimensionKey, value: string): string {
   return DIMENSION_LABEL_MAPS[dimension]?.[value] ?? value;
 }
 
-/** 获取维度某个取值的描述 */
+
 export function getTagDescription(dimension: FilterDimensionKey, value: string): string {
   return DIMENSION_DESCRIPTION_MAPS[dimension]?.[value] ?? '';
 }
 
-/** 获取维度某个取值的徽章配色（bg/text/border 三件套） */
+
 export function getTagBadgeColor(dimension: FilterDimensionKey, value: string): string {
   return DIMENSION_BADGE_COLOR_MAPS[dimension]?.[value] ?? DEFAULT_TAG_COLOR;
 }
 
-// ============================================================
-// SkillTags 摊平与搜索辅助
-// ============================================================
 
-/** 摊平后的单个标签 */
 export interface FlatTag {
-  /** 所属标签维度 */
+
   dimension: TagDimensionKey;
-  /** 维度内取值 */
+
   value: string;
-  /** 中文标签 */
+
   label: string;
 }
 
-/** 把 SkillTags 摊平为标签列表（按维度固定顺序） */
+
 export function flattenSkillTags(tags: SkillTags): FlatTag[] {
   const result: FlatTag[] = [];
   for (const dim of TAG_DIMENSIONS_META) {
@@ -823,7 +765,7 @@ export function flattenSkillTags(tags: SkillTags): FlatTag[] {
   return result;
 }
 
-/** 提取标签的可搜索文本（含取值本身与中文标签），用于关键词搜索 */
+
 export function getSkillTagTexts(tags: SkillTags | string[]): string[] {
   if (Array.isArray(tags)) return tags;
   const texts: string[] = [];
@@ -837,11 +779,7 @@ export function getSkillTagTexts(tags: SkillTags | string[]): string[] {
   return texts;
 }
 
-// ============================================================
-// 自由标签（许愿池等用户输入标签）配色
-// ============================================================
 
-/** 自由标签备选配色（按哈希轮转） */
 const FREE_TAG_PALETTE: string[] = [
   'bg-violet-500/10 text-violet-400 border-violet-500/20',
   'bg-blue-500/10 text-blue-400 border-blue-500/20',
@@ -851,10 +789,10 @@ const FREE_TAG_PALETTE: string[] = [
   'bg-pink-500/10 text-pink-400 border-pink-500/20',
 ];
 
-/** 默认标签颜色 */
+
 export const DEFAULT_TAG_COLOR = 'bg-base-elevated text-content-muted border-border';
 
-/** 简单字符串哈希 */
+
 function hashString(str: string): number {
   let hash = 0;
   for (let i = 0; i < str.length; i++) {
@@ -863,17 +801,13 @@ function hashString(str: string): number {
   return hash;
 }
 
-/** 获取自由标签（用户输入）的配色：按内容稳定哈希轮转取色 */
+
 export function getFreeTagColor(tag: string): string {
   if (!tag) return DEFAULT_TAG_COLOR;
   return FREE_TAG_PALETTE[hashString(tag) % FREE_TAG_PALETTE.length];
 }
 
-// ============================================================
-// 其他常量（保留）
-// ============================================================
 
-/** 收藏状态映射 */
 export const FAVORITE_STATUS_LABELS: Record<FavoriteStatus, string> = {
   wishlist: '待试用',
   trying: '试用中',
@@ -881,7 +815,7 @@ export const FAVORITE_STATUS_LABELS: Record<FavoriteStatus, string> = {
   archived: '已弃用',
 };
 
-/** 收藏状态颜色 */
+
 export const FAVORITE_STATUS_COLORS: Record<FavoriteStatus, string> = {
   wishlist: 'bg-yellow-500/10 text-yellow-400 border-yellow-500/20',
   trying: 'bg-blue-500/10 text-blue-400 border-blue-500/20',
@@ -889,7 +823,7 @@ export const FAVORITE_STATUS_COLORS: Record<FavoriteStatus, string> = {
   archived: 'bg-gray-500/10 text-gray-400 border-gray-500/20',
 };
 
-/** 许愿状态映射 */
+
 export const WISH_STATUS_LABELS: Record<WishStatus, string> = {
   open: '待认领',
   claimed: '已认领',
@@ -897,7 +831,7 @@ export const WISH_STATUS_LABELS: Record<WishStatus, string> = {
   completed: '已完成',
 };
 
-/** 许愿状态颜色 */
+
 export const WISH_STATUS_COLORS: Record<WishStatus, string> = {
   open: 'bg-yellow-500/10 text-yellow-400 border-yellow-500/20',
   claimed: 'bg-blue-500/10 text-blue-400 border-blue-500/20',
@@ -905,25 +839,25 @@ export const WISH_STATUS_COLORS: Record<WishStatus, string> = {
   completed: 'bg-green-500/10 text-green-400 border-green-500/20',
 };
 
-/** 难度颜色映射 */
+
 export const DIFFICULTY_COLORS: Record<Difficulty, string> = {
   入门: 'bg-green-500/10 text-green-400 border-green-500/20',
   进阶: 'bg-yellow-500/10 text-yellow-400 border-yellow-500/20',
   高级: 'bg-red-500/10 text-red-400 border-red-500/20',
 };
 
-/** 语言映射 */
+
 export const LANGUAGE_LABELS: Record<string, string> = {
   zh: '中文',
   en: '英文',
   'zh-en': '中英双语',
 };
 
-/** 所有难度列表 */
+
 export const ALL_DIFFICULTIES: Difficulty[] = ['入门', '进阶', '高级'];
 
-/** 所有收藏状态列表 */
+
 export const ALL_FAVORITE_STATUSES: FavoriteStatus[] = ['wishlist', 'trying', 'frequent', 'archived'];
 
-/** 所有许愿状态列表 */
+
 export const ALL_WISH_STATUSES: WishStatus[] = ['open', 'claimed', 'in-progress', 'completed'];

@@ -1,6 +1,3 @@
-// ============================================================
-// WishDetail - 许愿详情组件（Modal）
-// ============================================================
 import { useState, useEffect } from 'react';
 import {
   ThumbsUp,
@@ -34,7 +31,6 @@ import { formatRelativeTime, formatNumber } from '@/utils/format';
 import { getCurrentUser } from '@/utils/userStorage';
 import { cn } from '@/utils/cn';
 
-/** WishDetail Props */
 interface WishDetailProps {
   wish: Wish | null;
   open: boolean;
@@ -43,13 +39,11 @@ interface WishDetailProps {
   onVote: (id: string) => void;
 }
 
-/** 大类下拉选项 */
 const primaryCategoryOptions = ALL_PRIMARY_CATEGORIES.map((c) => ({
   value: c,
   label: PRIMARY_CATEGORY_LABELS[c],
 }));
 
-/** WishDetail 组件 */
 export function WishDetail({ wish, open, onClose, isVoted, onVote }: WishDetailProps) {
   const claimWish = useWishStore((s) => s.claimWish);
   const completeWish = useWishStore((s) => s.completeWish);
@@ -60,13 +54,11 @@ export function WishDetail({ wish, open, onClose, isVoted, onVote }: WishDetailP
   const [showEdit, setShowEdit] = useState(false);
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
 
-  // 编辑表单状态
   const [editTitle, setEditTitle] = useState('');
   const [editDesc, setEditDesc] = useState('');
   const [editPrimaryCategory, setEditPrimaryCategory] = useState<PrimaryCategory>('vibe');
   const [editTags, setEditTags] = useState<string[]>([]);
 
-  // 当 wish 变化时初始化编辑表单
   useEffect(() => {
     if (wish && showEdit) {
       setEditTitle(wish.title);
@@ -81,30 +73,25 @@ export function WishDetail({ wish, open, onClose, isVoted, onVote }: WishDetailP
   const currentUser = getCurrentUser();
   const isAuthor = wish.authorName === currentUser.userName;
 
-  /** 投票 */
   const handleVote = () => {
     onVote(wish.id);
   };
 
-  /** 认领 */
   const handleClaim = (id: string) => {
     claimWish(id, currentUser.userName, currentUser.userAvatar);
     toast.success('认领成功！请尽快开始制作');
   };
 
-  /** 提交成果 */
   const handleSubmitResult = (id: string, resultUrl: string) => {
     completeWish(id, resultUrl);
     toast.success('成果已提交，感谢你的贡献！');
   };
 
-  /** 放弃认领 */
   const handleAbandon = (id: string) => {
     abandonClaim(id);
     toast.info('已放弃认领');
   };
 
-  /** 删除 */
   const handleDelete = () => {
     removeWish(wish.id);
     toast.success('需求已删除');
@@ -112,7 +99,6 @@ export function WishDetail({ wish, open, onClose, isVoted, onVote }: WishDetailP
     onClose();
   };
 
-  /** 保存编辑 */
   const handleSaveEdit = () => {
     if (!editTitle.trim() || !editDesc.trim()) {
       toast.error('标题和描述不能为空');
@@ -137,7 +123,6 @@ export function WishDetail({ wish, open, onClose, isVoted, onVote }: WishDetailP
         size="lg"
       >
         <div className="space-y-5">
-          {/* 状态 + 分类 */}
           <div className="flex items-center justify-between gap-2">
             <Badge color={WISH_STATUS_BADGE_COLOR[wish.status]} size="md">
               <span
@@ -154,17 +139,14 @@ export function WishDetail({ wish, open, onClose, isVoted, onVote }: WishDetailP
             </Badge>
           </div>
 
-          {/* 标题 */}
           <h2 className="text-xl font-semibold text-content leading-snug">
             {wish.title}
           </h2>
 
-          {/* 描述 */}
           <p className="text-sm text-content-muted leading-relaxed whitespace-pre-wrap">
             {wish.description}
           </p>
 
-          {/* 标签 */}
           {wish.tags.length > 0 && (
             <div className="flex flex-wrap gap-1.5">
               {wish.tags.map((tag) => (
@@ -175,7 +157,6 @@ export function WishDetail({ wish, open, onClose, isVoted, onVote }: WishDetailP
             </div>
           )}
 
-          {/* 提出者 + 时间 */}
           <div className="flex flex-wrap items-center gap-4 py-3 border-y border-border-subtle text-sm">
             <div className="flex items-center gap-2">
               <Avatar src={wish.authorAvatar} name={wish.authorName} size="sm" />
@@ -193,7 +174,6 @@ export function WishDetail({ wish, open, onClose, isVoted, onVote }: WishDetailP
             </div>
           </div>
 
-          {/* 认领者信息 */}
           {wish.claimantName && wish.status !== 'open' && (
             <div className="flex items-center gap-2 p-3 rounded-lg bg-white/[0.03] border border-border-subtle">
               <UserCheck className="w-4 h-4 text-content-subtle" />
@@ -209,7 +189,6 @@ export function WishDetail({ wish, open, onClose, isVoted, onVote }: WishDetailP
             </div>
           )}
 
-          {/* 成果链接 */}
           {wish.status === 'completed' && wish.resultUrl && (
             <div className="flex items-center gap-2 p-3 rounded-lg bg-success/5 border border-success/15">
               <Link2 className="w-4 h-4 text-success" />
@@ -226,7 +205,6 @@ export function WishDetail({ wish, open, onClose, isVoted, onVote }: WishDetailP
             </div>
           )}
 
-          {/* 投票区 */}
           <div className="flex items-center justify-between">
             <button
               onClick={handleVote}
@@ -245,7 +223,6 @@ export function WishDetail({ wish, open, onClose, isVoted, onVote }: WishDetailP
               </span>
             </button>
 
-            {/* 作者操作 */}
             {isAuthor && (
               <div className="flex items-center gap-2">
                 <Button
@@ -269,8 +246,7 @@ export function WishDetail({ wish, open, onClose, isVoted, onVote }: WishDetailP
             )}
           </div>
 
-          {/* 认领操作区 */}
-          <div className="pt-4 border-t border-border-subtle">
+          <div className="rounded-xl bg-white/[0.025] p-4">
             <div className="flex items-center gap-2 mb-3">
               <User className="w-4 h-4 text-content-subtle" />
               <span className="text-sm text-content-muted">认领与制作</span>
@@ -300,7 +276,6 @@ export function WishDetail({ wish, open, onClose, isVoted, onVote }: WishDetailP
         </div>
       </Modal>
 
-      {/* 编辑弹窗 */}
       <Modal
         open={showEdit}
         onClose={() => setShowEdit(false)}
@@ -370,7 +345,6 @@ export function WishDetail({ wish, open, onClose, isVoted, onVote }: WishDetailP
         </div>
       </Modal>
 
-      {/* 删除确认 */}
       <Modal
         open={showDeleteConfirm}
         onClose={() => setShowDeleteConfirm(false)}

@@ -1,9 +1,6 @@
-// ============================================================
-// 扭蛋机组件 - 随机抽取 Skill
-// ============================================================
-import { useState, useCallback } from 'react';
+import { useCallback, useEffect, useMemo, useState, type CSSProperties } from 'react';
 import { Link } from 'react-router-dom';
-import { Dices, RefreshCw, ArrowRight, Sparkles, Zap } from 'lucide-react';
+import { ArrowRight, Check, Dices, RefreshCw, RotateCw, Sparkles, Zap } from 'lucide-react';
 import { skills } from '@/data';
 import type { Skill } from '@/types';
 import {
@@ -14,386 +11,211 @@ import {
   getTagBadgeColor,
 } from '@/utils/constants';
 
-type GachaState = 'idle' | 'shaking' | 'dropping' | 'cracking' | 'result';
+type GachaState = 'idle' | 'shaking' | 'dropping' | 'revealing' | 'result';
 
-// 扭蛋颜色组合
 const CAPSULE_COLORS = [
-  { top: '#8B5CF6', bottom: '#C4B5FD' }, // 紫
-  { top: '#EC4899', bottom: '#F9A8D4' }, // 粉
-  { top: '#06B6D4', bottom: '#67E8F9' }, // 青
-  { top: '#F59E0B', bottom: '#FCD34D' }, // 橙
-  { top: '#10B981', bottom: '#6EE7B7' }, // 绿
-  { top: '#3B82F6', bottom: '#93C5FD' }, // 蓝
+  { top: '#ef5a45', bottom: '#ffc4b8', glow: 'rgba(239,90,69,.38)' },
+  { top: '#f2c94c', bottom: '#fff0ad', glow: 'rgba(242,201,76,.34)' },
+  { top: '#43a7a3', bottom: '#b7ebe5', glow: 'rgba(67,167,163,.34)' },
+  { top: '#6378d6', bottom: '#c9d3ff', glow: 'rgba(99,120,214,.34)' },
+  { top: '#c56bb4', bottom: '#f2c5e8', glow: 'rgba(197,107,180,.34)' },
+  { top: '#7fa958', bottom: '#d7edbb', glow: 'rgba(127,169,88,.34)' },
 ];
 
-export function GashaponMachine() {
+const CAPSULES = [
+  [9, 53, 54, -18, 0], [23, 68, 58, 22, 2], [41, 60, 55, -8, 3], [59, 69, 59, 14, 1],
+  [77, 57, 54, -20, 4], [13, 34, 52, 18, 5], [31, 41, 57, -24, 1], [50, 36, 54, 12, 0],
+  [68, 40, 58, -9, 2], [82, 31, 50, 21, 3], [22, 17, 52, -13, 4], [42, 20, 55, 17, 5],
+  [61, 17, 51, -19, 0], [74, 11, 48, 9, 1], [5, 16, 49, 24, 3],
+] as const;
+
+function Capsule({ top, bottom, className = '', style }: { top: string; bottom: string; className?: string; style?: CSSProperties }) {
+  return (
+    <div
+      className={`relative overflow-hidden rounded-full border border-black/20 ${className}`}
+      style={{ background: `linear-gradient(180deg, ${top} 0 48%, #ece7db 48% 52%, ${bottom} 52% 100%)`, boxShadow: 'inset -7px -8px 12px rgba(0,0,0,.17), inset 5px 5px 8px rgba(255,255,255,.28), 0 4px 9px rgba(0,0,0,.28)', ...style }}
+    >
+      <span className="absolute left-[21%] top-[13%] h-[22%] w-[34%] -rotate-[18deg] rounded-full bg-white/45 blur-[1px]" />
+      <span className="absolute inset-x-0 top-[48%] h-[3px] bg-black/20" />
+      <span className="absolute bottom-[16%] right-[20%] h-[7%] w-[7%] rounded-full bg-black/15" />
+    </div>
+  );
+}
+
+export function GashaponMachine({ pool }: { pool?: Skill[] }) {
+  const availableSkills = pool?.length ? pool : skills;
   const [state, setState] = useState<GachaState>('idle');
   const [result, setResult] = useState<Skill | null>(null);
-  const [colorIdx, setColorIdx] = useState(0);
+  const [colorIndex, setColorIndex] = useState(1);
 
-  const handleDraw = useCallback(() => {
-    if (state === 'shaking' || state === 'dropping' || state === 'cracking') return;
+  useEffect(() => {
+    setState('idle');
+    setResult(null);
+  }, [pool]);
 
-    // 随机选一个 skill
-    const randomSkill = skills[Math.floor(Math.random() * skills.length)];
-    const randomColor = Math.floor(Math.random() * CAPSULE_COLORS.length);
-    setResult(randomSkill);
-    setColorIdx(randomColor);
-
-    // 动画序列：摇晃 → 掉落 → 破开 → 结果
+  const draw = useCallback(() => {
+    if (state === 'shaking' || state === 'dropping' || state === 'revealing') return;
+    const nextResult = availableSkills[Math.floor(Math.random() * availableSkills.length)];
+    setResult(nextResult);
+    setColorIndex(Math.floor(Math.random() * CAPSULE_COLORS.length));
     setState('shaking');
-    setTimeout(() => setState('dropping'), 900);
-    setTimeout(() => setState('cracking'), 1600);
-    setTimeout(() => setState('result'), 2200);
+    window.setTimeout(() => setState('dropping'), 950);
+    window.setTimeout(() => setState('revealing'), 1700);
+    window.setTimeout(() => setState('result'), 2250);
+  }, [availableSkills, state]);
+
+  const capsule = CAPSULE_COLORS[colorIndex];
+  const busy = state === 'shaking' || state === 'dropping' || state === 'revealing';
+  const status = useMemo(() => {
+    if (state === 'shaking') return ['搅拌中', '机械盘正在混合扭蛋'];
+    if (state === 'dropping') return ['出货中', '扭蛋正在通过落球通道'];
+    if (state === 'revealing') return ['开启中', '正在读取内部 Skill'];
+    if (state === 'result') return ['抽取完成', '扭蛋已到达取物仓'];
+    return ['等待投币', '转动把手，随机获得一个 Skill'];
   }, [state]);
 
-
-  const capsule = CAPSULE_COLORS[colorIdx];
-  const isAnimating = state === 'shaking' || state === 'dropping' || state === 'cracking';
-
   return (
-    <div className="flex flex-col items-center">
-      {/* ========== 扭蛋机本体 ========== */}
-      <div className="relative" style={{ width: 280, height: 380 }}>
-        {/* 顶部圆罩 */}
-        <div
-          className={`absolute left-1/2 -translate-x-1/2 top-0 ${state === 'shaking' ? 'gacha-shake' : ''}`}
-          style={{
-            width: 240,
-            height: 240,
-            borderRadius: '50% 50% 12px 12px',
-            background:
-              'linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.02) 50%, rgba(255,255,255,0.05) 100%)',
-            border: '2px solid rgba(255,255,255,0.12)',
-            borderBottom: 'none',
-            overflow: 'hidden',
-            boxShadow:
-              'inset 0 0 30px rgba(139,92,246,0.15), 0 0 40px rgba(139,92,246,0.1)',
-            backdropFilter: 'blur(4px)',
-          }}
-        >
-          {/* 玻璃高光 */}
-          <div
-            className="absolute top-4 left-8 opacity-30"
-            style={{
-              width: 80,
-              height: 60,
-              borderRadius: '50%',
-              background: 'linear-gradient(135deg, rgba(255,255,255,0.4), transparent)',
-              filter: 'blur(8px)',
-            }}
-          />
+    <div className="relative mx-auto grid w-full max-w-[1180px] items-center gap-5 lg:grid-cols-[minmax(480px,1.08fr)_minmax(320px,.72fr)] lg:gap-8">
+      <section className="relative flex min-h-[680px] items-center justify-center overflow-hidden rounded-[10px] border border-white/[0.09] bg-[#0a0a0a] px-3 py-7 sm:px-8">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_38%,rgba(255,255,255,.09),transparent_36%),linear-gradient(115deg,transparent_0_48%,rgba(255,255,255,.018)_48%_52%,transparent_52%)]" />
+        <div className="pointer-events-none absolute bottom-7 h-8 w-[420px] max-w-[80%] rounded-full bg-black blur-xl" />
 
-          {/* 内部小球（装饰） */}
-          {[
-            { c: '#8B5CF6', s: 22, x: 40, y: 50 },
-            { c: '#EC4899', s: 18, x: 170, y: 40 },
-            { c: '#06B6D4', s: 20, x: 60, y: 140 },
-            { c: '#F59E0B', s: 16, x: 180, y: 130 },
-            { c: '#10B981', s: 24, x: 100, y: 170 },
-            { c: '#3B82F6', s: 18, x: 150, y: 180 },
-            { c: '#8B5CF6', s: 14, x: 30, y: 100 },
-            { c: '#EC4899', s: 16, x: 200, y: 90 },
-          ].map((ball, i) => (
-            <div
-              key={i}
-              className={`absolute rounded-full ${state === 'shaking' ? 'gacha-ball-roll' : ''}`}
-              style={{
-                width: ball.s,
-                height: ball.s,
-                background: `radial-gradient(circle at 30% 30%, ${ball.c}, ${ball.c}88)`,
-                left: ball.x,
-                top: ball.y,
-                animationDelay: `${i * 0.08}s`,
-                boxShadow: `0 2px 8px ${ball.c}44`,
-              }}
-            />
-          ))}
-
-          {/* 顶部标识 */}
-          <div className="absolute top-3 left-1/2 -translate-x-1/2 text-xs font-bold text-content-muted tracking-wider">
-            SKILL
+        <div className={`gacha-machine relative h-[620px] w-[370px] max-w-full origin-bottom ${state === 'shaking' ? 'gacha-machine-shake' : ''}`} aria-label="Skill 扭蛋机">
+          <div className="absolute left-1/2 top-0 z-20 h-[58px] w-[326px] -translate-x-1/2 rounded-t-[24px] border border-black/40 bg-[linear-gradient(180deg,#f7f3e9_0%,#d5d0c5_100%)] shadow-[inset_0_2px_1px_rgba(255,255,255,.8),0_6px_18px_rgba(0,0,0,.35)]">
+            <div className="absolute inset-x-3 top-2.5 flex h-[34px] items-center justify-between rounded-[7px] border border-black/20 bg-[#e94f37] px-4 text-[#fff8ea] shadow-[inset_0_2px_5px_rgba(0,0,0,.18)]">
+              <span className="text-[10px] font-black tracking-[0.22em]">SKILL CAPSULE</span>
+              <span className="rounded-full border border-white/35 px-2 py-0.5 text-[8px] font-black">M-01</span>
+            </div>
           </div>
-        </div>
 
-        {/* 中部连接 + 出口 */}
-        <div
-          className="absolute left-1/2 -translate-x-1/2"
-          style={{
-            top: 230,
-            width: 200,
-            height: 50,
-            background: 'linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02))',
-            border: '2px solid rgba(255,255,255,0.1)',
-            borderTop: 'none',
-            borderRadius: '0 0 16px 16px',
-          }}
-        >
-          {/* 出口洞 */}
-          <div
-            className="absolute left-1/2 -translate-x-1/2 bottom-2"
-            style={{
-              width: 70,
-              height: 12,
-              borderRadius: '50%',
-              background: 'rgba(0,0,0,0.4)',
-              boxShadow: 'inset 0 2px 6px rgba(0,0,0,0.6)',
-            }}
-          />
-        </div>
+          <div className="absolute left-1/2 top-[48px] z-10 h-[310px] w-[318px] -translate-x-1/2 overflow-hidden rounded-[22px_22px_34px_34px] border-[6px] border-[#d9d5ca] bg-[linear-gradient(135deg,rgba(218,237,236,.28),rgba(255,255,255,.06)_45%,rgba(106,135,138,.16))] shadow-[inset_0_0_0_1px_rgba(255,255,255,.4),inset_0_-24px_40px_rgba(0,0,0,.22),0_10px_24px_rgba(0,0,0,.38)]">
+            <div className="absolute inset-[5px] overflow-hidden rounded-[14px_14px_28px_28px] border border-white/20 bg-[#101b1b]/65">
+              <div className="absolute inset-0 opacity-15" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,.15) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.15) 1px,transparent 1px)', backgroundSize: '26px 26px' }} />
+              <div className="absolute inset-x-0 bottom-0 h-[50%] bg-[linear-gradient(180deg,transparent,rgba(0,0,0,.3))]" />
+              <div className="absolute -left-8 top-8 h-[250px] w-[64px] rotate-[13deg] bg-white/10 blur-[2px]" />
+              <div className="absolute right-8 top-3 h-[110px] w-[16px] rotate-[18deg] rounded-full bg-white/15 blur-[1px]" />
 
-        {/* 底座 */}
-        <div
-          className="absolute left-1/2 -translate-x-1/2 bottom-0"
-          style={{
-            width: 260,
-            height: 90,
-            background: 'linear-gradient(180deg, rgba(139,92,246,0.12), rgba(139,92,246,0.04))',
-            border: '2px solid rgba(139,92,246,0.2)',
-            borderRadius: '16px',
-            boxShadow: '0 8px 32px rgba(139,92,246,0.15)',
-          }}
-        >
-          {/* 按钮 */}
-          <button
-            onClick={handleDraw}
-            disabled={isAnimating}
-            className={`absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2
-              w-16 h-16 rounded-full font-bold text-sm
-              transition-[transform,opacity] duration-[160ms] ease-out-strong
-              ${
-                isAnimating
-                  ? 'opacity-50 cursor-not-allowed'
-                  : 'hover:scale-105 active:scale-[0.97] cursor-pointer'
-              }
-              gacha-btn-glow
-            `}
-            style={{
-              background: isAnimating
-                ? 'linear-gradient(135deg, #4C1D95, #6D28D9)'
-                : 'linear-gradient(135deg, #8B5CF6, #EC4899)',
-              boxShadow: isAnimating
-                ? 'none'
-                : '0 4px 20px rgba(139,92,246,0.5), inset 0 1px 0 rgba(255,255,255,0.3)',
-              border: '2px solid rgba(255,255,255,0.2)',
-            }}
-          >
-            {isAnimating ? (
-              <RefreshCw className="w-5 h-5 mx-auto animate-spin" />
-            ) : (
-              <Dices className="w-6 h-6 mx-auto" />
-            )}
-          </button>
+              <div className="absolute inset-[13px]">
+                {CAPSULES.map(([x, y, size, rotation, tone], index) => {
+                  const color = CAPSULE_COLORS[tone];
+                  return (
+                    <Capsule
+                      key={`${x}-${y}`}
+                      top={color.top}
+                      bottom={color.bottom}
+                      className={state === 'shaking' ? 'gacha-capsule-jostle' : ''}
+                      style={{ position: 'absolute', left: `${x}%`, top: `${y}%`, width: size, height: size, transform: `translate(-50%,-50%) rotate(${rotation}deg)`, animationDelay: `${index * 35}ms`, '--capsule-rotate': `${rotation}deg` } as CSSProperties}
+                    />
+                  );
+                })}
+              </div>
 
-          {/* 按钮标签 */}
-          {!isAnimating && (
-            <div className="absolute bottom-3 left-1/2 -translate-x-1/2 text-xs text-content-subtle whitespace-nowrap">
-              {state === 'result' ? '再抽一次' : '按下抽取'}
+              <div className={`absolute bottom-[-52px] left-1/2 h-[138px] w-[138px] -translate-x-1/2 rounded-full border-[12px] border-[#bbb7ad] bg-[#2d302f] shadow-[inset_0_0_0_4px_#77746c,inset_0_0_22px_#000] ${state === 'shaking' ? 'gacha-mixer-turn' : ''}`}>
+                {[0, 90, 180, 270].map((degree) => <span key={degree} className="absolute left-1/2 top-1/2 h-[8px] w-[48px] origin-left rounded-full bg-[#8d8a82]" style={{ transform: `rotate(${degree}deg) translateX(9px)` }} />)}
+              </div>
+            </div>
+          </div>
+
+          <div className="absolute left-1/2 top-[338px] h-[250px] w-[344px] -translate-x-1/2 rounded-[16px_16px_26px_26px] border border-black/45 bg-[linear-gradient(105deg,#ded9cd_0%,#f4f0e6_24%,#cbc6bb_58%,#eee9df_100%)] shadow-[inset_0_2px_1px_rgba(255,255,255,.8),inset_-12px_0_20px_rgba(0,0,0,.08),0_18px_30px_rgba(0,0,0,.5)]">
+            <div className="absolute inset-x-0 top-0 h-[18px] rounded-t-[15px] border-b border-black/30 bg-[#e94f37] shadow-[inset_0_2px_1px_rgba(255,255,255,.25)]" />
+            <div className="absolute left-[29px] top-[49px] h-[72px] w-[66px] rounded-[8px] border border-black/30 bg-[#c8c3b8] shadow-[inset_0_3px_7px_rgba(0,0,0,.2)]">
+              <div className="mx-auto mt-4 h-[27px] w-[8px] rounded-sm border border-black/50 bg-[#242524] shadow-[inset_0_0_4px_#000]" />
+              <div className="mt-2 text-center text-[7px] font-black tracking-[0.12em] text-black/55">1 COIN</div>
+            </div>
+
+            <div className="absolute left-1/2 top-[32px] h-[120px] w-[120px] -translate-x-1/2 rounded-full border border-black/25 bg-[#bcb8ae] shadow-[inset_0_7px_13px_rgba(0,0,0,.22),0_2px_1px_rgba(255,255,255,.8)]">
+              <div className="absolute inset-[13px] rounded-full border border-black/50 bg-[repeating-conic-gradient(#333_0deg_8deg,#171817_8deg_15deg)] shadow-[0_7px_12px_rgba(0,0,0,.38)]" />
+              <button
+                type="button"
+                onClick={draw}
+                disabled={busy}
+                className={`absolute inset-[24px] flex cursor-grab items-center justify-center rounded-full border border-black/60 bg-[radial-gradient(circle_at_38%_30%,#666_0%,#252625_56%,#111_100%)] text-[#f1cb4b] shadow-[inset_0_2px_2px_rgba(255,255,255,.26),0_6px_10px_rgba(0,0,0,.42)] transition-transform active:cursor-grabbing ${busy ? 'gacha-knob-turn cursor-wait' : 'hover:scale-[1.04] active:scale-[.98]'}`}
+                aria-label={state === 'result' ? '再抽一次' : '转动把手抽取 Skill'}
+              >
+                <RotateCw className="h-8 w-8" strokeWidth={2.4} />
+              </button>
+              <span className="absolute -top-5 left-1/2 -translate-x-1/2 text-[7px] font-black tracking-[0.14em] text-black/50">TURN</span>
+              <span className="absolute -right-7 top-1/2 -translate-y-1/2 text-[8px] font-black text-black/45">→</span>
+            </div>
+
+            <div className="absolute right-[29px] top-[50px] w-[63px] text-center text-black/50">
+              <div className="text-[7px] font-black tracking-[0.1em]">CAPSULE</div>
+              <div className="mx-auto mt-2 h-[42px] w-[42px] rounded-full border border-black/25 bg-[#bcb8ae] p-2 shadow-[inset_0_3px_6px_rgba(0,0,0,.18)]">
+                <Dices className="h-full w-full" strokeWidth={1.5} />
+              </div>
+            </div>
+
+            <div className="absolute bottom-[20px] left-1/2 h-[66px] w-[172px] -translate-x-1/2 rounded-[8px_8px_24px_24px] border border-black/55 bg-[#242625] p-[7px] shadow-[inset_0_8px_12px_rgba(0,0,0,.7),0_2px_1px_rgba(255,255,255,.6)]">
+              <div className={`relative h-full overflow-hidden rounded-[4px_4px_18px_18px] border border-white/10 bg-[#090a09] ${state === 'dropping' ? 'gacha-tray-hit' : ''}`}>
+                <div className="absolute inset-x-3 top-2 h-px bg-white/10" />
+                <span className="absolute bottom-2 left-1/2 -translate-x-1/2 whitespace-nowrap text-[7px] font-black tracking-[0.16em] text-white/25">PUSH / TAKE</span>
+                {(state === 'dropping' || state === 'revealing' || state === 'result') && (
+                  <Capsule top={capsule.top} bottom={capsule.bottom} className={`absolute left-1/2 top-1/2 h-[46px] w-[46px] ${state === 'dropping' ? 'gacha-dispense-drop' : ''}`} style={{ transform: 'translate(-50%,-55%) rotate(-12deg)', boxShadow: `0 5px 18px ${capsule.glow}` }} />
+                )}
+              </div>
+            </div>
+          </div>
+
+          <div className="absolute bottom-[7px] left-1/2 h-[35px] w-[320px] -translate-x-1/2 rounded-[6px_6px_18px_18px] border border-black/55 bg-[linear-gradient(180deg,#cbc6ba,#8e8a82)] shadow-[0_9px_18px_rgba(0,0,0,.55)]" />
+
+          {(state === 'dropping' || state === 'revealing') && (
+            <div className="pointer-events-none absolute left-1/2 top-[322px] z-30 h-[184px] w-[60px] -translate-x-1/2 overflow-hidden">
+              <Capsule top={capsule.top} bottom={capsule.bottom} className="gacha-chute-capsule absolute left-1/2 top-0 h-[46px] w-[46px]" style={{ '--capsule-glow': capsule.glow } as CSSProperties} />
             </div>
           )}
         </div>
+      </section>
 
-        {/* ========== 掉落的扭蛋 ========== */}
-        {(state === 'dropping' || state === 'cracking' || state === 'result') && (
-          <div
-            className="absolute left-1/2 -translate-x-1/2"
-            style={{
-              top: state === 'dropping' ? 250 : state === 'cracking' || state === 'result' ? 310 : 250,
-              transition: 'top 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)',
-              zIndex: 10,
-            }}
-          >
-            {/* 扭蛋球 */}
-            <div
-              className={`relative ${state === 'dropping' ? 'gacha-drop' : ''}`}
-              style={{ width: 64, height: 64 }}
-            >
-              {state === 'cracking' || state === 'result' ? (
-                /* 破开效果：左右两半 */
-                <>
-                  <div
-                    className="absolute left-0 top-0 gacha-crack-left"
-                    style={{
-                      width: 32,
-                      height: 64,
-                      borderRadius: '32px 0 0 32px',
-                      background: `linear-gradient(135deg, ${capsule.top}, ${capsule.top}88)`,
-                      boxShadow: `0 4px 12px ${capsule.top}44`,
-                    }}
-                  />
-                  <div
-                    className="absolute right-0 top-0 gacha-crack-right"
-                    style={{
-                      width: 32,
-                      height: 64,
-                      borderRadius: '0 32px 32px 0',
-                      background: `linear-gradient(135deg, ${capsule.bottom}, ${capsule.bottom}88)`,
-                      boxShadow: `0 4px 12px ${capsule.bottom}44`,
-                    }}
-                  />
-                  {/* 破开光效 */}
-                  {state === 'cracking' && (
-                    <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 gacha-burst">
-                      <Sparkles className="w-8 h-8 text-yellow-300" />
-                    </div>
-                  )}
-                </>
-              ) : (
-                /* 完整扭蛋 */
-                <div
-                  className="w-full h-full rounded-full relative overflow-hidden"
-                  style={{
-                    background: `linear-gradient(180deg, ${capsule.top} 50%, ${capsule.bottom} 50%)`,
-                    boxShadow: `0 6px 20px ${capsule.top}55, inset 0 1px 2px rgba(255,255,255,0.3)`,
-                    border: '1px solid rgba(255,255,255,0.15)',
-                  }}
-                >
-                  {/* 高光 */}
-                  <div
-                    className="absolute top-2 left-3 opacity-40"
-                    style={{
-                      width: 20,
-                      height: 14,
-                      borderRadius: '50%',
-                      background: 'rgba(255,255,255,0.6)',
-                      filter: 'blur(4px)',
-                    }}
-                  />
-                  {/* 分割线 */}
-                  <div
-                    className="absolute left-0 right-0 top-1/2"
-                    style={{
-                      height: 1,
-                      background: 'rgba(0,0,0,0.15)',
-                    }}
-                  />
-                </div>
-              )}
-            </div>
+      <aside className="flex min-h-[560px] flex-col rounded-[10px] border border-white/[0.09] bg-[#090909] p-5 sm:p-7">
+        <div className="flex items-start justify-between gap-5 pb-4">
+          <div>
+            <div className="text-[10px] font-black tracking-[0.22em] text-[#f1cb4b]">RANDOM DISCOVERY</div>
+            <h1 className="mt-2 text-3xl font-black tracking-tight text-white sm:text-4xl">扭一个 Skill</h1>
           </div>
-        )}
-
-        {/* ========== 粒子效果 ========== */}
-        {state === 'cracking' && (
-          <div className="absolute left-1/2 top-[340px] -translate-x-1/2 pointer-events-none">
-            {Array.from({ length: 12 }).map((_, i) => (
-              <div
-                key={i}
-                className="absolute gacha-particle"
-                style={{
-                  width: 6,
-                  height: 6,
-                  borderRadius: '50%',
-                  background: i % 2 === 0 ? capsule.top : capsule.bottom,
-                  animationDelay: `${i * 0.03}s`,
-                  '--angle': `${i * 30}deg`,
-                  '--distance': `${40 + Math.random() * 30}px`,
-                } as React.CSSProperties}
-              />
-            ))}
-          </div>
-        )}
-      </div>
-
-      {/* ========== 结果展示 ========== */}
-      {state === 'result' && result && (
-        <div className="mt-6 w-full max-w-md gacha-result-appear">
-          <div
-            className="relative rounded-2xl p-5 border overflow-hidden"
-            style={{
-              background:
-                'linear-gradient(135deg, rgba(139,92,246,0.08), rgba(236,72,153,0.05))',
-              borderColor: 'rgba(139,92,246,0.2)',
-              boxShadow: '0 8px 32px rgba(139,92,246,0.12)',
-            }}
-          >
-            {/* 顶部标签 */}
-            <div className="flex items-center gap-2 mb-3">
-              <div className="flex items-center gap-1 px-2 py-0.5 rounded-full bg-yellow-500/10 border border-yellow-500/20 text-yellow-400 text-xs font-medium">
-                <Zap className="w-3 h-3" />
-                <span>恭喜抽中</span>
-              </div>
-              <span className="text-xs text-content-subtle">
-                {PRIMARY_CATEGORY_LABELS[result.primaryCategory]}
-                {result.vibeSubcategory && ` · ${VIBE_SUBCATEGORY_LABELS[result.vibeSubcategory]}`}
-                {result.tags.visualStyles[0] && ` · ${VISUAL_STYLE_LABELS[result.tags.visualStyles[0]]}`}
-              </span>
-            </div>
-
-            {/* Skill 名称 */}
-            <h3 className="text-lg font-bold text-content mb-1 truncate">{result.name}</h3>
-            <p className="text-sm text-content-muted mb-3 line-clamp-2">{result.description}</p>
-
-            {/* 标签 */}
-            <div className="flex flex-wrap gap-1.5 mb-4">
-              {flattenSkillTags(result.tags).slice(0, 5).map((t) => (
-                <span
-                  key={`${t.dimension}-${t.value}`}
-                  className={`px-2 py-0.5 rounded-md text-xs border ${getTagBadgeColor(t.dimension, t.value)}`}
-                >
-                  {t.label}
-                </span>
-              ))}
-            </div>
-
-            {/* 作者信息 */}
-            <div className="text-xs text-content-subtle mb-4">
-              by <span className="text-content-muted">{result.author}</span>
-              {result.stars > 0 && (
-                <span className="ml-2">⭐ {result.stars}</span>
-              )}
-            </div>
-
-            {/* 操作按钮 */}
-            <div className="flex items-center gap-2">
-              <Link
-                to={`/skill/${result.id}`}
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium bg-brand-500/15 text-brand-300 border border-brand-500/25 hover:bg-brand-500/25 transition-colors"
-              >
-                查看详情
-                <ArrowRight className="w-3.5 h-3.5" />
-              </Link>
-              <button
-                onClick={handleDraw}
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium bg-base-elevated text-content-muted border border-border hover:border-border-strong transition-colors"
-              >
-                <RefreshCw className="w-3.5 h-3.5" />
-                再抽一次
-              </button>
-            </div>
-
-            {/* 装饰光效 */}
-            <div
-              className="absolute -top-10 -right-10 w-32 h-32 rounded-full opacity-20 pointer-events-none"
-              style={{
-                background: `radial-gradient(circle, ${capsule.top}, transparent 70%)`,
-              }}
-            />
-          </div>
+          <div className="rounded-full border border-white/10 px-3 py-1.5 text-[10px] tabular-nums text-white/35">{availableSkills.length} 枚</div>
         </div>
-      )}
 
-      {/* ========== 提示文字 ========== */}
-      {state === 'idle' && (
-        <p className="mt-4 text-sm text-content-subtle text-center max-w-xs">
-          找不到想用的 Skill？试试扭蛋机，随机抽取一个发现新惊喜！
-        </p>
-      )}
-      {state === 'shaking' && (
-        <p className="mt-4 text-sm text-brand-400 text-center gacha-pulse">
-          🔮 摇晃中...
-        </p>
-      )}
-      {state === 'dropping' && (
-        <p className="mt-4 text-sm text-pink-400 text-center gacha-pulse">
-          🧩 扭蛋掉落中...
-        </p>
-      )}
-      {state === 'cracking' && (
-        <p className="mt-4 text-sm text-yellow-400 text-center gacha-pulse">
-          ✨ 即将揭晓...
-        </p>
-      )}
+        <div className="mt-1 flex items-center gap-3 rounded-[7px] bg-white/[0.025] px-3 py-3">
+          <span className={`h-2 w-2 rounded-full ${busy ? 'animate-pulse bg-[#f1cb4b]' : state === 'result' ? 'bg-[#73b56a]' : 'bg-white/25'}`} />
+          <div className="min-w-0 flex-1">
+            <div className="text-xs font-black text-white/75">{status[0]}</div>
+            <div className="mt-1 text-[10px] text-white/30">{status[1]}</div>
+          </div>
+          {busy && <RefreshCw className="h-4 w-4 animate-spin text-white/35" />}
+          {state === 'result' && <Check className="h-4 w-4 text-[#73b56a]" />}
+        </div>
+
+        {state === 'result' && result ? (
+          <div className="gacha-result-appear flex flex-1 flex-col pt-5">
+            <div className="mb-4 flex items-center gap-2">
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-[#f1cb4b]/25 bg-[#f1cb4b]/10 px-2.5 py-1 text-[10px] font-black text-[#f1cb4b]"><Zap className="h-3 w-3" />抽取结果</span>
+              <span className="text-[10px] text-white/30">{PRIMARY_CATEGORY_LABELS[result.primaryCategory]}{result.vibeSubcategory && ` · ${VIBE_SUBCATEGORY_LABELS[result.vibeSubcategory]}`}</span>
+            </div>
+            <h2 className="text-2xl font-black leading-tight tracking-tight text-white">{result.name}</h2>
+            <p className="mt-3 line-clamp-3 text-xs leading-6 text-white/45">{result.description}</p>
+            <div className="mt-4 flex flex-wrap gap-1.5">
+              {flattenSkillTags(result.tags).slice(0, 5).map((tag) => <span key={`${tag.dimension}-${tag.value}`} className={`rounded-full border px-2.5 py-1 text-[10px] ${getTagBadgeColor(tag.dimension, tag.value)}`}>{tag.label}</span>)}
+            </div>
+            <div className="mt-5 grid grid-cols-2 gap-2 text-[10px]">
+              <div className="rounded-[6px] bg-white/[0.025] p-3"><div className="text-white/25">作者</div><div className="mt-1 truncate text-white/65">{result.author}</div></div>
+              <div className="rounded-[6px] bg-white/[0.025] p-3"><div className="text-white/25">视觉风格</div><div className="mt-1 truncate text-white/65">{result.tags.visualStyles[0] ? VISUAL_STYLE_LABELS[result.tags.visualStyles[0]] : '未标注'}</div></div>
+            </div>
+            <div className="mt-auto flex gap-2 pt-6">
+              <Link to={`/skills/${result.id}`} className="inline-flex h-9 flex-1 items-center justify-center gap-2 rounded-[6px] bg-[#f1cb4b] text-xs font-black text-black transition-colors hover:bg-[#ffe06b]">打开 Skill<ArrowRight className="h-3.5 w-3.5" /></Link>
+              <button type="button" onClick={draw} className="inline-flex h-9 items-center justify-center gap-2 rounded-[6px] border border-white/10 px-3 text-xs font-black text-white/60 transition-colors hover:text-white"><RefreshCw className="h-3.5 w-3.5" />再扭一次</button>
+            </div>
+          </div>
+        ) : (
+          <div className="flex flex-1 flex-col pt-5">
+            <p className="max-w-sm text-sm leading-7 text-white/45">从当前分类随机抽取一个 Skill。像真实扭蛋机一样，投入一次好奇心，然后顺时针转动把手。</p>
+            <div className="mt-6 space-y-2">
+              {['在顶部选择想探索的分类', '转动机器中央的机械把手', '从下方取物仓打开扭蛋'].map((text, index) => <div key={text} className="flex items-center gap-3 rounded-[7px] border border-white/[0.08] bg-white/[0.02] px-3 py-3 text-xs text-white/45"><span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-white/15 text-[9px] text-white/45">{index + 1}</span>{text}</div>)}
+            </div>
+            <button type="button" onClick={draw} disabled={busy} className="mt-auto inline-flex h-10 items-center justify-center gap-2 rounded-[6px] bg-white text-xs font-black text-black transition-colors hover:bg-white/85 disabled:cursor-wait disabled:opacity-50"><RotateCw className={`h-4 w-4 ${busy ? 'animate-spin' : ''}`} />{busy ? status[0] : '转动把手'}</button>
+            <div className="mt-3 flex items-center justify-center gap-1.5 text-[9px] text-white/22"><Sparkles className="h-3 w-3" />每次结果完全随机，不设排名</div>
+          </div>
+        )}
+      </aside>
     </div>
   );
 }

@@ -1,9 +1,8 @@
-// ============================================================
-// Avatar 组件 - 头像
-// ============================================================
+
+
 import { cn } from '@/utils/cn';
 
-/** Avatar Props */
+
 interface AvatarProps {
   src?: string;
   name?: string;
@@ -11,7 +10,7 @@ interface AvatarProps {
   className?: string;
 }
 
-/** 尺寸映射 */
+
 const sizeStyles = {
   xs: 'w-6 h-6 text-xs',
   sm: 'w-8 h-8 text-sm',
@@ -19,14 +18,14 @@ const sizeStyles = {
   lg: 'w-12 h-12 text-lg',
 };
 
-/** 从名字提取首字母（支持中文） */
+
 function getInitials(name: string): string {
   if (!name) return '?';
-  // 中文取第一个字
+
   if (/[\u4e00-\u9fa5]/.test(name)) {
     return name.charAt(0);
   }
-  // 英文取首字母
+
   const parts = name.trim().split(/\s+/);
   if (parts.length >= 2) {
     return (parts[0][0] + parts[1][0]).toUpperCase();
@@ -34,7 +33,7 @@ function getInitials(name: string): string {
   return name.charAt(0).toUpperCase();
 }
 
-/** 根据名字生成稳定的背景色 */
+
 function getColor(name: string): string {
   const colors = [
     'bg-brand-500/20 text-brand-300',
@@ -51,7 +50,7 @@ function getColor(name: string): string {
   return colors[Math.abs(hash) % colors.length];
 }
 
-/** Avatar 组件 */
+
 export function Avatar({ src, name = '', size = 'md', className }: AvatarProps) {
   return (
     <div

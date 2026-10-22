@@ -1,21 +1,20 @@
-// ============================================================
-// Card 组件 - 卡片容器
-// ============================================================
+
+
 import type { ReactNode } from 'react';
 import { cn } from '@/utils/cn';
 
-/** Card Props */
+
 interface CardProps {
   children: ReactNode;
-  /** 是否可点击（hover 效果） */
+
   interactive?: boolean;
-  /** 内边距 */
+
   padding?: 'none' | 'sm' | 'md' | 'lg';
   className?: string;
   onClick?: () => void;
 }
 
-/** 内边距映射 */
+
 const paddingStyles = {
   none: '',
   sm: 'p-3',
@@ -23,7 +22,7 @@ const paddingStyles = {
   lg: 'p-7',
 };
 
-/** Card 组件 */
+
 export function Card({ children, interactive, padding = 'md', className, onClick }: CardProps) {
   return (
     <div

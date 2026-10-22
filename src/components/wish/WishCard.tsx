@@ -1,9 +1,5 @@
-// ============================================================
-// WishCard - 许愿卡片组件
-// ============================================================
 import { ThumbsUp, ExternalLink, Clock, UserCheck } from 'lucide-react';
 import type { Wish } from '@/types';
-import { Card } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
 import { Avatar } from '@/components/ui/Avatar';
 import { Tooltip } from '@/components/ui/Tooltip';
@@ -16,22 +12,15 @@ import {
   WISH_STATUS_HEX,
 } from './wishConstants';
 
-/** WishCard Props */
 interface WishCardProps {
   wish: Wish;
-  /** 是否已投票 */
   isVoted: boolean;
-  /** 点击投票 */
   onVote: (id: string) => void;
-  /** 点击卡片（展开详情） */
   onClick?: (wish: Wish) => void;
-  /** 点击查看成果链接 */
   onViewResult?: (url: string) => void;
 }
 
-/** WishCard 组件 */
 export function WishCard({ wish, isVoted, onVote, onClick, onViewResult }: WishCardProps) {
-  // 阻止冒泡：点击投票按钮 / 链接时不触发卡片点击
   const stop = (e: React.MouseEvent) => e.stopPropagation();
 
   const handleVote = (e: React.MouseEvent) => {
@@ -49,12 +38,10 @@ export function WishCard({ wish, isVoted, onVote, onClick, onViewResult }: WishC
   };
 
   return (
-    <Card
-      interactive
+    <article
       onClick={() => onClick?.(wish)}
-      className="h-full flex flex-col gap-3"
+      className="group flex h-full cursor-pointer flex-col gap-3 rounded-[8px] border border-white/10 bg-[#0d0d0d] p-4 transition-colors hover:border-white/25"
     >
-      {/* 顶部：状态 + 分类 */}
       <div className="flex items-center justify-between gap-2">
         <Badge color={WISH_STATUS_BADGE_COLOR[wish.status]}>
           <span
@@ -68,17 +55,14 @@ export function WishCard({ wish, isVoted, onVote, onClick, onViewResult }: WishC
         </Badge>
       </div>
 
-      {/* 标题 */}
-      <h3 className="text-base font-semibold text-content leading-snug line-clamp-2">
+      <h3 className="line-clamp-2 text-lg font-black leading-snug text-content">
         {wish.title}
       </h3>
 
-      {/* 描述（截断） */}
-      <p className="text-sm text-content-muted leading-relaxed line-clamp-3 flex-1">
+      <p className="line-clamp-3 flex-1 text-xs leading-5 text-white/45">
         {truncate(wish.description, 120)}
       </p>
 
-      {/* 标签 */}
       {wish.tags.length > 0 && (
         <div className="flex flex-wrap gap-1.5">
           {wish.tags.slice(0, 4).map((tag) => (
@@ -94,7 +78,6 @@ export function WishCard({ wish, isVoted, onVote, onClick, onViewResult }: WishC
         </div>
       )}
 
-      {/* 认领者信息 */}
       {wish.claimantName && wish.status !== 'open' && (
         <div className="flex items-center gap-1.5 text-xs text-content-subtle">
           <UserCheck className="w-3.5 h-3.5 text-content-subtle" />
@@ -109,9 +92,7 @@ export function WishCard({ wish, isVoted, onVote, onClick, onViewResult }: WishC
         </div>
       )}
 
-      {/* 底部：作者 + 时间 + 投票 */}
-      <div className="flex items-center justify-between pt-3 border-t border-border-subtle">
-        {/* 左：作者 + 时间 */}
+      <div className="mt-1 flex items-center justify-between">
         <div className="flex items-center gap-2 min-w-0">
           <Avatar src={wish.authorAvatar} name={wish.authorName} size="xs" />
           <span className="text-xs text-content-muted truncate max-w-[80px]">
@@ -125,7 +106,6 @@ export function WishCard({ wish, isVoted, onVote, onClick, onViewResult }: WishC
           </Tooltip>
         </div>
 
-        {/* 右：投票 + 成果链接 */}
         <div className="flex items-center gap-2 flex-shrink-0">
           {wish.status === 'completed' && wish.resultUrl && (
             <button
@@ -152,6 +132,6 @@ export function WishCard({ wish, isVoted, onVote, onClick, onViewResult }: WishC
           </button>
         </div>
       </div>
-    </Card>
+    </article>
   );
 }

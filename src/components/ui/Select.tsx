@@ -1,23 +1,22 @@
-// ============================================================
-// Select 组件 - 下拉选择
-// ============================================================
+
+
 import { forwardRef, type SelectHTMLAttributes } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { cn } from '@/utils/cn';
 
-/** Select Option */
+
 interface SelectOption {
   value: string;
   label: string;
 }
 
-/** Select Props */
+
 interface SelectProps extends SelectHTMLAttributes<HTMLSelectElement> {
   options: SelectOption[];
   fullWidth?: boolean;
 }
 
-/** Select 组件 */
+
 export const Select = forwardRef<HTMLSelectElement, SelectProps>(
   ({ options, fullWidth = true, className, ...props }, ref) => {
     return (

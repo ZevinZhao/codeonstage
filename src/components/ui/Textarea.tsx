@@ -1,15 +1,14 @@
-// ============================================================
-// Textarea 组件 - 多行输入
-// ============================================================
+
+
 import { forwardRef, type TextareaHTMLAttributes } from 'react';
 import { cn } from '@/utils/cn';
 
-/** Textarea Props */
+
 interface TextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
   error?: boolean;
 }
 
-/** Textarea 组件 */
+
 export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
   ({ error, className, ...props }, ref) => {
     return (

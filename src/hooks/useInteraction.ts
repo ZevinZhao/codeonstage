@@ -1,21 +1,9 @@
-// ============================================================
-// 交互动画 Hooks
-// - 动效规范（emil-design-eng）：
-//   1. 装饰性鼠标交互必须用 spring 物理插值（直接跟随显得"人造"）
-//   2. spring 中断时保留速度（可反向、可打断），优于 CSS transition
-//   3. prefers-reduced-motion 时禁用位移类装饰交互
-// ============================================================
 import { useState, useEffect, useRef, useCallback } from 'react';
 
-/** 是否偏好减少动效 */
 export function prefersReducedMotion(): boolean {
   return typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 }
 
-/**
- * 滚动揭示 Hook — 基于 IntersectionObserver
- * 元素进入视口时触发动画
- */
 export function useScrollReveal<T extends HTMLElement = HTMLDivElement>(
   options?: { threshold?: number; rootMargin?: string; once?: boolean }
 ) {
@@ -47,10 +35,6 @@ export function useScrollReveal<T extends HTMLElement = HTMLDivElement>(
   return { ref, visible };
 }
 
-/**
- * 数字递增 Hook
- * 元素进入视口时数字从 0 递增到目标值（easeOutExpo）
- */
 export function useCountUp(target: number, duration = 1500, start = false) {
   const [value, setValue] = useState(0);
   const rafRef = useRef<number>(0);
@@ -62,7 +46,6 @@ export function useCountUp(target: number, duration = 1500, start = false) {
     const animate = (now: number) => {
       const elapsed = now - startTime;
       const progress = Math.min(elapsed / duration, 1);
-      // easeOutExpo
       const eased = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
       setValue(Math.round(target * eased));
 
@@ -78,10 +61,6 @@ export function useCountUp(target: number, duration = 1500, start = false) {
   return value;
 }
 
-/**
- * 二维 spring 状态（胡克定律 + 阻尼，半隐式欧拉积分）
- * 中断时保留速度 → 平滑反向，这是 spring 相对 CSS transition 的核心优势
- */
 interface SpringState {
   x: number;
   y: number;
@@ -95,14 +74,12 @@ interface SpringState {
 
 const SPRING_EPSILON = 0.01;
 
-/** 步进一帧并写回元素（write 回调由调用方提供） */
 function springStep(s: SpringState, write: (x: number, y: number) => void) {
   const k = 100; // stiffness（emil-design-eng 推荐物理参数）
   const c = 10; // damping
   const m = 1; // mass
   const dt = 1 / 60;
 
-  // 半隐式欧拉：先更新速度，再更新位置
   const ax = (-k * (s.x - s.tx) - c * s.vx) / m;
   const ay = (-k * (s.y - s.ty) - c * s.vy) / m;
   s.vx += ax * dt;
@@ -112,7 +89,6 @@ function springStep(s: SpringState, write: (x: number, y: number) => void) {
 
   write(s.x, s.y);
 
-  // 收敛判定：位移与速度都足够小则停止 rAF（空闲零开销）
   const settled =
     Math.abs(s.x - s.tx) < SPRING_EPSILON &&
     Math.abs(s.y - s.ty) < SPRING_EPSILON &&
@@ -125,10 +101,6 @@ function springStep(s: SpringState, write: (x: number, y: number) => void) {
   s.raf = requestAnimationFrame(() => springStep(s, write));
 }
 
-/**
- * 磁性悬浮 Hook — spring 驱动的 3D 倾斜
- * 鼠标位置设为目标角度，spring 插值逼近（带惯性与回弹，装饰性交互）
- */
 export function useMagneticHover<T extends HTMLElement = HTMLDivElement>() {
   const ref = useRef<T>(null);
   const state = useRef<SpringState>({
@@ -158,7 +130,6 @@ export function useMagneticHover<T extends HTMLElement = HTMLDivElement>() {
     const y = e.clientY - rect.top - rect.height / 2;
 
     const s = state.current;
-    // 目标角度：离中心越远倾斜越大（±8deg 封顶）
     s.tx = (y / rect.height) * 8;
     s.ty = (x / rect.width) * 8;
     startLoop();
@@ -166,7 +137,6 @@ export function useMagneticHover<T extends HTMLElement = HTMLDivElement>() {
 
   const handleMouseLeave = useCallback(() => {
     const s = state.current;
-    // 目标归零：spring 以保留的速度平滑回弹（而非 CSS 硬过渡）
     s.tx = 0;
     s.ty = 0;
     startLoop();
@@ -189,10 +159,6 @@ export function useMagneticHover<T extends HTMLElement = HTMLDivElement>() {
   return ref;
 }
 
-/**
- * 平滑跟随 Hook — spring 插值的光标跟随（CursorGlow 用）
- * 不直接更新目标值，而是让 spring 逼近（有拖尾的"果冻感"）
- */
 export function useSmoothFollow<T extends HTMLElement = HTMLDivElement>() {
   const ref = useRef<T>(null);
   const state = useRef<SpringState>({

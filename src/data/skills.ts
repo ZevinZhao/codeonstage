@@ -1,16 +1,3 @@
-// ============================================================
-// Skill 数据集 - Vibe 知识大赏 Skills（存量数据）
-// 数据来源：2026-10-20 采集，共 119 条；2026-10-21 同名去重
-// （剔除 vibe-knowledge-film 59 个社区 Fork、vibe-knowledge-video-skill
-//   4 个 Fork、vibe-knowledge-video 家族 11 个同名仓库、
-//   vibe-knowledge 5 个同名待分类仓库、vibe-director /
-//   vibe-knowledge-awards 各 1 个同名仓库）后剩 38 条。
-// ------------------------------------------------------------
-// 说明：本文件内的条目仍以旧标签体系书写
-// （resourceType + visualStyle + 扁平 tags），统一通过
-// legacyMigration.ts 的 migrateLegacySkills 批量迁移到新体系
-// （primaryCategory='vibe' + vibeSubcategory + SkillTags 八维标签）。
-// ============================================================
 import type { Skill, Difficulty, Language } from '@/types';
 import {
   migrateLegacySkills,
@@ -20,38 +7,26 @@ import {
   type LegacyVisualStyle,
 } from './legacyMigration';
 
-/** 计算N天前的时间戳 */
 const daysAgo = (n: number): string => {
   const d = new Date('2026-10-20T00:00:00Z');
   d.setDate(d.getDate() - n);
   return d.toISOString();
 };
 
-// ============================================================
-// 标签常量
-// ============================================================
-
-// HeyChengC/vibe-knowledge-film（入口，432 stars）
 const TAGS_FILM: LegacySkillTag[] = [
   '原理演示', '角色寓言', '通用', '选题研究', '文案', '分镜', '动画', '音效', '字幕', '导出',
   '无旁白', '事件音效', '输入主题', '输入文案', 'Canvas', 'Claude Code', '横屏', '原创',
 ];
 
-// LuZhong-Li/vibe-knowledge-video-skill（入口，18 stars）
 const TAGS_VIDEO_SKILL: LegacySkillTag[] = [
   '原理演示', '数据对比', '心理认知', '通用', '选题研究', '文案', '分镜', '动画', '音效', '字幕', '导出',
   '无旁白', '事件音效', '输入主题', 'HTML', 'Claude Code', '横屏', '原创',
 ];
 
-// vibe-director 家族标签
 const TAGS_DIRECTOR: LegacySkillTag[] = [
   '角色寓言', '原理演示', '通用', '选题研究', '文案', '分镜', '动画', '导出',
   '无旁白', '输入主题', '横屏', '原创',
 ];
-
-// ============================================================
-// 辅助构造函数
-// ============================================================
 
 interface SkillOpts {
   resourceType: LegacyResourceType;
@@ -67,7 +42,6 @@ interface SkillOpts {
   name?: string;
 }
 
-/** 生成 GitHub 仓库 Skill 数据 */
 function gh(author: string, repo: string, day: number, opts: SkillOpts): LegacySkill {
   const id = `${author}-${repo}`.toLowerCase().replace(/[^a-z0-9]+/g, '-');
   const url = `https://github.com/${author}/${repo}`;
@@ -92,7 +66,6 @@ function gh(author: string, repo: string, day: number, opts: SkillOpts): LegacyS
   };
 }
 
-/** 生成 GitHub 文件链接数据（template 类型） */
 function ghDoc(
   author: string,
   repo: string,
@@ -108,7 +81,6 @@ function ghDoc(
   const url = `https://github.com/${author}/${repo}/blob/main/${path}`;
   return {
     id,
-    // 展示名默认取文件名；同名文件（如多个 SKILL.md）传 nameOverride 用完整路径区分
     name: nameOverride ?? (path.split('/').pop() || path),
     description,
     longDescription,
@@ -127,7 +99,6 @@ function ghDoc(
   };
 }
 
-/** 生成非 GitHub 链接数据 */
 function link(
   id: string,
   name: string,
@@ -159,13 +130,7 @@ function link(
   };
 }
 
-// ============================================================
-// Skill 数据集（38 条，旧体系书写；原 119 条，2026-10-21 同名去重）
-// ============================================================
 const legacySkills: LegacySkill[] = [
-  // ============================================================
-  // 6 个入口（featured: true）
-  // ============================================================
   gh('HeyChengC', 'vibe-knowledge-film', 1, {
     resourceType: 'skill',
     visualStyle: 'multi-style',
@@ -248,9 +213,6 @@ const legacySkills: LegacySkill[] = [
     difficulty: '进阶',
   }),
 
-  // ============================================================
-  // vibe-knowledge-video 家族（保留 stars 最高的 1 条）
-  // ============================================================
   gh('xiazhuo123456789', 'vibe-knowledge-video', 70, {
     resourceType: 'skill',
     visualStyle: 'geometric',
@@ -265,9 +227,6 @@ const legacySkills: LegacySkill[] = [
     stars: 62,
   }),
 
-  // ============================================================
-  // vibe-director 家族（保留 1 条）
-  // ============================================================
   gh('86777835', 'vibe-director', 82, {
     resourceType: 'skill',
     visualStyle: 'multi-style',
@@ -278,9 +237,6 @@ const legacySkills: LegacySkill[] = [
       '86777835 维护的 vibe-director，负责科普视频的文案、分镜、叙事与动效导演，支持角色寓言与原理演示两种风格。',
   }),
 
-  // ============================================================
-  // 其他特色仓库（14 个）
-  // ============================================================
   gh('walter-io', 'vibecoding-remotion', 84, {
     resourceType: 'skill',
     visualStyle: 'multi-style',
@@ -442,9 +398,6 @@ const legacySkills: LegacySkill[] = [
       'xxjj2024 维护的 Vibe-Knowledge-Awards-Video-Production，面向 Vibe 知识大赏的视频制作 Skill。',
   }),
 
-  // ============================================================
-  // template（3 个，GitHub 文档/Skill 文件）
-  // ============================================================
   ghDoc(
     'ChenShuo2004',
     'cs-skills',
@@ -479,10 +432,6 @@ const legacySkills: LegacySkill[] = [
     'skill/vibe-knowledge/SKILL.md'
   ),
 
-  // ============================================================
-  // 非GitHub条目 - 教程/平台（11 个）
-  // ============================================================
-  // 107: 抖音 - Anatomy Skill 科普视频
   link(
     'douyin-anatomy-skill',
     'Anatomy Skill 机械结构科普视频',
@@ -493,7 +442,6 @@ const legacySkills: LegacySkill[] = [
     ['输入主题', '横屏'],
     107
   ),
-  // 108: t.co - HeyChengC/vibe-knowledge-film 介绍文章
   link(
     'heychengc-vibe-knowledge-film-article',
     'HeyChengC/vibe-knowledge-film 介绍',
@@ -504,7 +452,6 @@ const legacySkills: LegacySkill[] = [
     ['输入主题', '横屏'],
     108
   ),
-  // 109: claudepluginhub - knowledge-video 收录页面
   link(
     'claudepluginhub-knowledge-video',
     'knowledge-video - Claude Code Plugin',
@@ -515,7 +462,6 @@ const legacySkills: LegacySkill[] = [
     ['通用'],
     109
   ),
-  // 110: bilibili - vibe知识大赏动画视频怎么做
   link(
     'bilibili-vibe-knowledge-tutorial',
     'vibe知识大赏动画视频怎么做',
@@ -526,7 +472,6 @@ const legacySkills: LegacySkill[] = [
     ['输入主题', '横屏'],
     110
   ),
-  // 111: 抖音 - 丢个主题就能做
   link(
     'douyin-vibe-drop-topic',
     'Vibe知识大赏丢个主题就能做',
@@ -537,7 +482,6 @@ const legacySkills: LegacySkill[] = [
     ['输入主题', '横屏'],
     111
   ),
-  // 112: 抖音 - vibe视频制作教程
   link(
     'douyin-vibe-tutorial-beginner',
     'Vibe视频制作教程（新手版）',
@@ -548,7 +492,6 @@ const legacySkills: LegacySkill[] = [
     ['输入主题', '横屏'],
     112
   ),
-  // 113: skillget - knowledge-video (EN)
   link(
     'skillget-knowledge-video-en',
     'Win-Hao/knowledge-video | Skillget (EN)',
@@ -560,7 +503,6 @@ const legacySkills: LegacySkill[] = [
     113,
     { language: 'en' }
   ),
-  // 114: skillget - knowledge-video (TR)
   link(
     'skillget-knowledge-video-tr',
     'Win-Hao/knowledge-video | Skillget (TR)',
@@ -571,7 +513,6 @@ const legacySkills: LegacySkill[] = [
     ['通用'],
     114
   ),
-  // 115: 抖音 - 用豆包也能做vibe知识大赏
   link(
     'douyin-vibe-doubao',
     '用豆包做vibe知识大赏',
@@ -582,7 +523,6 @@ const legacySkills: LegacySkill[] = [
     ['输入主题', '横屏'],
     115
   ),
-  // 116: 抖音 - 真的想起个新号了
   link(
     'douyin-vibe-new-account',
     'Vibe知识大赏 AI剪视频',
@@ -593,7 +533,6 @@ const legacySkills: LegacySkill[] = [
     ['输入主题', '横屏'],
     116
   ),
-  // 117: maker.tuxutool.com - 造物台
   link(
     'tuxutool-maker',
     '造物台 - 在线工具与 HTML 动画',
@@ -605,9 +544,6 @@ const legacySkills: LegacySkill[] = [
     117
   ),
 
-  // ============================================================
-  // 作品/经验参考（2 个，case 类型）
-  // ============================================================
   link(
     'douyin-work-siduchishui',
     'Vibe知识大赏 | 神之一战——《四渡赤水》',
@@ -630,21 +566,10 @@ const legacySkills: LegacySkill[] = [
   ),
 ];
 
-// ============================================================
-// 旧体系 → 新体系 批量迁移
-// 全部存量数据来自 Vibe 知识大赏生态：
-//   primaryCategory 统一为 'vibe'，vibeSubcategory 由讲解方式标签推断，
-//   扁平 tags 分流到 SkillTags 八个维度（详见 legacyMigration.ts）
-// ============================================================
 export const skills: Skill[] = migrateLegacySkills(legacySkills);
 
-// 效果展示媒体（demoMedia）在 src/data/index.ts 合并后统一挂载，
-// 采集来源与映射表见 src/data/demo-media.ts。
-
-/** 精选 Skill */
 export const featuredSkills: Skill[] = skills.filter((s) => s.featured);
 
-/** 根据 ID 获取 Skill */
 export function getSkillById(id: string): Skill | undefined {
   return skills.find((s) => s.id === id);
 }

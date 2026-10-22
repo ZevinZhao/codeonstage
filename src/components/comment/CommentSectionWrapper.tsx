@@ -1,8 +1,3 @@
-// ============================================================
-// CommentSectionWrapper 评论区包装组件
-// 从路由参数提取 skillId，处理 Skill 不存在的情况
-// 用于在 SkillDetailPage 中集成评论区，避免直接耦合
-// ============================================================
 import { useParams } from 'react-router-dom';
 import { CommentSection } from './CommentSection';
 import { getSkillById } from '@/data';
@@ -11,7 +6,6 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/Button';
 import { Compass } from 'lucide-react';
 
-/** CommentSectionWrapper 组件 */
 export function CommentSectionWrapper() {
   const { id } = useParams<{ id: string }>();
 

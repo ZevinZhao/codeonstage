@@ -1,12 +1,11 @@
-// ============================================================
-// 许愿池 Store - Zustand + localStorage 持久化
-// ============================================================
+
+
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import type { Wish, WishStatus } from '@/types';
 import { generateId } from '@/utils/format';
 
-/** 初始示例许愿数据 */
+
 const initialWishes: Wish[] = [
   {
     id: 'wish-1',
@@ -77,35 +76,35 @@ const initialWishes: Wish[] = [
   },
 ];
 
-/** 许愿可编辑字段 */
+
 export type WishEditableFields = Pick<Wish, 'title' | 'description' | 'primaryCategory' | 'tags'>;
 
-/** 许愿 Store 接口 */
+
 interface WishState {
   wishes: Wish[];
-  /** 添加许愿 */
+
   addWish: (wish: Omit<Wish, 'id' | 'votes' | 'status' | 'createdAt'>) => void;
-  /** 投票（点赞） */
+
   voteWish: (id: string) => void;
-  /** 取消投票 */
+
   unvoteWish: (id: string) => void;
-  /** 认领许愿 */
+
   claimWish: (id: string, claimantName: string, claimantAvatar: string) => void;
-  /** 放弃认领（状态回到 open，清空认领人） */
+
   abandonClaim: (id: string) => void;
-  /** 标记为开发中 */
+
   startProgress: (id: string) => void;
-  /** 完成许愿 */
+
   completeWish: (id: string, resultUrl: string) => void;
-  /** 编辑许愿（仅可编辑字段） */
+
   editWish: (id: string, updates: WishEditableFields) => void;
-  /** 移除许愿 */
+
   removeWish: (id: string) => void;
-  /** 按状态获取 */
+
   getByStatus: (status: WishStatus) => Wish[];
 }
 
-/** 许愿 Store */
+
 export const useWishStore = create<WishState>()(
   persist(
     (set, get) => ({
@@ -197,7 +196,7 @@ export const useWishStore = create<WishState>()(
     }),
     {
       name: 'vibe-wishes',
-      // v2：Wish.resourceType → primaryCategory（类型体系重构），弃用旧缓存
+
       version: 2,
     }
   )

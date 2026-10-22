@@ -1,12 +1,3 @@
-// ============================================================
-// CommentSection 评论区组件
-// - 接收 skillId prop
-// - 顶部：评分概览（平均分、总评论数、评分分布柱状图）
-// - 发表评论表单：用户名 + 星级 + 内容 + 成品上传 + 提交
-// - 评论列表：按时间倒序展示 CommentItem
-// - 排序选择（最新 / 最热）
-// - 空状态 + 加载状态
-// ============================================================
 import { useMemo, useState } from 'react';
 import { MessageSquare, Send, Flame, Clock } from 'lucide-react';
 import { cn } from '@/utils/cn';
@@ -24,22 +15,15 @@ import { useToastStore } from '@/store/useToastStore';
 import { getCurrentUser, setCurrentUser } from '@/utils/currentUser';
 import type { WorkShowcase } from '@/types';
 
-/** 排序模式 */
 type SortMode = 'latest' | 'hot';
 
-/** CommentSection Props */
 interface CommentSectionProps {
-  /** Skill ID */
   skillId: string;
-  /** 自定义类名 */
   className?: string;
-  /** 是否显示标题（"评论区"），默认 true */
   showHeader?: boolean;
-  /** 是否显示评分概览（平均分 + 分布柱状图），默认 true */
   showOverview?: boolean;
 }
 
-/** CommentSection 组件 */
 export function CommentSection({
   skillId,
   className,
@@ -50,7 +34,6 @@ export function CommentSection({
   const addComment = useCommentStore((s) => s.addComment);
   const showToast = useToastStore((s) => s.showToast);
 
-  // 表单状态
   const currentUser = getCurrentUser();
   const [userName, setUserName] = useState(currentUser.userName);
   const [rating, setRating] = useState(5);
@@ -59,8 +42,6 @@ export function CommentSection({
   const [submitting, setSubmitting] = useState(false);
   const [sortMode, setSortMode] = useState<SortMode>('latest');
 
-
-  /** 当前 Skill 的评论 */
   const skillComments = useMemo(() => {
     const list = comments.filter((c) => c.skillId === skillId);
     if (sortMode === 'latest') {
@@ -68,14 +49,12 @@ export function CommentSection({
         (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
       );
     }
-    // 最热：点赞数倒序，相同则时间倒序
     return [...list].sort((a, b) => {
       if (b.likes !== a.likes) return b.likes - a.likes;
       return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
     });
   }, [comments, skillId, sortMode]);
 
-  /** 评分概览统计 */
   const stats = useMemo(() => {
     const total = skillComments.length;
     if (total === 0) {
@@ -91,7 +70,6 @@ export function CommentSection({
     return { avg: sum / total, total, distribution };
   }, [skillComments]);
 
-  /** 处理提交评论 */
   const handleSubmit = () => {
     const trimmedName = userName.trim() || '匿名用户';
     const trimmedContent = content.trim();
@@ -108,7 +86,6 @@ export function CommentSection({
     setSubmitting(true);
 
     try {
-      // 保存当前用户信息到 localStorage
       setCurrentUser({ userName: trimmedName, userAvatar: '' });
 
       addComment({
@@ -120,7 +97,6 @@ export function CommentSection({
         works: works.length > 0 ? works : undefined,
       });
 
-      // 重置表单
       setContent('');
       setRating(5);
       setWorks([]);
@@ -132,12 +108,10 @@ export function CommentSection({
     }
   };
 
-  /** 是否可提交 */
   const canSubmit = content.trim().length >= 5 && !submitting;
 
   return (
     <section className={cn('w-full', className)}>
-      {/* 标题 */}
       {showHeader && (
         <div className="flex items-center gap-2 mb-4">
           <MessageSquare className="w-5 h-5 text-content-subtle" />
@@ -146,12 +120,10 @@ export function CommentSection({
         </div>
       )}
 
-      {/* 评分概览 */}
       {showOverview && stats.total > 0 && (
         <Card className="mb-4">
           <div className="flex flex-col sm:flex-row gap-4 sm:items-center">
-            {/* 平均分 */}
-            <div className="flex items-center gap-3 sm:border-r sm:border-border sm:pr-6">
+            <div className="flex items-center gap-3 sm:pr-6">
               <div className="text-3xl font-bold text-content tabular-nums">
                 {stats.avg.toFixed(1)}
               </div>
@@ -163,7 +135,6 @@ export function CommentSection({
               </div>
             </div>
 
-            {/* 评分分布柱状图 */}
             <div className="flex-1 space-y-1.5 min-w-0">
               {[5, 4, 3, 2, 1].map((star) => {
                 const count = stats.distribution[star - 1];
@@ -188,11 +159,9 @@ export function CommentSection({
         </Card>
       )}
 
-      {/* 发表评论表单 */}
       <Card className="mb-4">
         <h3 className="text-sm font-medium text-content mb-3">发表评论</h3>
         <div className="space-y-3">
-          {/* 用户名 + 评分 */}
           <div className="flex flex-col sm:flex-row gap-3">
             <div className="sm:w-48">
               <label className="block text-xs text-content-subtle mb-1.5">用户名</label>
@@ -209,7 +178,6 @@ export function CommentSection({
             </div>
           </div>
 
-          {/* 评论内容 */}
           <div>
             <label className="block text-xs text-content-subtle mb-1.5">
               评论内容 <span className="text-content-faint">（至少 5 个字）</span>
@@ -227,7 +195,6 @@ export function CommentSection({
             </div>
           </div>
 
-          {/* 成品上传 */}
           <div>
             <label className="block text-xs text-content-subtle mb-1.5">
               成品展示 <span className="text-content-faint">（可选）</span>
@@ -235,7 +202,6 @@ export function CommentSection({
             <WorkUpload works={works} onChange={setWorks} />
           </div>
 
-          {/* 提交按钮 */}
           <div className="flex justify-end">
             <Button
               onClick={handleSubmit}
@@ -249,7 +215,6 @@ export function CommentSection({
         </div>
       </Card>
 
-      {/* 排序选择 */}
       {stats.total > 0 && (
         <div className="flex items-center gap-2 mb-3">
           <button
@@ -281,7 +246,6 @@ export function CommentSection({
         </div>
       )}
 
-      {/* 评论列表 */}
       {skillComments.length === 0 ? (
         <EmptyState
           title="暂无评论"

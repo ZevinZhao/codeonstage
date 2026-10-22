@@ -1,6 +1,3 @@
-// ============================================================
-// WishForm - 提需求表单组件（Modal 弹窗）
-// ============================================================
 import { useState, type KeyboardEvent } from 'react';
 import { X, Tag as TagIcon, Plus } from 'lucide-react';
 import type { PrimaryCategory } from '@/types';
@@ -16,42 +13,34 @@ import { ALL_PRIMARY_CATEGORIES, PRIMARY_CATEGORY_LABELS } from '@/utils/constan
 import { getCurrentUser } from '@/utils/userStorage';
 import { cn } from '@/utils/cn';
 
-/** WishForm Props */
 interface WishFormProps {
   open: boolean;
   onClose: () => void;
-  /** 提交成功回调 */
   onSuccess?: () => void;
 }
 
-/** 大类下拉选项 */
 const primaryCategoryOptions = ALL_PRIMARY_CATEGORIES.map((c) => ({
   value: c,
   label: PRIMARY_CATEGORY_LABELS[c],
 }));
 
-/** WishForm 组件 */
 export function WishForm({ open, onClose, onSuccess }: WishFormProps) {
   const addWish = useWishStore((s) => s.addWish);
 
-  // 表单状态
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [primaryCategory, setPrimaryCategory] = useState<PrimaryCategory | ''>('');
   const [tags, setTags] = useState<string[]>([]);
   const [tagInput, setTagInput] = useState('');
 
-  // 错误状态
   const [errors, setErrors] = useState<{
     title?: boolean;
     description?: boolean;
     primaryCategory?: boolean;
   }>({});
 
-  // 提交 loading
   const [submitting, setSubmitting] = useState(false);
 
-  /** 重置表单 */
   const resetForm = () => {
     setTitle('');
     setDescription('');
@@ -61,17 +50,14 @@ export function WishForm({ open, onClose, onSuccess }: WishFormProps) {
     setErrors({});
   };
 
-  /** 关闭并重置 */
   const handleClose = () => {
     resetForm();
     onClose();
   };
 
-  /** 添加标签 */
   const addTag = (raw: string) => {
     const value = raw.trim();
     if (!value) return;
-    // 去重 + 最多 8 个
     if (tags.includes(value)) return;
     if (tags.length >= 8) {
       toast.warning('最多添加 8 个标签');
@@ -81,23 +67,19 @@ export function WishForm({ open, onClose, onSuccess }: WishFormProps) {
     setTagInput('');
   };
 
-  /** 移除标签 */
   const removeTag = (tag: string) => {
     setTags((prev) => prev.filter((t) => t !== tag));
   };
 
-  /** 标签输入键盘事件 */
   const handleTagKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter' || e.key === ',') {
       e.preventDefault();
       addTag(tagInput);
     } else if (e.key === 'Backspace' && tagInput === '' && tags.length > 0) {
-      // 退格删除最后一个
       setTags((prev) => prev.slice(0, -1));
     }
   };
 
-  /** 表单校验 */
   const validate = (): boolean => {
     const next: typeof errors = {};
     if (!title.trim()) next.title = true;
@@ -107,7 +89,6 @@ export function WishForm({ open, onClose, onSuccess }: WishFormProps) {
     return !next.title && !next.description && !next.primaryCategory;
   };
 
-  /** 提交 */
   const handleSubmit = () => {
     if (!validate()) {
       toast.error('请填写完整的需求信息');
@@ -153,7 +134,6 @@ export function WishForm({ open, onClose, onSuccess }: WishFormProps) {
       }
     >
       <div className="space-y-5">
-        {/* 标题 */}
         <div>
           <label className="block text-sm font-medium text-content-muted mb-1.5">
             需求标题 <span className="text-error">*</span>
@@ -176,7 +156,6 @@ export function WishForm({ open, onClose, onSuccess }: WishFormProps) {
           </p>
         </div>
 
-        {/* 描述 */}
         <div>
           <label className="block text-sm font-medium text-content-muted mb-1.5">
             需求描述 <span className="text-error">*</span>
@@ -200,7 +179,6 @@ export function WishForm({ open, onClose, onSuccess }: WishFormProps) {
           </p>
         </div>
 
-        {/* 资源类型 */}
         <div>
           <label className="block text-sm font-medium text-content-muted mb-1.5">
             所属大类 <span className="text-error">*</span>
@@ -219,7 +197,6 @@ export function WishForm({ open, onClose, onSuccess }: WishFormProps) {
           )}
         </div>
 
-        {/* 标签 */}
         <div>
           <label className="block text-sm font-medium text-content-muted mb-1.5">
             标签 <span className="text-content-faint text-xs">（可选，回车添加）</span>
@@ -264,7 +241,6 @@ export function WishForm({ open, onClose, onSuccess }: WishFormProps) {
           )}
         </div>
 
-        {/* 提示 */}
         <div className="flex items-start gap-2 p-3 rounded-lg bg-white/[0.03] border border-border-subtle">
           <Plus className="w-4 h-4 text-content-subtle mt-0.5 flex-shrink-0" />
           <p className="text-xs text-content-muted leading-relaxed">

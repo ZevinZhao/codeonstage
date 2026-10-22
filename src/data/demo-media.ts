@@ -1,13 +1,4 @@
-// ============================================================
-// 效果展示媒体映射表（自动生成，请勿手工编辑）
-// ------------------------------------------------------------
-// 由 scripts/collect-readme-media.mjs 采集各仓库 README 中的
-// 演示媒体直链生成，并经 scripts/validate-demo-media.mjs 剔除
-// 不可加载的死链。key 为 skill.id，value 为可直接内嵌的媒体 URL。
-// 卡片展示逻辑见 src/components/skill/SkillCard.tsx（依赖 skill.demoMedia）。
-// ============================================================
 
-/** skill.id -> 效果媒体直链（mp4/webm 用 <video>，gif/png/jpg 用 <img>） */
 export const DEMO_MEDIA: Record<string, string[]> = {
   "0xs4n4tg-papercut-explainer": [
     "https://raw.githubusercontent.com/0xS4N4TG/papercut-explainer/main/docs/img/hello-reel.gif",

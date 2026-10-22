@@ -1,662 +1,264 @@
-// ============================================================
-// Skill 详情页 - 完整信息展示
-// ============================================================
 import { useMemo, useState } from 'react';
-import { useParams, useNavigate, Link } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import {
   ArrowLeft,
-  Star,
-  Heart,
-  Share2,
-  Github,
-  User,
-  Clock,
-  Calendar,
-  Gauge,
-  Globe,
-  Tag,
-  Copy,
+  ArrowUpRight,
   Check,
-  Sparkles,
-  Terminal,
-  FileCode,
-  FileText,
-  MessageSquare,
-  ThumbsUp,
-  ExternalLink,
+  ChevronLeft,
   ChevronRight,
+  Clock,
+  Copy,
+  FileCode,
+  Github,
+  Globe,
+  Heart,
   Layers,
-  Film,
+  Share2,
+  Sparkles,
+  Star,
+  Tag,
+  User,
 } from 'lucide-react';
 import { skills, getSkillById } from '@/data';
 import { cn } from '@/utils/cn';
-import { formatNumber, formatDate, formatRelativeTime } from '@/utils/format';
+import { formatDate, formatNumber, formatRelativeTime } from '@/utils/format';
 import {
-  PRIMARY_CATEGORY_LABELS,
-  PRIMARY_CATEGORY_BADGE_COLORS,
-  VIBE_SUBCATEGORY_LABELS,
-  VIBE_SUBCATEGORY_BADGE_COLORS,
-  VISUAL_STYLE_LABELS,
-  VISUAL_STYLE_BADGE_COLORS,
   DIFFICULTY_COLORS,
   LANGUAGE_LABELS,
+  PRIMARY_CATEGORY_LABELS,
   TAG_DIMENSIONS_META,
-  flattenSkillTags,
-  getTagBadgeColor,
+  VIBE_SUBCATEGORY_LABELS,
+  VISUAL_STYLE_LABELS,
   getTagLabel,
 } from '@/utils/constants';
-import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
-import { Card } from '@/components/ui/Card';
 import { EmptyState } from '@/components/ui/EmptyState';
-import { FilmFrame } from '@/components/ui/FilmFrame';
-import { SkillCard } from '@/components/skill/SkillCard';
+import { GallerySiteMenu } from '@/components/layout/GallerySiteMenu';
 import { MediaPreview } from '@/components/skill/MediaPreview';
 import { CommentSection } from '@/components/comment/CommentSection';
 import { useFavoriteStore } from '@/store/useFavoriteStore';
 import { useCommentStore } from '@/store/useCommentStore';
 import { toast } from '@/store/useToastStore';
 
-/** 代码块组件 */
-function CodeBlock({
-  code,
-  label,
-  icon,
-}: {
-  code: string;
-  label?: string;
-  icon?: React.ReactNode;
-}) {
+function CodeBlock({ code, label }: { code: string; label: string }) {
   const [copied, setCopied] = useState(false);
 
-  const handleCopy = async () => {
-    try {
-      await navigator.clipboard.writeText(code);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    } catch {
-      // 兜底：使用传统方法
-      const textarea = document.createElement('textarea');
-      textarea.value = code;
-      document.body.appendChild(textarea);
-      textarea.select();
-      try {
-        document.execCommand('copy');
-        setCopied(true);
-        setTimeout(() => setCopied(false), 2000);
-      } catch {
-        // 忽略
-      }
-      document.body.removeChild(textarea);
-    }
+  const copy = async () => {
+    await navigator.clipboard.writeText(code);
+    setCopied(true);
+    window.setTimeout(() => setCopied(false), 1600);
   };
 
   return (
-    <div className="rounded-xl border border-border overflow-hidden bg-[#0d0d0d]">
-      {/* 头部 */}
-      <div className="flex items-center justify-between px-4 py-2.5 border-b border-border bg-base-elevated/50">
-        <div className="flex items-center gap-2 text-xs text-content-muted">
-          {icon}
-          {label || '代码'}
-        </div>
-        <button
-          onClick={handleCopy}
-          className={cn(
-            'flex items-center gap-1.5 px-2 py-1 rounded text-xs transition-colors',
-            copied
-              ? 'text-success bg-success/10'
-              : 'text-content-subtle hover:text-content hover:bg-base-elevated'
-          )}
-        >
-          {copied ? (
-            <>
-              <Check className="w-3 h-3" />
-              已复制
-            </>
-          ) : (
-            <>
-              <Copy className="w-3 h-3" />
-              复制
-            </>
-          )}
+    <div className="overflow-hidden border border-white/[0.09] bg-[#080808]">
+      <div className="flex items-center justify-between bg-white/[0.025] px-3 py-2 text-[10px] text-white/30">
+        <span>{label}</span>
+        <button onClick={copy} className="inline-flex items-center gap-1.5 text-white/40 transition-colors hover:text-white">
+          {copied ? <Check className="h-3.5 w-3.5" /> : <Copy className="h-3.5 w-3.5" />}
+          {copied ? '已复制' : '复制'}
         </button>
       </div>
-      {/* 代码内容 */}
-      <pre className="p-4 overflow-x-auto text-sm text-content font-mono leading-relaxed">
-        <code>{code}</code>
-      </pre>
+      <pre className="max-h-72 overflow-auto p-3 text-[11px] leading-5 text-white/65"><code>{code}</code></pre>
     </div>
   );
 }
 
-/** 元信息项 */
-function MetaItem({ icon, label, value }: { icon: React.ReactNode; label: string; value: React.ReactNode }) {
+function MetaCell({ label, value, icon }: { label: string; value: React.ReactNode; icon: React.ReactNode }) {
   return (
-    <div className="flex items-center gap-2.5">
-      <span className="text-content-subtle">{icon}</span>
-      <span className="text-sm text-content-subtle">{label}</span>
-      <span className="text-sm text-content font-medium">{value}</span>
+    <div className="min-w-0 rounded-[6px] bg-white/[0.025] p-3">
+      <div className="flex items-center gap-1.5 text-[9px] text-white/28">{icon}{label}</div>
+      <div className="mt-1.5 truncate text-[11px] leading-5 text-white/68">{value}</div>
     </div>
   );
 }
 
-/** SkillDetailPage */
+function SectionLabel({ index, title, description }: { index: string; title: string; description?: string }) {
+  return (
+    <div className="sm:pr-5">
+      <div className="text-[9px] font-black tracking-[0.18em] text-white/22">{index}</div>
+      <h2 className="mt-1.5 text-sm font-black text-white/85">{title}</h2>
+      {description && <p className="mt-1.5 text-[10px] leading-5 text-white/28">{description}</p>}
+    </div>
+  );
+}
+
 export function SkillDetailPage() {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
-
   const skill = id ? getSkillById(id) : undefined;
+  const isFavorited = useFavoriteStore((state) => id ? state.isFavorited(id) : false);
+  const toggleFavorite = useFavoriteStore((state) => state.toggleFavorite);
+  const comments = useCommentStore((state) => id ? state.getCommentsBySkillId(id) : []);
+  const [shared, setShared] = useState(false);
 
-  const isFavorited = useFavoriteStore((s) => (id ? s.isFavorited(id) : false));
-  const toggleFavorite = useFavoriteStore((s) => s.toggleFavorite);
-
-  // 获取该 Skill 的评论（用于右侧栏评论概览）
-  const comments = useCommentStore((s) => (id ? s.getCommentsBySkillId(id) : []));
-
-  // 计算平均评分
-  const avgRating = useMemo(() => {
-    if (comments.length === 0) return 0;
-    const sum = comments.reduce((acc, c) => acc + c.rating, 0);
-    return sum / comments.length;
-  }, [comments]);
-
-  // 相关推荐：同大类（vibe 大类进一步按 Vibe 二级分类）的其他 Skill
   const relatedSkills = useMemo(() => {
     if (!skill) return [];
     return skills
-      .filter((s) => {
-        if (s.id === skill.id) return false;
-        if (s.primaryCategory !== skill.primaryCategory) return false;
-        // vibe 大类下若已知二级分类，优先同细分
-        if (skill.primaryCategory === 'vibe' && skill.vibeSubcategory) {
-          return s.vibeSubcategory === skill.vibeSubcategory;
-        }
-        return true;
-      })
+      .filter((item) => item.id !== skill.id && item.primaryCategory === skill.primaryCategory)
       .sort((a, b) => b.stars - a.stars)
       .slice(0, 4);
   }, [skill]);
 
-  // 分享功能
-  const [shared, setShared] = useState(false);
-  const handleShare = async () => {
-    if (!skill) return;
-    const url = window.location.href;
-    try {
-      if (navigator.share) {
-        await navigator.share({ title: skill.name, url });
-      } else {
-        await navigator.clipboard.writeText(url);
-        setShared(true);
-        setTimeout(() => setShared(false), 2000);
-      }
-    } catch {
-      // 用户取消分享，忽略
-    }
-  };
-
-  // 未找到 Skill
   if (!skill) {
     return (
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
-        <EmptyState
-          icon={<FileCode className="w-12 h-12" strokeWidth={1.5} />}
-          title="Skill 不存在"
-          description="找不到对应的 Skill，可能已被删除或链接错误"
-          action={
-            <Button variant="primary" size="sm" onClick={() => navigate('/skills')}>
-              返回 Skill 大全
-            </Button>
-          }
-        />
+      <div className="min-h-screen bg-[#050505] px-5 py-20">
+        <EmptyState icon={<FileCode className="h-12 w-12" />} title="Skill 不存在" description="这个 Skill 可能已被移除或链接有误。" action={<Button onClick={() => navigate('/skills')}>返回 Skill 大全</Button>} />
       </div>
     );
   }
 
+  const currentIndex = skills.findIndex((item) => item.id === skill.id);
+  const previous = skills[(currentIndex - 1 + skills.length) % skills.length];
+  const next = skills[(currentIndex + 1) % skills.length];
+  const media = skill.demoMedia ?? [];
+  const avgRating = comments.length ? comments.reduce((sum, item) => sum + item.rating, 0) / comments.length : 0;
+
+  const share = async () => {
+    await navigator.clipboard.writeText(window.location.href);
+    setShared(true);
+    window.setTimeout(() => setShared(false), 1600);
+  };
+
+  const favorite = () => {
+    toggleFavorite(skill.id);
+    toast.success(isFavorited ? '已取消收藏' : '已加入收藏');
+  };
+
   return (
-    <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
-      {/* ============================================================ */}
-      {/* 顶部：返回 + 标题 */}
-      {/* ============================================================ */}
-      <button
-        onClick={() => navigate(-1)}
-        className="flex items-center gap-1.5 text-sm text-content-subtle hover:text-content transition-colors mb-6"
-      >
-        <ArrowLeft className="w-4 h-4" />
-        返回
-      </button>
-
-      {/* 标题区 */}
-      <div className="mb-8">
-        <div className="flex flex-wrap items-center gap-3 mb-3">
-          <Badge color={PRIMARY_CATEGORY_BADGE_COLORS[skill.primaryCategory]} size="md">
-            {PRIMARY_CATEGORY_LABELS[skill.primaryCategory]}
-          </Badge>
-          {skill.vibeSubcategory && (
-            <Badge color={VIBE_SUBCATEGORY_BADGE_COLORS[skill.vibeSubcategory]} size="md">
-              {VIBE_SUBCATEGORY_LABELS[skill.vibeSubcategory]}
-            </Badge>
-          )}
-          {skill.tags.visualStyles.map((vs) => (
-            <Badge key={vs} color={`${VISUAL_STYLE_BADGE_COLORS[vs]} border-current/20`} size="md">
-              {VISUAL_STYLE_LABELS[vs]}
-            </Badge>
-          ))}
-          {skill.featured && (
-            <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-white/[0.06] border border-white/15 text-content text-xs font-medium">
-              <Sparkles className="w-3 h-3" strokeWidth={1.75} />
-              精选
-            </span>
-          )}
-          <span
-            className={cn(
-              'px-2 py-0.5 rounded border text-xs',
-              DIFFICULTY_COLORS[skill.difficulty]
-            )}
-          >
-            {skill.difficulty}
-          </span>
-        </div>
-        <h1 className="font-display text-3xl md:text-4xl tracking-[0.06em] leading-[1.15] text-content mb-3">{skill.name}</h1>
-        <p className="text-lg text-content-muted max-w-3xl leading-relaxed">
-          {skill.description}
-        </p>
-      </div>
-
-      {/* ============================================================ */}
-      {/* 效果展示：视频/图片媒体（胶片边框，作品为视觉焦点） */}
-      {/* ============================================================ */}
-      {skill.demoMedia && skill.demoMedia.length > 0 && (
-        <section className="mb-8">
-          <div className="flex flex-wrap items-baseline justify-between gap-2 mb-3 px-1">
-            <h2 className="text-lg font-semibold text-content flex items-center gap-2">
-              <Film className="w-5 h-5 text-content-subtle" strokeWidth={1.75} />
-              效果展示
-            </h2>
-            <p className="text-sm text-content-subtle">结合效果视频了解和使用</p>
+    <div className="min-h-screen bg-[#050505] text-white">
+      <header className="sticky top-0 z-40 bg-[#080808]/95 px-2 py-1.5 shadow-[0_10px_30px_rgba(0,0,0,0.16)] backdrop-blur-xl">
+        <div className="flex min-w-0 items-center gap-1.5">
+          <GallerySiteMenu />
+          <Link to="/skills" className="inline-flex h-7 shrink-0 items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.04] px-2.5 text-[11px] text-white/65 transition-colors hover:text-white">
+            <ArrowLeft className="h-3.5 w-3.5" />全部 Skill
+          </Link>
+          <div className="flex min-w-0 flex-1 items-center gap-1.5 overflow-hidden">
+            <span className="hidden h-7 shrink-0 items-center rounded-full border border-white/10 px-2.5 text-[10px] text-white/40 sm:inline-flex">{PRIMARY_CATEGORY_LABELS[skill.primaryCategory]}</span>
+            <span className="truncate px-1 text-[11px] font-black text-white/62">{skill.name}</span>
           </div>
-          <FilmFrame>
-            <MediaPreview
-              media={skill.demoMedia}
-              autoPlay
-              showControls
-              height="h-72 md:h-96"
-              rounded={false}
-            />
-          </FilmFrame>
-        </section>
-      )}
-
-      {/* ============================================================ */}
-      {/* 主体：左侧信息 + 右侧操作栏 */}
-      {/* ============================================================ */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        {/* 左侧：详情内容（占 2 列） */}
-        <div className="lg:col-span-2 flex flex-col gap-6">
-          {/* 完整描述 */}
-          <Card padding="lg">
-            <h2 className="text-lg font-semibold text-content mb-3 flex items-center gap-2">
-              <FileText className="w-5 h-5 text-content-subtle" />
-              详细介绍
-            </h2>
-            <p className="text-content-muted leading-relaxed whitespace-pre-line">
-              {skill.longDescription}
-            </p>
-
-            {/* 标签（按维度分组展示） */}
-            <div className="mt-5 pt-5 border-t border-border-subtle">
-              <div className="flex items-center gap-2 mb-3 text-sm text-content-subtle">
-                <Tag className="w-4 h-4" />
-                标签
-                {skill.tagBasis && (
-                  <span className="text-xs text-content-faint">依据：{skill.tagBasis}</span>
-                )}
-              </div>
-              <div className="flex flex-col gap-3">
-                {TAG_DIMENSIONS_META.map((dim) => {
-                  const values = (skill.tags[dim.key] as readonly string[] | undefined) ?? [];
-                  if (values.length === 0) return null;
-                  return (
-                    <div key={dim.key} className="flex items-center gap-2 flex-wrap">
-                      <span className="text-xs text-content-faint w-16 flex-shrink-0">{dim.label}</span>
-                      <div className="flex flex-wrap gap-2">
-                        {values.map((value) => (
-                          <Badge
-                            key={`${dim.key}-${value}`}
-                            color={getTagBadgeColor(dim.key, value)}
-                            size="md"
-                          >
-                            {getTagLabel(dim.key, value)}
-                          </Badge>
-                        ))}
-                      </div>
-                    </div>
-                  );
-                })}
-                {flattenSkillTags(skill.tags).length === 0 && (
-                  <span className="text-sm text-content-faint">暂无标签</span>
-                )}
-              </div>
-            </div>
-          </Card>
-
-          {/* 安装说明 */}
-          <Card padding="lg">
-            <h2 className="text-lg font-semibold text-content mb-4 flex items-center gap-2">
-              <Terminal className="w-5 h-5 text-content-subtle" />
-              安装与使用
-            </h2>
-
-            <div className="flex flex-col gap-4">
-              {/* 安装命令 */}
-              {skill.installCommand && (
-                <div>
-                  <div className="text-sm text-content-muted mb-2 flex items-center gap-1.5">
-                    <ChevronRight className="w-3.5 h-3.5 text-content-subtle" />
-                    安装命令
-                  </div>
-                  <CodeBlock
-                    code={skill.installCommand}
-                    label="terminal"
-                    icon={<Terminal className="w-3.5 h-3.5" />}
-                  />
-                </div>
-              )}
-
-              {/* 使用示例 */}
-              {skill.usageExample && (
-                <div>
-                  <div className="text-sm text-content-muted mb-2 flex items-center gap-1.5">
-                    <ChevronRight className="w-3.5 h-3.5 text-content-subtle" />
-                    使用示例
-                  </div>
-                  <CodeBlock
-                    code={skill.usageExample}
-                    label="example"
-                    icon={<FileCode className="w-3.5 h-3.5" />}
-                  />
-                </div>
-              )}
-
-              {/* 配置内容 */}
-              {skill.configContent && (
-                <div>
-                  <div className="text-sm text-content-muted mb-2 flex items-center gap-1.5">
-                    <ChevronRight className="w-3.5 h-3.5 text-content-subtle" />
-                    配置内容
-                  </div>
-                  <CodeBlock
-                    code={skill.configContent}
-                    label="config"
-                    icon={<FileCode className="w-3.5 h-3.5" />}
-                  />
-                </div>
-              )}
-            </div>
-          </Card>
-
-          {/* 评论区入口：评分概览 + 完整评论区（CommentSection 由另一个开发者实现） */}
-          <Card padding="lg">
-            <div className="flex items-center justify-between mb-4">
-              <h2 className="text-lg font-semibold text-content flex items-center gap-2">
-                <MessageSquare className="w-5 h-5 text-content-subtle" />
-                评论区
-              </h2>
-              <div className="flex items-center gap-3 text-sm">
-                <span className="text-content-subtle">
-                  {comments.length} 条评论
-                </span>
-                {avgRating > 0 && (
-                  <span className="flex items-center gap-1">
-                    <Star className="w-4 h-4 text-warning fill-current" />
-                    <span className="text-content font-medium">
-                      {avgRating.toFixed(1)}
-                    </span>
-                  </span>
-                )}
-              </div>
-            </div>
-
-            {/* 评分概览 */}
-            {comments.length > 0 ? (
-              <div className="mb-4 p-4 rounded-lg bg-base-elevated border border-border">
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-sm text-content-muted">社区评分</span>
-                  <div className="flex items-center gap-1">
-                    {Array.from({ length: 5 }).map((_, i) => (
-                      <Star
-                        key={i}
-                        className={cn(
-                          'w-4 h-4',
-                          i < Math.round(avgRating)
-                            ? 'text-warning fill-current'
-                            : 'text-content-faint'
-                        )}
-                      />
-                    ))}
-                    <span className="ml-1.5 text-sm text-content font-medium">
-                      {avgRating.toFixed(1)}
-                    </span>
-                  </div>
-                </div>
-                <p className="text-xs text-content-subtle">
-                  基于 {comments.length} 位用户的评价
-                </p>
-              </div>
-            ) : (
-              <div className="mb-4 p-4 rounded-lg bg-base-elevated border border-border text-center">
-                <p className="text-sm text-content-subtle">
-                  暂无评论，快来分享你的使用体验吧！
-                </p>
-              </div>
-            )}
-
-            {/* 完整评论区 */}
-            <div id="comment-section">
-              <CommentSection skillId={skill.id} showHeader={false} showOverview={false} />
-            </div>
-          </Card>
-        </div>
-
-        {/* 右侧：操作 + 元信息（占 1 列） */}
-        <div className="flex flex-col gap-6">
-          {/* 操作栏 */}
-          <Card padding="lg">
-            <div className="flex flex-col gap-3">
-              <Button
-                fullWidth
-                size="lg"
-                variant={isFavorited ? 'secondary' : 'primary'}
-                icon={<Heart className={cn('w-4 h-4', isFavorited && 'fill-current text-error')} />}
-                onClick={() => {
-                  toggleFavorite(skill.id);
-                  toast.success(isFavorited ? '已取消收藏' : '已加入收藏');
-                }}
-              >
-                {isFavorited ? '已收藏' : '收藏'}
-              </Button>
-
-              <Button
-                fullWidth
-                size="lg"
-                variant="outline"
-                icon={shared ? <Check className="w-4 h-4 text-success" /> : <Share2 className="w-4 h-4" />}
-                onClick={handleShare}
-              >
-                {shared ? '链接已复制' : '分享'}
-              </Button>
-
-              <a href={skill.sourceUrl} target="_blank" rel="noopener noreferrer" className="block">
-                <Button
-                  fullWidth
-                  size="lg"
-                  variant="secondary"
-                  icon={<Github className="w-4 h-4" />}
-                >
-                  查看源码
-                  <ExternalLink className="w-3 h-3 ml-1" />
-                </Button>
-              </a>
-            </div>
-          </Card>
-
-          {/* 元信息 */}
-          <Card padding="lg">
-            <h3 className="text-sm font-semibold text-content mb-4 flex items-center gap-2">
-              <FileCode className="w-4 h-4 text-content-subtle" />
-              元信息
-            </h3>
-            <div className="flex flex-col gap-3">
-              <MetaItem
-                icon={<User className="w-4 h-4" />}
-                label="作者"
-                value={skill.author}
-              />
-              <MetaItem
-                icon={<Layers className="w-4 h-4" />}
-                label="大类"
-                value={PRIMARY_CATEGORY_LABELS[skill.primaryCategory]}
-              />
-              {skill.vibeSubcategory && (
-                <MetaItem
-                  icon={<Tag className="w-4 h-4" />}
-                  label="Vibe 细分"
-                  value={VIBE_SUBCATEGORY_LABELS[skill.vibeSubcategory]}
-                />
-              )}
-              {skill.tags.visualStyles.length > 0 && (
-                <MetaItem
-                  icon={<Tag className="w-4 h-4" />}
-                  label="画风"
-                  value={skill.tags.visualStyles
-                    .map((vs) => VISUAL_STYLE_LABELS[vs])
-                    .join('、')}
-                />
-              )}
-              <MetaItem
-                icon={<Star className="w-4 h-4 text-warning" />}
-                label="Stars"
-                value={formatNumber(skill.stars)}
-              />
-              <MetaItem
-                icon={<Gauge className="w-4 h-4" />}
-                label="难度"
-                value={skill.difficulty}
-              />
-              <MetaItem
-                icon={<Globe className="w-4 h-4" />}
-                label="语言"
-                value={LANGUAGE_LABELS[skill.language]}
-              />
-              <MetaItem
-                icon={<Calendar className="w-4 h-4" />}
-                label="创建于"
-                value={formatRelativeTime(skill.createdAt)}
-              />
-              <MetaItem
-                icon={<Clock className="w-4 h-4" />}
-                label="更新于"
-                value={formatRelativeTime(skill.updatedAt)}
-              />
-            </div>
-
-            {/* 项目家族 */}
-            {skill.family && (
-              <div className="mt-4 pt-4 border-t border-border-subtle">
-                <div className="flex items-center gap-2 mb-1">
-                  <span className="text-xs text-content-subtle">项目家族</span>
-                </div>
-                <Badge color="bg-base-elevated text-content-muted border-border">
-                  {skill.family}
-                </Badge>
-              </div>
-            )}
-
-            {/* 详细日期 */}
-            <div className="mt-4 pt-4 border-t border-border-subtle text-xs text-content-faint space-y-1">
-              <div>创建日期：{formatDate(skill.createdAt)}</div>
-              <div>更新日期：{formatDate(skill.updatedAt)}</div>
-            </div>
-          </Card>
-
-          {/* 评论概览 */}
-          {comments.length > 0 && (
-            <Card padding="lg">
-              <h3 className="text-sm font-semibold text-content mb-3 flex items-center gap-2">
-                <ThumbsUp className="w-4 h-4 text-content-subtle" />
-                社区反馈
-              </h3>
-              <div className="flex flex-col gap-2">
-                {comments.slice(0, 2).map((c) => (
-                  <div key={c.id} className="p-3 rounded-lg bg-base-elevated border border-border">
-                    <div className="flex items-center justify-between mb-1.5">
-                      <span className="text-sm text-content font-medium">{c.userName}</span>
-                      <div className="flex items-center gap-0.5">
-                        {Array.from({ length: 5 }).map((_, i) => (
-                          <Star
-                            key={i}
-                            className={cn(
-                              'w-3 h-3',
-                              i < c.rating ? 'text-warning fill-current' : 'text-content-faint'
-                            )}
-                          />
-                        ))}
-                      </div>
-                    </div>
-                    <p className="text-xs text-content-muted line-clamp-2">{c.content}</p>
-                  </div>
-                ))}
-                {comments.length > 2 && (
-                  <button
-                    onClick={() => {
-                      document.getElementById('comment-section')?.scrollIntoView({ behavior: 'smooth' });
-                    }}
-                    className="text-xs text-content-subtle hover:text-content transition-colors text-center pt-1"
-                  >
-                    查看全部 {comments.length} 条评论 →
-                  </button>
-                )}
-              </div>
-            </Card>
-          )}
-        </div>
-      </div>
-
-      {/* ============================================================ */}
-      {/* 相关推荐 */}
-      {/* ============================================================ */}
-      {relatedSkills.length > 0 && (
-        <section className="mt-12">
-          <h2 className="text-xl font-semibold text-content mb-5 flex items-center gap-2">
-            <Sparkles className="w-5 h-5 text-content-subtle" />
-            相关推荐
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            {relatedSkills.map((s) => (
-              <SkillCard key={s.id} skill={s} />
-            ))}
+          <div className="flex shrink-0 items-center gap-1">
+            <button onClick={favorite} className={cn('flex h-7 w-7 items-center justify-center rounded-full border border-white/10 text-white/50 transition-colors hover:text-white', isFavorited && 'bg-white text-black')} aria-label={isFavorited ? '取消收藏' : '收藏'}><Heart className={cn('h-3.5 w-3.5', isFavorited && 'fill-current')} /></button>
+            <button onClick={share} className="hidden h-7 w-7 items-center justify-center rounded-full border border-white/10 text-white/50 transition-colors hover:text-white sm:flex" aria-label="复制链接">{shared ? <Check className="h-3.5 w-3.5" /> : <Share2 className="h-3.5 w-3.5" />}</button>
+            <Link to={`/skills/${previous.id}`} className="flex h-7 w-7 items-center justify-center rounded-full border border-white/10 text-white/50 transition-colors hover:text-white" aria-label="上一个 Skill"><ChevronLeft className="h-3.5 w-3.5" /></Link>
+            <Link to={`/skills/${next.id}`} className="flex h-7 w-7 items-center justify-center rounded-full border border-white/10 text-white/50 transition-colors hover:text-white" aria-label="下一个 Skill"><ChevronRight className="h-3.5 w-3.5" /></Link>
           </div>
-        </section>
-      )}
+        </div>
+      </header>
 
-      {/* 底部导航 */}
-      <div className="mt-12 flex items-center justify-between pt-6 border-t border-border">
-        <button
-          onClick={() => navigate(-1)}
-          className="flex items-center gap-1.5 text-sm text-content-subtle hover:text-content transition-colors"
-        >
-          <ArrowLeft className="w-4 h-4" />
-          返回上一页
-        </button>
-        <Link
-          to="/skills"
-          className="flex items-center gap-1.5 text-sm text-content-subtle hover:text-content transition-colors"
-        >
-          返回 Skill 大全
-          <ChevronRight className="w-4 h-4" />
-        </Link>
-      </div>
+      <main className="mx-auto max-w-[1680px]">
+        <div className="grid items-start md:grid-cols-[minmax(0,1fr)_320px] xl:grid-cols-[minmax(0,1fr)_380px]">
+          <div className="min-w-0">
+            <section className="relative h-[360px] overflow-hidden bg-[radial-gradient(circle_at_50%_45%,#292929_0%,#151515_40%,#080808_82%)] sm:h-[430px] md:h-auto md:aspect-[16/10] md:max-h-[650px]">
+              <div className="absolute right-3 top-3 z-20 rounded-full border border-white/12 bg-black/50 px-2.5 py-1.5 text-[9px] text-white/40 backdrop-blur-md">{media.length ? `${media.length} 个预览` : '暂无预览'}</div>
+              {media.length ? (
+                <MediaPreview media={media} autoPlay showControls fit="contain" rounded={false} loadingLabel={skill.name} height="h-full" className="bg-transparent" />
+              ) : (
+                <div className="flex h-full items-center justify-center px-8 text-center">
+                  <div><Sparkles className="mx-auto mb-4 h-7 w-7 text-white/18" /><div className="text-2xl font-black tracking-tight text-white/70">{skill.name}</div><p className="mt-2 text-[10px] text-white/25">暂未上传演示素材</p></div>
+                </div>
+              )}
+            </section>
+
+            <div className="px-4 sm:px-6 lg:px-8">
+              <section className="grid gap-4 py-7 sm:grid-cols-[132px_minmax(0,1fr)] sm:gap-7">
+                <SectionLabel index="01" title="功能概览" description="它解决什么问题" />
+                <p className="whitespace-pre-line text-sm leading-7 text-white/52">{skill.longDescription}</p>
+              </section>
+
+              <section className="grid gap-4 py-7 sm:grid-cols-[132px_minmax(0,1fr)] sm:gap-7">
+                <SectionLabel index="02" title="能力地图" description="适用场景与工作流" />
+                <div className="grid gap-x-6 gap-y-5 sm:grid-cols-2">
+                  {TAG_DIMENSIONS_META.map((dimension) => {
+                    const values = (skill.tags[dimension.key] as string[]) ?? [];
+                    if (!values.length) return null;
+                    return (
+                      <div key={dimension.key}>
+                        <div className="mb-2 text-[9px] tracking-[0.12em] text-white/25">{dimension.label}</div>
+                        <div className="flex flex-wrap gap-1.5">{values.map((value) => <span key={value} className="rounded-full border border-white/10 bg-white/[0.025] px-2.5 py-1 text-[10px] text-white/52">{getTagLabel(dimension.key, value)}</span>)}</div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </section>
+
+              {(skill.installCommand || skill.usageExample || skill.configContent) && (
+                <section className="grid gap-4 py-7 sm:grid-cols-[132px_minmax(0,1fr)] sm:gap-7">
+                  <SectionLabel index="03" title="安装与使用" description="复制后即可开始" />
+                  <div className="grid min-w-0 gap-2 xl:grid-cols-2">
+                    {skill.installCommand && <CodeBlock code={skill.installCommand} label="安装命令" />}
+                    {skill.usageExample && <CodeBlock code={skill.usageExample} label="使用示例" />}
+                    {skill.configContent && <div className="xl:col-span-2"><CodeBlock code={skill.configContent} label="配置内容" /></div>}
+                  </div>
+                </section>
+              )}
+
+              <section className="grid gap-4 py-7 sm:grid-cols-[132px_minmax(0,1fr)] sm:gap-7">
+                <SectionLabel index={skill.installCommand || skill.usageExample || skill.configContent ? '04' : '03'} title="使用反馈" description={`${comments.length} 条评论${avgRating ? ` · ${avgRating.toFixed(1)} 分` : ''}`} />
+                <div className="min-w-0"><CommentSection skillId={skill.id} showHeader={false} showOverview /></div>
+              </section>
+
+            </div>
+          </div>
+
+          <aside className="bg-[#080808] p-5 md:sticky md:top-10 xl:p-6">
+            <div className="flex flex-wrap gap-1.5 text-[9px] text-white/42">
+              <span className="rounded-full border border-white/10 px-2.5 py-1">{PRIMARY_CATEGORY_LABELS[skill.primaryCategory]}</span>
+              {skill.vibeSubcategory && <span className="rounded-full border border-white/10 px-2.5 py-1">{VIBE_SUBCATEGORY_LABELS[skill.vibeSubcategory]}</span>}
+              <span className={cn('rounded-full border px-2.5 py-1', DIFFICULTY_COLORS[skill.difficulty])}>{skill.difficulty}</span>
+            </div>
+
+            <h1 className="mt-4 break-words text-2xl font-black leading-[1.12] tracking-tight text-white xl:text-3xl">{skill.name}</h1>
+            <p className="mt-3 text-xs leading-6 text-white/43">{skill.description}</p>
+
+            <a href={skill.sourceUrl} target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex h-9 w-full items-center justify-center gap-2 rounded-[5px] border border-[#ffe485] bg-[#f1cb4b] text-xs font-black text-black transition-colors hover:bg-[#ffdc68]">
+              <Github className="h-4 w-4" />查看源码<ArrowUpRight className="h-3.5 w-3.5" />
+            </a>
+
+            <div className="mt-5 grid grid-cols-2 gap-2">
+              <MetaCell icon={<User className="h-3 w-3" />} label="作者" value={skill.author} />
+              <MetaCell icon={<Star className="h-3 w-3" />} label="Stars" value={formatNumber(skill.stars)} />
+              <MetaCell icon={<Layers className="h-3 w-3" />} label="分类" value={PRIMARY_CATEGORY_LABELS[skill.primaryCategory]} />
+              <MetaCell icon={<Globe className="h-3 w-3" />} label="语言" value={LANGUAGE_LABELS[skill.language]} />
+              <MetaCell icon={<Tag className="h-3 w-3" />} label="视觉风格" value={skill.tags.visualStyles.length ? skill.tags.visualStyles.map((item) => VISUAL_STYLE_LABELS[item]).join('、') : '未标注'} />
+              <MetaCell icon={<Clock className="h-3 w-3" />} label="最近更新" value={formatRelativeTime(skill.updatedAt)} />
+            </div>
+
+            <div className="mt-4 flex items-center justify-between rounded-[6px] bg-white/[0.02] px-3 py-2.5 text-[9px] text-white/24">
+              <span>创建 {formatDate(skill.createdAt)}</span>
+              <span>更新 {formatDate(skill.updatedAt)}</span>
+            </div>
+
+            <div className="mt-5 grid grid-cols-2 gap-2">
+              <Link to={`/skills/${previous.id}`} className="group min-w-0 rounded-[6px] bg-white/[0.025] px-3 py-3 text-left transition-colors hover:bg-white/[0.045]">
+                <div className="flex items-center gap-1 text-[9px] text-white/25"><ChevronLeft className="h-3 w-3" />上一个</div>
+                <div className="mt-1 truncate text-[10px] text-white/48 transition-colors group-hover:text-white">{previous.name}</div>
+              </Link>
+              <Link to={`/skills/${next.id}`} className="group min-w-0 rounded-[6px] bg-white/[0.025] px-3 py-3 text-right transition-colors hover:bg-white/[0.045]">
+                <div className="flex items-center justify-end gap-1 text-[9px] text-white/25">下一个<ChevronRight className="h-3 w-3" /></div>
+                <div className="mt-1 truncate text-[10px] text-white/48 transition-colors group-hover:text-white">{next.name}</div>
+              </Link>
+            </div>
+
+            {relatedSkills.length > 0 && (
+              <div className="mt-6 pt-2">
+                <div className="mb-2 flex items-center justify-between">
+                  <div><div className="text-[9px] font-black tracking-[0.18em] text-white/22">RELATED</div><h2 className="mt-1 text-xs font-black text-white/70">同类 Skill</h2></div>
+                  <Link to="/skills" className="text-[9px] text-white/28 transition-colors hover:text-white">查看全部</Link>
+                </div>
+                <div className="mt-2 space-y-1">
+                  {relatedSkills.map((item) => (
+                    <Link key={item.id} to={`/skills/${item.id}`} className="group flex items-center gap-3 rounded-[6px] px-2 py-2.5 transition-colors hover:bg-white/[0.025]">
+                      <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-white/10 text-[9px] font-black text-white/35 transition-colors group-hover:border-white/25 group-hover:text-white">{item.name.slice(0, 1).toUpperCase()}</div>
+                      <div className="min-w-0 flex-1"><div className="truncate text-[10px] text-white/56 transition-colors group-hover:text-white">{item.name}</div><div className="mt-1 text-[8px] text-white/22">{PRIMARY_CATEGORY_LABELS[item.primaryCategory]}</div></div>
+                      <ArrowUpRight className="h-3 w-3 text-white/18 transition-colors group-hover:text-white/65" />
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+          </aside>
+        </div>
+      </main>
     </div>
   );
 }
-

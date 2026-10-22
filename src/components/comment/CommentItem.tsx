@@ -1,12 +1,3 @@
-// ============================================================
-// CommentItem 单条评论组件
-// - 用户头像、用户名、评论时间（相对时间）
-// - 星级评分展示（只读 StarRating）
-// - 评论内容（支持换行）
-// - 成品展示（如有 works，展示图片网格，点击放大）
-// - 点赞按钮和数量（带 heart 缩放动画）
-// - 删除按钮（仅自己的评论）
-// ============================================================
 import { useState } from 'react';
 import { Heart, Trash2, ZoomIn } from 'lucide-react';
 import { cn } from '@/utils/cn';
@@ -19,31 +10,22 @@ import { useCommentStore } from '@/store/useCommentStore';
 import { useToastStore } from '@/store/useToastStore';
 import type { Comment } from '@/types';
 
-/** CommentItem Props */
 interface CommentItemProps {
-  /** 评论数据 */
   comment: Comment;
-  /** 自定义类名 */
   className?: string;
 }
 
-/** CommentItem 组件 */
 export function CommentItem({ comment, className }: CommentItemProps) {
   const likeComment = useCommentStore((s) => s.likeComment);
   const deleteComment = useCommentStore((s) => s.deleteComment);
   const showToast = useToastStore((s) => s.showToast);
 
-  // 点赞动画状态
   const [liked, setLiked] = useState(false);
-  // 放大查看的图片
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
-  // 删除确认弹窗
   const [deleteConfirmOpen, setDeleteConfirmOpen] = useState(false);
 
-  // 是否当前用户的评论
   const isOwn = isCurrentUser(comment.userName);
 
-  /** 处理点赞 */
   const handleLike = () => {
     if (liked) {
       showToast('info', '你已经点过赞了');
@@ -53,7 +35,6 @@ export function CommentItem({ comment, className }: CommentItemProps) {
     likeComment(comment.id);
   };
 
-  /** 确认删除评论 */
   const handleConfirmDelete = () => {
     deleteComment(comment.id);
     setDeleteConfirmOpen(false);
@@ -68,12 +49,9 @@ export function CommentItem({ comment, className }: CommentItemProps) {
         className
       )}
     >
-      {/* 头像 */}
       <Avatar src={comment.userAvatar} name={comment.userName} size="md" />
 
-      {/* 主体内容 */}
       <div className="flex-1 min-w-0">
-        {/* 头部：用户名 + 时间 + 评分 */}
         <div className="flex flex-wrap items-center gap-x-3 gap-y-1 mb-2">
           <span className="text-sm font-medium text-content">{comment.userName}</span>
           <span className="text-xs text-content-faint">
@@ -89,14 +67,12 @@ export function CommentItem({ comment, className }: CommentItemProps) {
           </div>
         </div>
 
-        {/* 评论内容（保留换行） */}
         {comment.content && (
           <p className="text-sm text-content-muted leading-relaxed whitespace-pre-wrap break-words mb-3">
             {comment.content}
           </p>
         )}
 
-        {/* 成品展示网格 */}
         {comment.works && comment.works.length > 0 && (
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 mb-3">
             {comment.works.map((work) => (
@@ -116,11 +92,9 @@ export function CommentItem({ comment, className }: CommentItemProps) {
                     无图
                   </div>
                 )}
-                {/* 悬浮提示 */}
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors flex items-center justify-center">
                   <ZoomIn className="w-5 h-5 text-white opacity-0 group-hover:opacity-100 transition-opacity" />
                 </div>
-                {/* 描述条 */}
                 {work.description && (
                   <div className="absolute bottom-0 left-0 right-0 px-2 py-1 bg-black/60 text-white text-xs truncate">
                     {work.description}
@@ -131,9 +105,7 @@ export function CommentItem({ comment, className }: CommentItemProps) {
           </div>
         )}
 
-        {/* 底部操作栏 */}
         <div className="flex items-center gap-3">
-          {/* 点赞 */}
           <button
             type="button"
             onClick={handleLike}
@@ -154,7 +126,6 @@ export function CommentItem({ comment, className }: CommentItemProps) {
             <span className="tabular-nums">{comment.likes}</span>
           </button>
 
-          {/* 删除（仅自己的评论） */}
           {isOwn && (
             <button
               type="button"
@@ -169,7 +140,6 @@ export function CommentItem({ comment, className }: CommentItemProps) {
         </div>
       </div>
 
-      {/* 图片放大 Modal */}
       <Modal
         open={previewUrl !== null}
         onClose={() => setPreviewUrl(null)}
@@ -183,7 +153,6 @@ export function CommentItem({ comment, className }: CommentItemProps) {
         )}
       </Modal>
 
-      {/* 删除确认 Modal */}
       <Modal
         open={deleteConfirmOpen}
         onClose={() => setDeleteConfirmOpen(false)}

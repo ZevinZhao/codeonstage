@@ -1,10 +1,5 @@
-// ============================================================
-// 格式化工具函数
-// ============================================================
 
-/**
- * 格式化数字：41000 → 41k，1500 → 1.5k
- */
+
 export function formatNumber(num: number): string {
   if (num >= 1000000) {
     return (num / 1000000).toFixed(1).replace(/\.0$/, '') + 'm';
@@ -15,9 +10,6 @@ export function formatNumber(num: number): string {
   return num.toString();
 }
 
-/**
- * 格式化日期：YYYY-MM-DD
- */
 export function formatDate(dateStr: string): string {
   const date = new Date(dateStr);
   if (isNaN(date.getTime())) return dateStr;
@@ -27,9 +19,6 @@ export function formatDate(dateStr: string): string {
   return `${year}-${month}-${day}`;
 }
 
-/**
- * 相对时间：刚刚 / x 分钟前 / x 小时前 / x 天前 / x 周前 / x 月前 / x 年前
- */
 export function formatRelativeTime(dateStr: string): string {
   const date = new Date(dateStr);
   if (isNaN(date.getTime())) return dateStr;
@@ -53,24 +42,15 @@ export function formatRelativeTime(dateStr: string): string {
   return '刚刚';
 }
 
-/**
- * 生成唯一 ID
- */
 export function generateId(): string {
   return `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 9)}`;
 }
 
-/**
- * 截断文本，超出显示省略号
- */
 export function truncate(text: string, maxLength: number): string {
   if (text.length <= maxLength) return text;
   return text.slice(0, maxLength) + '...';
 }
 
-/**
- * 将星数转换为星级显示字符串
- */
 export function formatRating(rating: number): string {
   return '★'.repeat(Math.round(rating)) + '☆'.repeat(5 - Math.round(rating));
 }

@@ -1,64 +1,57 @@
-/* ============================================================
-   全局样式 - TailwindCSS + 深色主题
-   - 背景层级：base #0a0a0a / surface #111111 / card #1a1a1a / elevated #1e1e1e
-   - 边框层级：border rgba(255,255,255,0.08) / strong 0.14 / subtle 0.05
-   - 文字层级：content #fafafa / muted #a3a3a3 / subtle #737373 / faint #525252
-   - 主色渐变：indigo #6366f1 → violet #8b5cf6
-   - 动效规范：emil-design-eng（看不见的细节复合成惊艳）
-   ============================================================ */
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* ============================================================
-   动效设计 token（emil-design-eng 推荐曲线）
-   ============================================================ */
 :root {
-  /* 强 ease-out：进入动画（立即运动 = 感觉响应快） */
+
+  --font-heiti-black: "特黑体", "STHeiti", "Heiti SC", "SimHei", "Source Han Sans SC Heavy", "Noto Sans CJK SC Black", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+
   --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
-  /* 强 ease-in-out：屏幕内移动 */
+
   --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
-  /* iOS 抽屉曲线 */
+
   --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
-  /* 时长：按压 120ms / 小组件 160ms / 下拉 200ms / 面板 250ms */
+
   --duration-press: 120ms;
   --duration-pop: 160ms;
   --duration-panel: 250ms;
 }
 
-/* ============================================================
-   全局基础样式
-   ============================================================ */
 @layer base {
   html {
     @apply bg-base text-content antialiased;
+    font-family: var(--font-heiti-black);
     font-feature-settings: 'cv11', 'ss01';
-    /* 平滑滚动 */
+
     scroll-behavior: smooth;
   }
 
   body {
     @apply min-h-screen;
-    /* 防止移动端横向溢出 */
+    font-family: var(--font-heiti-black);
+
     overflow-x: hidden;
   }
 
-  /* 标题排版 */
+
   h1, h2, h3, h4, h5, h6 {
-    @apply text-content font-semibold;
+    @apply text-content font-extrabold;
+    font-family: var(--font-heiti-black);
   }
 
-  /* 链接默认 */
+
   a {
     @apply text-content no-underline;
   }
 
-  /* 选中文字（中性灰：界面装饰保持低饱和，颜色留给内容） */
+
   ::selection {
     @apply bg-white/20 text-content;
   }
 
-  /* 输入框聚焦时移除默认轮廓 */
+
   input,
   textarea,
   select,
@@ -66,14 +59,14 @@
     @apply outline-none;
   }
 
-  /* 键盘焦点补偿（outline-none 不应吞掉键盘导航的可见焦点） */
+
   :focus-visible {
     outline: 2px solid rgba(255, 255, 255, 0.45);
     outline-offset: 2px;
     border-radius: 4px;
   }
 
-  /* 代码块默认字体（等宽字体） */
+
   code,
   pre,
   kbd,
@@ -81,20 +74,24 @@
     @apply font-mono;
   }
 
-  /* 表单元素继承字体 */
+
   input,
   textarea,
   select,
   button {
-    @apply font-sans;
+    font-family: var(--font-heiti-black);
+  }
+
+
+  .font-display,
+  .font-mono,
+  .font-sans {
+    font-family: var(--font-heiti-black) !important;
   }
 }
 
-/* ============================================================
-   自定义滚动条（深色主题）
-   ============================================================ */
 @layer utilities {
-  /* Webkit 滚动条 */
+
   ::-webkit-scrollbar {
     width: 8px;
     height: 8px;
@@ -113,13 +110,13 @@
     @apply bg-content-faint;
   }
 
-  /* Firefox 滚动条 */
+
   * {
     scrollbar-width: thin;
     scrollbar-color: #333333 #0a0a0a;
   }
 
-  /* 隐藏滚动条（横向滚动区域使用） */
+
   .scrollbar-hide {
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -129,37 +126,31 @@
   }
 }
 
-/* ============================================================
-   渐变工具类
-   ============================================================ */
 @layer utilities {
-  /* 品牌渐变文字 */
+
   .text-gradient-brand {
     @apply bg-clip-text text-transparent;
     background-image: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
   }
 
-  /* 品牌渐变背景 */
+
   .bg-gradient-brand {
     background-image: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
   }
 
-  /* 微妙的渐变边框 */
+
   .border-gradient-brand {
     border-image: linear-gradient(135deg, #6366f1, #8b5cf6) 1;
   }
 
-  /* 卡片渐变光晕 */
+
   .glow-brand {
     box-shadow: 0 0 24px rgba(99, 102, 241, 0.15);
   }
 }
 
-/* ============================================================
-   交互动效工具类（emil-design-eng 规范）
-   ============================================================ */
 @layer utilities {
-  /* 按压反馈：所有可按元素都应"听见"用户（scale 0.97 + 120ms 强 ease-out） */
+
   .pressable {
     transition-property: transform;
     transition-duration: var(--duration-press);
@@ -169,7 +160,7 @@
     transform: scale(0.97);
   }
 
-  /* 列表级联入场：30-80ms 间隔，装饰性、不阻塞交互 */
+
   @keyframes stagger-in {
     from {
       opacity: 0;
@@ -181,8 +172,8 @@
     }
   }
   .stagger > * {
-    /* backwards fill：delay 期间保持隐藏态，结束后释放 transform
-       （避免 forwards 永久覆盖子元素的内联 spring transform） */
+
+
     animation: stagger-in 400ms var(--ease-out) backwards;
   }
   .stagger > :nth-child(1) { animation-delay: 0ms; }
@@ -198,7 +189,7 @@
   .stagger > :nth-child(11) { animation-delay: 450ms; }
   .stagger > :nth-child(12) { animation-delay: 495ms; }
 
-  /* 淡入上滑（旧工具类，缓动统一到 token） */
+
   .animate-fade-up {
     animation: fade-up 0.35s var(--ease-out) both;
   }
@@ -214,13 +205,13 @@
     }
   }
 
-  /* 纯透明度淡入（reduced-motion 时替代位移动画） */
+
   @keyframes fade-only {
     from { opacity: 0; }
     to { opacity: 1; }
   }
 
-  /* 闪烁光标 */
+
   .animate-cursor-blink {
     animation: cursor-blink 1s step-end infinite;
   }
@@ -230,11 +221,9 @@
     51%, 100% { opacity: 0; }
   }
 
-  /* ============================================================
-     放映厅（首页）专用
-     ============================================================ */
 
-  /* 放映厅背景：接近纯黑的柔和深灰径向渐变（中央稍亮四周渐暗） */
+
+
   .bg-screening-hall {
     background: radial-gradient(
       ellipse at 50% 40%,
@@ -244,14 +233,10 @@
     );
   }
 
-  /* ============================================================
-     放映厅视觉语言（全站统一）：以首页为基准
-     - 内页背景：同源近黑径向渐变（自顶部展开，适配长页面滚动）
-     - 胶片齿孔：仅作低亮度点缀，静止无动画
-     ============================================================ */
 
-  /* 内页背景：与 .bg-screening-hall 同源的近黑渐变，
-     中心移至视口顶部，长页面滚动时自然过渡到底部纯黑 */
+
+
+
   .bg-hall-page {
     background: radial-gradient(
       ellipse 120% 70% at 50% -10%,
@@ -262,7 +247,7 @@
     );
   }
 
-  /* 胶片齿孔分隔线：一行居中齿孔，两端渐隐（页头/Footer 点缀） */
+
   .film-divider {
     height: 6px;
     background-image: repeating-linear-gradient(
@@ -289,7 +274,7 @@
     );
   }
 
-  /* 胶片边框齿孔带：FilmFrame 上下边（比 film-divider 齿孔略宽，不做渐隐） */
+
   .film-band {
     height: 22px;
     background-image: repeating-linear-gradient(
@@ -302,7 +287,7 @@
     background-repeat: no-repeat;
   }
 
-  /* 胶卷入场：透明度 + 不超过 12px 的轻微上移（ease-out-strong token） */
+
   @keyframes reel-enter {
     from {
       opacity: 0;
@@ -317,9 +302,8 @@
     animation: reel-enter 700ms var(--ease-out) both;
   }
 
-  /* ============================================================
-     放映厅视频控制条 - range 进度条（克制样式，与按钮风格一致）
-     ============================================================ */
+
+
   .reel-range {
     -webkit-appearance: none;
     appearance: none;
@@ -331,7 +315,7 @@
     cursor: default;
     opacity: 0.4;
   }
-  /* WebKit 轨道：已播放进度用 --progress 变量驱动双色轨道 */
+
   .reel-range::-webkit-slider-runnable-track {
     height: 3px;
     border-radius: 9999px;
@@ -349,7 +333,7 @@
     border-radius: 9999px;
     background: #fafafa;
   }
-  /* Firefox 轨道（自带 progress 伪元素） */
+
   .reel-range::-moz-range-track {
     height: 3px;
     border-radius: 9999px;
@@ -368,38 +352,33 @@
     background: #fafafa;
   }
 
-  /* 胶卷区全屏：纯黑背景（防止浏览器全屏的默认白底边） */
+
   .reel-stage:fullscreen,
   .reel-stage:-webkit-full-screen {
     background: #050506;
   }
 }
 
-/* ============================================================
-   无障碍：prefers-reduced-motion（减少动效 ≠ 零动效）
-   - 保留 opacity / color 过渡（辅助理解）
-   - 移除位移 / 缩放 / 无限循环运动
-   ============================================================ */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
 
-  /* 含位移的入场动画 → 纯淡入 */
+
   .animate-fade-up,
   .reel-enter,
   .text-line-reveal {
     animation: fade-only 0.3s ease-out both;
   }
 
-  /* Tailwind 动画类 → 纯淡入 */
+
   .animate-slide-up,
   .animate-slide-down,
   .animate-scale-in {
     animation: fade-only 0.2s ease-out both;
   }
 
-  /* 装饰性无限循环 → 静止 */
+
   .aurora-drift-1,
   .aurora-drift-2,
   .aurora-drift-3,
@@ -407,64 +386,103 @@
   .gacha-btn-glow,
   .gacha-pulse,
   .animate-pulse-soft,
-  .gacha-ball-roll {
+  .gacha-ball-roll,
+  .gacha-capsule-jostle,
+  .gacha-mixer-turn,
+  .gacha-knob-turn {
     animation: none;
   }
 
-  /* 一次性庆祝动画 → 快速结束 */
+
   .gacha-shake,
   .gacha-drop,
   .gacha-crack-left,
   .gacha-crack-right,
   .gacha-burst,
   .gacha-particle,
-  .gacha-result-appear {
+  .gacha-result-appear,
+  .gacha-machine-shake,
+  .gacha-chute-capsule,
+  .gacha-dispense-drop,
+  .gacha-tray-hit {
     animation-duration: 0.01ms;
     animation-iteration-count: 1;
   }
 
-  /* 按压缩放 → 仅透明度反馈 */
+
   .pressable:active {
     transform: none;
     opacity: 0.8;
   }
 
-  /* 级联入场 → 纯淡入且无延迟 */
+
   .stagger > * {
     animation: fade-only 0.2s ease-out backwards;
     animation-delay: 0ms;
   }
 }
 
-/* ============================================================
-   代码块样式（等宽字体 + 深色背景）
-   ============================================================ */
 @layer components {
-  /* 代码块容器 */
+
+  .works-wall {
+    --wall-columns: 2;
+    position: relative;
+    width: 100%;
+  }
+
+  .works-wall-item {
+    position: absolute;
+    left: 0;
+    top: 0;
+    will-change: transform;
+  }
+
+  .gallery-media {
+    position: relative;
+    width: 100%;
+    min-height: 132px;
+    overflow: hidden;
+    background: #111;
+  }
+
+  .gallery-media-loading {
+    background: linear-gradient(110deg, #111 20%, #1c1c1c 42%, #111 64%);
+    background-size: 220% 100%;
+    animation: gallery-shimmer 1.25s linear infinite;
+    opacity: 0.28;
+  }
+
+  @keyframes gallery-shimmer {
+    to { background-position-x: -220%; }
+  }
+
+  @media (min-width: 640px) { .works-wall { --wall-columns: 3; } }
+  @media (min-width: 820px) { .works-wall { --wall-columns: 4; } }
+  @media (min-width: 1080px) { .works-wall { --wall-columns: 5; } }
+  @media (min-width: 1500px) { .works-wall { --wall-columns: 6; } }
+  @media (min-width: 1900px) { .works-wall { --wall-columns: 7; } }
+
   pre {
     @apply bg-[#0d0d0d] text-content;
-    /* 等宽字体 + 连字优化 */
+
     font-feature-settings: 'liga' 0, 'calt' 0;
     tab-size: 2;
   }
 
-  /* 行内代码 */
+
   :not(pre) > code {
     @apply px-1.5 py-0.5 rounded-md bg-base-elevated text-content-muted text-[0.875em];
     border: 1px solid theme('colors.border.DEFAULT');
   }
 }
 
-/* ============================================================
-   响应式细节优化
-   ============================================================ */
 @layer utilities {
-  /* 移动端点击高亮移除 */
+
   * {
     -webkit-tap-highlight-color: transparent;
   }
 
-  /* iOS 输入框样式重置 */
+
   input[type='text'],
   input[type='search'],
   input[type='email'],
@@ -474,17 +492,14 @@
     appearance: none;
   }
 
-  /* 长内容换行优化 */
+
   .break-words-all {
     word-break: break-all;
     overflow-wrap: anywhere;
   }
 }
-/* ============================================================
-   扭蛋机动画
-   ============================================================ */
 
-/* 扭蛋机摇晃 */
+
 @keyframes gacha-shake {
   0%, 100% { transform: translateX(-50%) rotate(0deg); }
   10% { transform: translateX(calc(-50% - 4px)) rotate(-2deg); }
@@ -501,7 +516,7 @@
   animation: gacha-shake 0.9s ease-in-out;
 }
 
-/* 内部小球滚动 */
+
 @keyframes gacha-ball-roll {
   0% { transform: translate(0, 0); }
   25% { transform: translate(6px, -4px); }
@@ -513,7 +528,7 @@
   animation: gacha-ball-roll 0.5s ease-in-out infinite;
 }
 
-/* 扭蛋掉落 */
+
 @keyframes gacha-drop {
   0% {
     transform: translateY(0) scale(0.8);
@@ -532,7 +547,7 @@
   animation: gacha-drop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
 }
 
-/* 扭蛋破开 - 左半 */
+
 @keyframes gacha-crack-left {
   0% { transform: translateX(0) rotate(0deg); opacity: 1; }
   100% { transform: translateX(-20px) rotate(-30deg); opacity: 0; }
@@ -541,7 +556,7 @@
   animation: gacha-crack-left 0.5s ease-out forwards;
 }
 
-/* 扭蛋破开 - 右半 */
+
 @keyframes gacha-crack-right {
   0% { transform: translateX(0) rotate(0deg); opacity: 1; }
   100% { transform: translateX(20px) rotate(30deg); opacity: 0; }
@@ -550,7 +565,7 @@
   animation: gacha-crack-right 0.5s ease-out forwards;
 }
 
-/* 破开闪光（从 scale(0.6) 起步：真实世界没有东西从"无"出现） */
+
 @keyframes gacha-burst {
   0% { transform: translate(-50%, -50%) scale(0.6); opacity: 0; }
   50% { transform: translate(-50%, -50%) scale(1.5); opacity: 1; }
@@ -560,7 +575,7 @@
   animation: gacha-burst 0.5s ease-out forwards;
 }
 
-/* 粒子飞溅 */
+
 @keyframes gacha-particle {
   0% {
     transform: translate(0, 0) scale(1);
@@ -578,7 +593,7 @@
   animation: gacha-particle 0.6s ease-out forwards;
 }
 
-/* 结果出现 */
+
 @keyframes gacha-result-appear {
   0% {
     transform: translateY(20px) scale(0.95);
@@ -593,7 +608,7 @@
   animation: gacha-result-appear 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
 }
 
-/* 脉冲文字 */
+
 @keyframes gacha-pulse {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.5; }
@@ -602,7 +617,7 @@
   animation: gacha-pulse 0.8s ease-in-out infinite;
 }
 
-/* 按钮发光 */
+
 @keyframes gacha-btn-glow {
   0%, 100% {
     box-shadow: 0 4px 20px rgba(139, 92, 246, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.3);
@@ -614,9 +629,59 @@
 .gacha-btn-glow {
   animation: gacha-btn-glow 2s ease-in-out infinite;
 }
-/* ============================================================
-   极光背景动画
-   ============================================================ */
+
+@keyframes gacha-machine-shake {
+  0%, 100% { transform: translateX(0) rotate(0); }
+  12% { transform: translateX(-3px) rotate(-0.6deg); }
+  28% { transform: translateX(4px) rotate(0.8deg); }
+  45% { transform: translateX(-3px) rotate(-0.5deg); }
+  63% { transform: translateX(3px) rotate(0.6deg); }
+  82% { transform: translateX(-1px) rotate(-0.2deg); }
+}
+.gacha-machine-shake { animation: gacha-machine-shake .9s cubic-bezier(.36,.07,.19,.97); }
+
+@keyframes gacha-capsule-jostle {
+  0%, 100% { transform: translate(-50%,-50%) rotate(var(--capsule-rotate)); }
+  35% { transform: translate(calc(-50% + 8px),calc(-50% - 9px)) rotate(calc(var(--capsule-rotate) + 18deg)); }
+  68% { transform: translate(calc(-50% - 6px),calc(-50% + 5px)) rotate(calc(var(--capsule-rotate) - 14deg)); }
+}
+.gacha-capsule-jostle { animation: gacha-capsule-jostle .42s ease-in-out infinite; }
+
+@keyframes gacha-mixer-turn { to { transform: translateX(-50%) rotate(360deg); } }
+.gacha-mixer-turn { animation: gacha-mixer-turn .72s cubic-bezier(.45,.05,.55,.95); }
+
+@keyframes gacha-knob-turn {
+  0% { transform: rotate(0deg); }
+  72% { transform: rotate(320deg); }
+  100% { transform: rotate(360deg); }
+}
+.gacha-knob-turn { animation: gacha-knob-turn .9s cubic-bezier(.3,.05,.2,1); }
+
+@keyframes gacha-chute-capsule {
+  0% { transform: translate(-50%,-80px) rotate(0deg); opacity: 0; }
+  18% { opacity: 1; }
+  74% { transform: translate(-50%,115px) rotate(245deg); opacity: 1; }
+  100% { transform: translate(-50%,160px) rotate(310deg); opacity: 0; }
+}
+.gacha-chute-capsule { animation: gacha-chute-capsule .78s cubic-bezier(.28,.03,.3,1) forwards; box-shadow: 0 7px 18px var(--capsule-glow); }
+
+@keyframes gacha-dispense-drop {
+  0% { transform: translate(-50%,-130%) rotate(-70deg) scale(.8); }
+  68% { transform: translate(-50%,-42%) rotate(12deg) scale(1); }
+  84% { transform: translate(-50%,-65%) rotate(-18deg) scale(1); }
+  100% { transform: translate(-50%,-55%) rotate(-12deg) scale(1); }
+}
+.gacha-dispense-drop { animation: gacha-dispense-drop .55s cubic-bezier(.2,.7,.2,1) forwards; }
+
+@keyframes gacha-tray-hit {
+  0%, 100% { transform: translateY(0); }
+  60% { transform: translateY(3px); }
+}
+.gacha-tray-hit { animation: gacha-tray-hit .34s ease-out .42s; }
+
+@media (max-width: 520px) {
+  .gacha-machine { transform: scale(.86); }
+}
 
 @keyframes aurora-drift-1 {
   0%, 100% { transform: translate(0, 0) scale(1); }
@@ -645,10 +710,6 @@
   animation: aurora-drift-3 30s ease-in-out infinite;
 }
 
-/* ============================================================
-   文字逐行揭示动画
-   ============================================================ */
-
 @keyframes text-line-reveal {
   0% {
     opacity: 0;
@@ -665,7 +726,7 @@
   animation: text-line-reveal 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-/* 渐变文字流光 */
+
 @keyframes gradient-shift {
   0%, 100% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }

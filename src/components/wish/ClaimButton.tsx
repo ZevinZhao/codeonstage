@@ -1,11 +1,3 @@
-// ============================================================
-// ClaimButton - 认领按钮组件
-// ============================================================
-// 根据许愿状态和当前用户身份显示不同操作按钮：
-//   - open 且非作者            -> "我来认领制作"
-//   - claimed/in-progress 且是认领者 -> "提交成果" + "放弃认领"
-//   - completed                -> "查看成果" 链接
-//   - 自己提的需求             -> 不显示认领相关按钮
 import { useState } from 'react';
 import { Hammer, CheckCircle2, ExternalLink, XCircle, Link2 } from 'lucide-react';
 import type { Wish } from '@/types';
@@ -15,30 +7,20 @@ import { Input } from '@/components/ui/Input';
 import type { CurrentUser } from '@/utils/userStorage';
 import { cn } from '@/utils/cn';
 
-/** ClaimButton Props */
 interface ClaimButtonProps {
   wish: Wish;
   currentUser: CurrentUser;
-  /** 认领 */
   onClaim: (id: string) => void;
-  /** 提交成果 */
   onSubmitResult: (id: string, resultUrl: string) => void;
-  /** 放弃认领 */
   onAbandon: (id: string) => void;
-  /** 查看成果 */
   onViewResult?: (url: string) => void;
-  /** 按钮尺寸 */
   size?: 'sm' | 'md' | 'lg';
-  /** 是否采用全宽布局 */
   fullWidth?: boolean;
-  /** 自定义类名 */
   className?: string;
 }
 
-/** 确认弹窗类型 */
 type ConfirmType = 'claim' | 'abandon' | null;
 
-/** ClaimButton 组件 */
 export function ClaimButton({
   wish,
   currentUser,
@@ -59,7 +41,6 @@ export function ClaimButton({
   const isClaimant =
     !!wish.claimantName && wish.claimantName === currentUser.userName;
 
-  // 已完成：显示查看成果链接
   if (wish.status === 'completed') {
     if (!wish.resultUrl) return null;
     return (
@@ -82,10 +63,8 @@ export function ClaimButton({
     );
   }
 
-  // 自己提的需求：不显示认领按钮
   if (isAuthor) return null;
 
-  // open 状态且非作者：显示认领按钮
   if (wish.status === 'open') {
     return (
       <>
@@ -114,11 +93,9 @@ export function ClaimButton({
     );
   }
 
-  // claimed / in-progress 且是认领者：显示提交成果 + 放弃认领
   if (isClaimant && (wish.status === 'claimed' || wish.status === 'in-progress')) {
     const handleResultSubmit = () => {
       const trimmed = resultUrl.trim();
-      // 简单校验：非空且以 http 开头
       if (!trimmed || !/^https?:\/\//i.test(trimmed)) {
         setUrlError(true);
         return;
@@ -151,7 +128,6 @@ export function ClaimButton({
           </Button>
         </div>
 
-        {/* 提交成果弹窗 */}
         <Modal
           open={showResultForm}
           onClose={() => {
@@ -209,7 +185,6 @@ export function ClaimButton({
           </div>
         </Modal>
 
-        {/* 放弃认领确认 */}
         <ConfirmModal
           open={confirm === 'abandon'}
           title="确认放弃认领"
@@ -226,11 +201,9 @@ export function ClaimButton({
     );
   }
 
-  // 其他情况不显示
   return null;
 }
 
-/** 确认弹窗（内部组件） */
 interface ConfirmModalProps {
   open: boolean;
   title: string;

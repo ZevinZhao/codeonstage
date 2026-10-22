@@ -1,198 +1,58 @@
-// ============================================================
-// FavoriteCard 收藏卡片组件
-// - 展示 Skill 信息（名称、分类、描述截断）
-// - 状态标识（StatusBadge，可切换）
-// - 使用心得（NoteEditor）
-// - 收藏时间
-// - 跳转到 Skill 详情
-// - 取消收藏按钮（带 Modal 确认弹窗）
-// ============================================================
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ExternalLink, Trash2, Star, Clock } from 'lucide-react';
+import { ArrowUpRight, Clock, Star, Trash2 } from 'lucide-react';
 import { cn } from '@/utils/cn';
-import { Card } from '@/components/ui/Card';
-import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
 import { Modal } from '@/components/ui/Modal';
+import { GalleryMedia } from '@/components/skill/GalleryMedia';
 import { StatusBadge } from './StatusBadge';
 import { NoteEditor } from './NoteEditor';
 import { getSkillById } from '@/data';
-import {
-  PRIMARY_CATEGORY_LABELS,
-  flattenSkillTags,
-  getTagBadgeColor,
-} from '@/utils/constants';
+import { PRIMARY_CATEGORY_LABELS } from '@/utils/constants';
 import { formatRelativeTime, formatNumber, truncate } from '@/utils/format';
 import { useFavoriteStore } from '@/store/useFavoriteStore';
 import { useToastStore } from '@/store/useToastStore';
 import type { Favorite } from '@/types';
 
-/** FavoriteCard Props */
-interface FavoriteCardProps {
-  /** 收藏数据 */
-  favorite: Favorite;
-  /** 自定义类名 */
-  className?: string;
-}
+interface FavoriteCardProps { favorite: Favorite; className?: string }
 
-/** FavoriteCard 组件 */
 export function FavoriteCard({ favorite, className }: FavoriteCardProps) {
-  const updateStatus = useFavoriteStore((s) => s.updateStatus);
-  const updateNote = useFavoriteStore((s) => s.updateNote);
-  const removeFavorite = useFavoriteStore((s) => s.removeFavorite);
-  const showToast = useToastStore((s) => s.showToast);
-
-  // 删除确认弹窗
+  const updateStatus = useFavoriteStore((state) => state.updateStatus);
+  const updateNote = useFavoriteStore((state) => state.updateNote);
+  const removeFavorite = useFavoriteStore((state) => state.removeFavorite);
+  const showToast = useToastStore((state) => state.showToast);
   const [confirmOpen, setConfirmOpen] = useState(false);
-
   const skill = getSkillById(favorite.skillId);
 
-  /** 处理取消收藏（打开确认弹窗） */
-  const handleRemoveClick = () => {
-    setConfirmOpen(true);
-  };
-
-  /** 确认取消收藏 */
-  const handleConfirmRemove = () => {
+  const remove = () => {
     removeFavorite(favorite.skillId);
     setConfirmOpen(false);
     showToast('success', '已取消收藏');
   };
 
-  /** 处理状态切换 */
-  const handleStatusChange = (status: typeof favorite.status) => {
-    updateStatus(favorite.skillId, status);
-    showToast('success', '状态已更新');
-  };
-
-  /** 处理心得保存 */
-  const handleNoteSave = (note: string) => {
-    updateNote(favorite.skillId, note);
-  };
-
-  /** 渲染删除确认弹窗 */
-  const renderConfirmModal = () => (
-    <Modal
-      open={confirmOpen}
-      onClose={() => setConfirmOpen(false)}
-      title="确认取消收藏"
-      size="sm"
-      footer={
-        <>
-          <Button variant="secondary" onClick={() => setConfirmOpen(false)}>
-            再想想
-          </Button>
-          <Button variant="danger" onClick={handleConfirmRemove} icon={<Trash2 className="w-4 h-4" />}>
-            确认取消
-          </Button>
-        </>
-      }
-    >
-      <p className="text-sm text-content-muted leading-relaxed">
-        确定要取消收藏「{skill?.name ?? '该 Skill'}」吗？
-        <br />
-        相关使用心得将一并删除，此操作不可撤销。
-      </p>
-    </Modal>
-  );
-
-  // Skill 不存在的兜底
-  if (!skill) {
-    return (
-      <>
-        <Card className={cn('flex flex-col gap-3', className)}>
-          <div className="flex items-center justify-between">
-            <span className="text-sm text-content-muted">该 Skill 已下架</span>
-            <StatusBadge status={favorite.status} />
-          </div>
-          <div className="text-xs text-content-faint">
-            收藏于 {formatRelativeTime(favorite.addedAt)}
-          </div>
-          <Button variant="danger" size="sm" onClick={handleRemoveClick} icon={<Trash2 className="w-3.5 h-3.5" />}>
-            移除收藏
-          </Button>
-        </Card>
-        {renderConfirmModal()}
-      </>
-    );
-  }
+  if (!skill) return null;
 
   return (
     <>
-      <Card className={cn('flex flex-col gap-3', className)}>
-        {/* 头部：分类 + 状态 */}
-        <div className="flex items-start justify-between gap-2">
-          <Badge>
-            {PRIMARY_CATEGORY_LABELS[skill.primaryCategory]}
-          </Badge>
-          <StatusBadge
-            status={favorite.status}
-            editable
-            onChange={handleStatusChange}
-          />
+      <article className={cn('group overflow-hidden rounded-[8px] border border-white/10 bg-[#0d0d0d] transition-colors hover:border-white/25', className)}>
+        <div className="relative min-h-40 overflow-hidden bg-[#111]">
+          <GalleryMedia media={skill.demoMedia ?? []} paused={false} fallback={<div className="absolute inset-0 flex items-center justify-center bg-[radial-gradient(circle_at_30%_20%,#303036,transparent_42%),#111113] px-8 text-center text-xl text-white/85">{skill.name}</div>} />
+          <div className="absolute left-2 top-2 rounded-full border border-white/15 bg-black/65 px-2.5 py-1 text-[10px] text-white/65 backdrop-blur-md">{PRIMARY_CATEGORY_LABELS[skill.primaryCategory]}</div>
+          <button onClick={() => setConfirmOpen(true)} className="absolute right-2 top-2 rounded-full border border-white/15 bg-black/65 p-2 text-white/50 opacity-0 backdrop-blur-md transition-all hover:text-white group-hover:opacity-100" aria-label="取消收藏"><Trash2 className="h-3.5 w-3.5" /></button>
         </div>
-
-        {/* 标题 + Stars */}
-        <div>
-          <Link
-            to={`/skills/${skill.id}`}
-            className="group inline-flex items-center gap-1.5 text-base font-medium text-content hover:text-white transition-colors"
-          >
-            {skill.name}
-            <ExternalLink className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity" />
-          </Link>
-          <div className="flex items-center gap-3 mt-1 text-xs text-content-faint">
-            <span className="inline-flex items-center gap-1">
-              <Star className="w-3 h-3" />
-              {formatNumber(skill.stars)}
-            </span>
-            <span className="inline-flex items-center gap-1">
-              <Clock className="w-3 h-3" />
-              收藏于 {formatRelativeTime(favorite.addedAt)}
-            </span>
+        <div className="p-4">
+          <div className="mb-3 flex items-start justify-between gap-3">
+            <div className="min-w-0">
+              <Link to={`/skills/${skill.id}`} className="inline-flex max-w-full items-center gap-1.5 text-base font-black text-white hover:text-white/75"><span className="truncate">{skill.name}</span><ArrowUpRight className="h-3.5 w-3.5 shrink-0" /></Link>
+              <div className="mt-1.5 flex items-center gap-3 text-[10px] text-white/35"><span className="inline-flex items-center gap-1"><Star className="h-3 w-3" />{formatNumber(skill.stars)}</span><span className="inline-flex items-center gap-1"><Clock className="h-3 w-3" />{formatRelativeTime(favorite.addedAt)}</span></div>
+            </div>
+            <StatusBadge status={favorite.status} editable onChange={(status) => updateStatus(favorite.skillId, status)} />
           </div>
+          <p className="min-h-10 text-xs leading-5 text-white/45">{truncate(skill.description, 92)}</p>
+          <div className="mt-4"><NoteEditor value={favorite.note} onSave={(note) => updateNote(favorite.skillId, note)} /></div>
         </div>
-
-        {/* 描述截断 */}
-        <p className="text-sm text-content-muted leading-relaxed">
-          {truncate(skill.description, 100)}
-        </p>
-
-        {/* 标签 */}
-        {flattenSkillTags(skill.tags).length > 0 && (
-          <div className="flex flex-wrap gap-1.5">
-            {flattenSkillTags(skill.tags).slice(0, 4).map((t) => (
-              <Badge key={`${t.dimension}-${t.value}`} color={getTagBadgeColor(t.dimension, t.value)}>
-                {t.label}
-              </Badge>
-            ))}
-          </div>
-        )}
-
-        {/* 使用心得 */}
-        <div className="pt-2 border-t border-border">
-          <NoteEditor value={favorite.note} onSave={handleNoteSave} />
-        </div>
-
-        {/* 底部操作 */}
-        <div className="flex items-center justify-between pt-2 border-t border-border">
-          <Link to={`/skills/${skill.id}`}>
-            <Button variant="ghost" size="sm" icon={<ExternalLink className="w-3.5 h-3.5" />}>
-              查看详情
-            </Button>
-          </Link>
-          <Button
-            variant="danger"
-            size="sm"
-            onClick={handleRemoveClick}
-            icon={<Trash2 className="w-3.5 h-3.5" />}
-          >
-            取消收藏
-          </Button>
-        </div>
-      </Card>
-      {renderConfirmModal()}
+      </article>
+      <Modal open={confirmOpen} onClose={() => setConfirmOpen(false)} title="取消收藏" size="sm" footer={<><Button variant="secondary" onClick={() => setConfirmOpen(false)}>保留</Button><Button variant="danger" onClick={remove}>确认取消</Button></>}><p className="text-sm leading-6 text-content-muted">取消收藏“{skill.name}”后，这张卡片里的使用心得也会一起删除。</p></Modal>
     </>
   );
 }

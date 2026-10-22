@@ -1,13 +1,3 @@
-// ============================================================
-// WorkUpload 成品上传组件
-// - 支持上传多张图片（input type=file accept=image/*）
-// - 图片预览网格（可删除）
-// - 每张图片可添加描述
-// - 上传后转为 base64 存储
-// - 限制图片大小（2MB）和数量（5 张）
-// - 拖拽上传支持
-// - 预览时点击可放大查看
-// ============================================================
 import { useRef, useState, type ChangeEvent, type DragEvent } from 'react';
 import { ImagePlus, X, ZoomIn, AlertCircle } from 'lucide-react';
 import { cn } from '@/utils/cn';
@@ -16,27 +6,17 @@ import { Input } from '@/components/ui/Input';
 import { toast } from '@/store/useToastStore';
 import type { WorkShowcase } from '@/types';
 
-/** 默认限制 */
 const MAX_SIZE_MB = 2;
 const MAX_COUNT = 5;
 
-/** WorkUpload Props */
 interface WorkUploadProps {
-  /** 当前已上传的成品列表 */
   works: WorkShowcase[];
-  /** 作品变化回调 */
   onChange: (works: WorkShowcase[]) => void;
-  /** 最大数量 */
   maxCount?: number;
-  /** 单张最大尺寸（MB） */
   maxSizeMb?: number;
-  /** 自定义类名 */
   className?: string;
 }
 
-/**
- * 将 File 转为 base64 字符串
- */
 function fileToBase64(file: File): Promise<string> {
   return new Promise((resolve, reject) => {
     const reader = new FileReader();
@@ -46,7 +26,6 @@ function fileToBase64(file: File): Promise<string> {
   });
 }
 
-/** WorkUpload 组件 */
 export function WorkUpload({
   works,
   onChange,
@@ -56,14 +35,12 @@ export function WorkUpload({
 }: WorkUploadProps) {
   const inputRef = useRef<HTMLInputElement>(null);
   const [dragging, setDragging] = useState(false);
-  // 放大查看的图片索引
   const [previewIndex, setPreviewIndex] = useState<number | null>(null);
   const [uploading, setUploading] = useState(false);
 
   const maxSizeBytes = maxSizeMb * 1024 * 1024;
   const remaining = maxCount - works.length;
 
-  /** 处理文件选择 */
   const handleFiles = async (files: FileList | null) => {
     if (!files || files.length === 0) return;
 
@@ -78,12 +55,10 @@ export function WorkUpload({
     try {
       const newWorks: WorkShowcase[] = [];
       for (const file of fileArray) {
-        // 类型校验
         if (!file.type.startsWith('image/')) {
           toast.error(`${file.name} 不是图片文件`);
           continue;
         }
-        // 大小校验
         if (file.size > maxSizeBytes) {
           toast.error(`${file.name} 超过 ${maxSizeMb}MB 限制`);
           continue;
@@ -104,17 +79,14 @@ export function WorkUpload({
       toast.error('图片上传失败，请重试');
     } finally {
       setUploading(false);
-      // 清空 input，便于重复选择同一文件
       if (inputRef.current) inputRef.current.value = '';
     }
   };
 
-  /** 处理 input change */
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     void handleFiles(e.target.files);
   };
 
-  /** 处理拖拽相关 */
   const handleDragOver = (e: DragEvent<HTMLDivElement>) => {
     e.preventDefault();
     setDragging(true);
@@ -129,22 +101,18 @@ export function WorkUpload({
     void handleFiles(e.dataTransfer.files);
   };
 
-  /** 删除某张图片 */
   const handleRemove = (id: string) => {
     onChange(works.filter((w) => w.id !== id));
   };
 
-  /** 更新某张图片描述 */
   const handleUpdateDescription = (id: string, description: string) => {
     onChange(works.map((w) => (w.id === id ? { ...w, description } : w)));
   };
 
-  /** 放大查看的图片 */
   const previewWork = previewIndex !== null ? works[previewIndex] : null;
 
   return (
     <div className={cn('w-full', className)}>
-      {/* 隐藏的文件输入 */}
       <input
         ref={inputRef}
         type="file"
@@ -154,7 +122,6 @@ export function WorkUpload({
         onChange={handleInputChange}
       />
 
-      {/* 上传区域 */}
       {remaining > 0 && (
         <div
           onClick={() => inputRef.current?.click()}
@@ -183,7 +150,6 @@ export function WorkUpload({
         </div>
       )}
 
-      {/* 已达上限提示 */}
       {remaining === 0 && works.length > 0 && (
         <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-base-elevated text-xs text-content-subtle">
           <AlertCircle className="w-3.5 h-3.5" />
@@ -191,7 +157,6 @@ export function WorkUpload({
         </div>
       )}
 
-      {/* 预览网格 */}
       {works.length > 0 && (
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mt-3">
           {works.map((work, idx) => (
@@ -199,7 +164,6 @@ export function WorkUpload({
               key={work.id}
               className="group relative rounded-lg overflow-hidden border border-border bg-base-elevated"
             >
-              {/* 图片预览 */}
               <div className="relative aspect-video overflow-hidden bg-base">
                 {work.imageUrl ? (
                   <img
@@ -213,7 +177,6 @@ export function WorkUpload({
                   </div>
                 )}
 
-                {/* 操作按钮 */}
                 <div className="absolute top-1.5 right-1.5 flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
                   <button
                     type="button"
@@ -234,7 +197,6 @@ export function WorkUpload({
                 </div>
               </div>
 
-              {/* 描述输入 */}
               <div className="p-2">
                 <Input
                   value={work.description}
@@ -248,7 +210,6 @@ export function WorkUpload({
         </div>
       )}
 
-      {/* 放大查看 Modal */}
       <Modal
         open={previewWork !== null}
         onClose={() => setPreviewIndex(null)}
@@ -282,5 +243,4 @@ export function WorkUpload({
   );
 }
 
-/** 导出默认限制常量，便于外部使用 */
 export { MAX_COUNT as WORK_UPLOAD_MAX_COUNT, MAX_SIZE_MB as WORK_UPLOAD_MAX_SIZE_MB };

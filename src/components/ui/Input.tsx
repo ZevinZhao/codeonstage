@@ -1,17 +1,16 @@
-// ============================================================
-// Input 组件 - 输入框
-// ============================================================
+
+
 import { forwardRef, type InputHTMLAttributes, type ReactNode } from 'react';
 import { cn } from '@/utils/cn';
 
-/** Input Props */
+
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   icon?: ReactNode;
   error?: boolean;
   fullWidth?: boolean;
 }
 
-/** Input 组件 */
+
 export const Input = forwardRef<HTMLInputElement, InputProps>(
   ({ icon, error, fullWidth = true, className, ...props }, ref) => {
     return (

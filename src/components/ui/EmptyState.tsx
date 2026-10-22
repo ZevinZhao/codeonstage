@@ -1,11 +1,10 @@
-// ============================================================
-// EmptyState 组件 - 空状态展示
-// ============================================================
+
+
 import { type ReactNode } from 'react';
 import { Inbox } from 'lucide-react';
 import { cn } from '@/utils/cn';
 
-/** EmptyState Props */
+
 interface EmptyStateProps {
   icon?: ReactNode;
   title: string;
@@ -14,7 +13,7 @@ interface EmptyStateProps {
   className?: string;
 }
 
-/** EmptyState 组件 */
+
 export function EmptyState({ icon, title, description, action, className }: EmptyStateProps) {
   return (
     <div className={cn('flex flex-col items-center justify-center py-16 px-4 text-center', className)}>

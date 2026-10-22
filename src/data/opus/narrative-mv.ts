@@ -1,13 +1,5 @@
-// ============================================================
-// 码上开演 · Opus 索引数据 —— 叙事短片与音乐 MV（primaryCategory: 'narrative-mv'）
-// ------------------------------------------------------------
-// 本文件由 scripts/generate-opus-skills-data.mjs 自动生成，请勿手工编辑。
-// 数据来源：Opus 5.5 前端动画视频 Skills 索引（2026-10-20 采集）。
-// 生成条数：41
-// ============================================================
 import type { Skill } from '@/types';
 
-/** Opus 索引导入 · 叙事短片与音乐 MV（41 条，自动生成） */
 export const opusNarrativeMvSkills: Skill[] = [
   {
     id: '10291124jcjc-dotcom-ancient-rap-battle',

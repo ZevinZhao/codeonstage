@@ -1,13 +1,5 @@
-// ============================================================
-// 码上开演 · Opus 索引数据 —— 通用视频制作（primaryCategory: 'general-video'）
-// ------------------------------------------------------------
-// 本文件由 scripts/generate-opus-skills-data.mjs 自动生成，请勿手工编辑。
-// 数据来源：Opus 5.5 前端动画视频 Skills 索引（2026-10-20 采集）。
-// 生成条数：227
-// ============================================================
 import type { Skill } from '@/types';
 
-/** Opus 索引导入 · 通用视频制作（227 条，自动生成） */
 export const opusGeneralVideoSkills: Skill[] = [
   {
     id: 'huytieu-com-blog-release-video-skill-opus-5-5',
